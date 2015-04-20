@@ -75,9 +75,6 @@ public static void Create (string databaseArg, string userArg, string passArg)
 public static void InitializeData ()
 {
         /*PROTECTED REGION ID(initializeDataMethod) ENABLED START*/
-    AdministradorCEN admin = new AdministradorCEN();
-    admin.CrearAdministrador("admin", "admin", "admin", "admin","admin");
-
         try
         {
                 /*List<BalumaProjectGenNHibernate.EN.Mediaplayer.MusicTrackEN> musicTracks = new List<BalumaProjectGenNHibernate.EN.Mediaplayer.MusicTrackEN>();

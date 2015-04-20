@@ -48,6 +48,7 @@ body {
 	float:left;
 	margin: 14px 0;
 }
+
 /********** Login & registration *************/
 .log_reg{
 	border-right: 1px solid rgb(60, 60, 60);
@@ -316,6 +317,21 @@ h4.style{
 .menu ul li a:hover{
 	color:#57C5A0;
 }
+
+.google-maps {
+position: relative;
+padding-bottom: 75%; // This is the aspect ratio
+height: 0;
+overflow: hidden;
+}
+.google-maps iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100% !important;
+height: 100% !important;
+}
+
 /* start header_right */
 .header_right{
 	float:right;
