@@ -1,5 +1,4 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="contacto.aspx.cs" Inherits="BalumaProject_Plantilla_Frontend.contacto" %>
-<%@ Register Assembly="GMaps" Namespace="Subgurim.Controles" TagPrefix="cc" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
