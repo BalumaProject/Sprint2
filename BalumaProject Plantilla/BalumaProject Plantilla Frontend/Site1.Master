@@ -43,10 +43,9 @@
            });
        });
 	</script>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="head" runat="server" />
 </head>
-<body>
+<body runat="server">
 <!-- start header -->
 <div class="top_bg">
 <div class="wrap">
