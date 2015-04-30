@@ -9,9 +9,9 @@
     <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <!--- start-mmmenu-script---->
     <script src="~/Scripts/jquery.min.js" type="text/javascript"></script>
-    <link type="text/css" rel="stylesheet" href="~/Content/css/jquery.mmenu.all.css" />
-    <link type="text/css" rel="stylesheet" href="../Content/css/Estilos.css" />
+    <link type="text/css" rel="stylesheet" href="../Content/css/jquery.mmenu.all.css"/>
     <script type="text/javascript" src="~/Scripts/jquery.mmenu.js"></script>
+    <link type="text/css" rel="stylesheet" href="~/Content/css/Estilos.css"/>
 
 </head>
 <body>
@@ -19,7 +19,7 @@
     <div>
         <div class="registration_form medio_tam">
 		 <!-- Form -->
-			<form id="login_admin" action="" method="post">
+			<form id="login_admin" action="" method="post" class="medio-tam">
 				<div>
 					<label>
 						<asp:TextBox ID = "username" type="text" tabindex="1" placeholder="Nombre de usuario:" runat="server" />
