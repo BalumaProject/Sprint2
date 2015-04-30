@@ -65,7 +65,6 @@
     <Content Include="admin\indiceAdmin.aspx" />
     <Content Include="admin\LoginAdmin.aspx" />
     <Content Include="admin\LoginAdministrador.aspx" />
-    <Content Include="admin\WebForm1.aspx" />
     <Content Include="Catalogo.aspx" />
     <Content Include="cliente\cliente.aspx" />
     <Content Include="cliente\editar_cliente.aspx" />
@@ -140,13 +139,6 @@
     </Compile>
     <Compile Include="admin\LoginAdministrador.aspx.designer.cs">
       <DependentUpon>LoginAdministrador.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Catalogo.aspx.cs">
       <DependentUpon>Catalogo.aspx</DependentUpon>

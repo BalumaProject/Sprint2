@@ -28,12 +28,10 @@ namespace BalumaProject_Plantilla_Frontend.admin
                 AdministradorEN ad = new AdministradorEN();
                 ad = (AdministradorEN)us;
                 Session["admin"] = ad;
-                // Response.Redirect("http://localhost:58172/admin/indiceAdmin.aspx");
                 Response.Redirect("~/admin/indiceAdmin.aspx");
             }
             else
             {
-                //Response.Redirect("http://localhost:58172/indice.aspx");
                 Response.Redirect("~/indice.aspx");
             }
         }
