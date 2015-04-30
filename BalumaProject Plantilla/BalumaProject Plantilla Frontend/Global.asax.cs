@@ -19,6 +19,12 @@ namespace BalumaProject_Plantilla_Frontend
         void RegisterCustomRoutes(RouteCollection r)
         {
             r.MapPageRoute(
+                "Root",
+                "",
+                "~/indice.aspx"
+            );
+
+            r.MapPageRoute(
                 "LoginAdmin",
                 "LoginAdmin",
                 "~/admin/LoginAdmin.aspx"
