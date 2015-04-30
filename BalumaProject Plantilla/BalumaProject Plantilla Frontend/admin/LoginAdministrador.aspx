@@ -5,9 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,900,700,500' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,900,700,500' rel='stylesheet' type='text/css' />
     <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
-    <!--- start-mmmenu-script---->
     <script src="~/Scripts/jquery.min.js" type="text/javascript"></script>
     <link type="text/css" rel="stylesheet" href="../Content/css/jquery.mmenu.all.css"/>
     <script type="text/javascript" src="~/Scripts/jquery.mmenu.js"></script>
@@ -17,9 +16,9 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <div class="registration_form medio_tam">
-		 <!-- Form -->
-			<form id="login_admin" action="" method="post" class="medio-tam">
+        <div class="registration_form">
+            <div class="medio-tam">
+                <!-- Form -->
 				<div>
 					<label>
 						<asp:TextBox ID = "username" type="text" tabindex="1" placeholder="Nombre de usuario:" runat="server" />
@@ -33,8 +32,8 @@
 				<div>
 					<asp:Button OnClick = "login" type="submit" text="¡Entra!" runat = "server"/>
 				</div>
-			</form>
 			<!-- /Form -->
+            </div>		 
 		</div>
     </div>
     </form>

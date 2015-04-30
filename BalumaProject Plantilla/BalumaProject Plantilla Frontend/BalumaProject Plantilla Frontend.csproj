@@ -19,6 +19,11 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,6 +63,7 @@
   <ItemGroup>
     <Content Include="admin\editar_perfil.aspx" />
     <Content Include="admin\indiceAdmin.aspx" />
+    <Content Include="admin\LoginAdmin.aspx" />
     <Content Include="admin\LoginAdministrador.aspx" />
     <Content Include="admin\WebForm1.aspx" />
     <Content Include="Catalogo.aspx" />
@@ -76,6 +82,7 @@
     <Content Include="Content\images\cart.png" />
     <Content Include="Content\images\logoweb.png" />
     <Content Include="Content\images\perfil.jpg" />
+    <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\cloud-zoom.1.0.3.min.js" />
@@ -120,6 +127,13 @@
     <Compile Include="admin\indiceAdmin.aspx.designer.cs">
       <DependentUpon>indiceAdmin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\LoginAdmin.aspx.cs">
+      <DependentUpon>LoginAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\LoginAdmin.aspx.designer.cs">
+      <DependentUpon>LoginAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\LoginAdministrador.aspx.cs">
       <DependentUpon>LoginAdministrador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -161,6 +175,16 @@
     </Compile>
     <Compile Include="cliente\editar_cliente.aspx.designer.cs">
       <DependentUpon>editar_cliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Generico.Master.cs">
+      <DependentUpon>Generico.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Generico.Master.designer.cs">
+      <DependentUpon>Generico.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site1.Master.cs">
@@ -206,6 +230,9 @@
       <Project>{66C66636-FD6A-4A3F-A7C5-FE88BBA117AF}</Project>
       <Name>BalumaProjectGenNHibernate</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin\Generico.Master" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
