@@ -12,17 +12,17 @@ using BalumaProjectGenNHibernate.CAD.BalumaProject;
 
 namespace BalumaProjectGenNHibernate.CEN.BalumaProject
 {
-public partial class ValidarCEN
-{
-public bool ValidarPassword ()
-{
-        /*PROTECTED REGION ID(BalumaProjectGenNHibernate.CEN.BalumaProject_Validar_validarPassword) ENABLED START*/
+    public partial class ValidarCEN
+    {
+        public bool ValidarPassword()
+        {
+            /*PROTECTED REGION ID(BalumaProjectGenNHibernate.CEN.BalumaProject_Validar_validarPassword) ENABLED START*/
 
-        // Write here your custom code...
+            // Write here your custom code...
 
-        throw new NotImplementedException ("Method ValidarPassword() not yet implemented.");
+            throw new NotImplementedException("Method ValidarPassword() not yet implemented.");
 
-        /*PROTECTED REGION END*/
-}
-}
+            /*PROTECTED REGION END*/
+        }
+    }
 }
