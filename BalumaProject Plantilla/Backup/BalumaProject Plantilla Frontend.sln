@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-VisualStudioVersion = 12.0.31101.0
-MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalumaProject Plantilla Frontend", "BalumaProject Plantilla Frontend\BalumaProject Plantilla Frontend.csproj", "{D7ED8DD0-3BC2-4683-AA1E-644332A797DA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalumaProjectGenNHibernate", "..\BalumaProjectGen\BalumaProjectGenNHibernate\BalumaProjectGenNHibernate.csproj", "{66C66636-FD6A-4A3F-A7C5-FE88BBA117AF}"

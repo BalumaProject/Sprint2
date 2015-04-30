@@ -1,0 +1,15 @@
+﻿.medio-tam 
+{
+    max-width: 100px;
+    margin: auto;
+}
+
+.baja-servicio 
+{
+    margin-left: 15rem;
+}
+
+body
+{
+    background-color: black;
+}
