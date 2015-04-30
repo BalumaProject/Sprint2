@@ -348,6 +348,27 @@ width: 100%;
 height: 100%;
 }
 
+.factura 
+{
+	float: none;
+	width: 44.33333%;
+	margin-left:auto;
+    margin-right:auto;
+	background: #ffffff;
+	padding: 2%;
+	min-height: 350px;
+}
+
+.factura h3
+{
+    font-size: 1.2em;
+	color: #57C5A0;
+	text-transform: uppercase;
+	text-shadow: 0 1px 0 white;
+	border-bottom: 1px solid #E9E9E9;
+	padding-bottom: 10px;
+}
+
 
 
 /* start header_right */

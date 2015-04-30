@@ -4,11 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
-namespace WebApplication1
+namespace BalumaProject_Plantilla_Frontend
 {
-    public partial class Site1 : System.Web.UI.MasterPage
+    public partial class factura : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
         }

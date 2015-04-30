@@ -12,13 +12,6 @@ namespace BalumaProject_Plantilla_Frontend
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string key = "slides";
-            string javascript = "$(\"#slides\").slidesjs({ width: 375, height: 500, start: 1});";
-
-            if (!Page.ClientScript.IsStartupScriptRegistered(key))
-            {
-                Page.ClientScript.RegisterStartupScript(Page.GetType(), key, javascript, true);
-            }
         }
     }
 }
