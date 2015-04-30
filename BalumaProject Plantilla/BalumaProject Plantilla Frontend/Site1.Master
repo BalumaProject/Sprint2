@@ -73,10 +73,17 @@
 <div class="header_btm">
 		<div class="menu">
 			<ul>
+<<<<<<< HEAD
 				<li><a href="indice.aspx">Inicio</a></li>
 				<li><a href="Catalogo.aspx">Catálogo</a></li>
 				<li><a href="about.aspx">Sobre nosotros...</a></li>
 				<li><a href="contacto.aspx">Contacta con nosotros...</a></li>
+=======
+				<li><a href="~/indice.aspx" runat="server">Inicio</a></li>
+				<li><a href="~/Catalogo.aspx" runat="server">Catálogo</a></li>
+				<li><a href="~/about.aspx" runat="server">Sobre nosotros...</a></li>
+				<li><a href="~/contacto.aspx" runat="server">Contacta con nosotros...</a></li>
+>>>>>>> origin/contacto
 				
 			</ul>
 		</div>
