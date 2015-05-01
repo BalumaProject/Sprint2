@@ -1,5 +1,5 @@
 
-using System;
+using System.Collections.Generic;
 
 namespace BalumaProjectGenNHibernate.EN.BalumaProject
 {
@@ -7,9 +7,9 @@ namespace BalumaProjectGenNHibernate.EN.BalumaProject
     {
         private int idProducto;
         private int precio;
-        private BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador;
-        private System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN> categoria;
-        private System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido;
+        private AdministradorEN administrador;
+        private IList<CategoriaEN> categoria;
+        private IList<LineaPedidoEN> lineaPedido;
         
         public virtual int IdProducto
         {
@@ -23,19 +23,19 @@ namespace BalumaProjectGenNHibernate.EN.BalumaProject
             set { precio = value; }
         }
 
-        public virtual BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN Administrador
+        public virtual AdministradorEN Administrador
         {
             get { return administrador; }
             set { administrador = value; }
         }
 
-        public virtual System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN> Categoria
+        public virtual IList<CategoriaEN> Categoria
         {
             get { return categoria; }
             set { categoria = value; }
         }
 
-        public virtual System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> LineaPedido
+        public virtual IList<LineaPedidoEN> LineaPedido
         {
             get { return lineaPedido; }
             set { lineaPedido = value; }
@@ -43,11 +43,11 @@ namespace BalumaProjectGenNHibernate.EN.BalumaProject
 
         public ProductoEN()
         {
-            categoria = new System.Collections.Generic.List<BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN>();
-            lineaPedido = new System.Collections.Generic.List<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN>();
+            categoria = new List<CategoriaEN>();
+            lineaPedido = new List<LineaPedidoEN>();
         }
 
-        public ProductoEN(int idProducto, int precio, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN> categoria, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido)
+        public ProductoEN(int idProducto, int precio, AdministradorEN administrador, IList<CategoriaEN> categoria, IList<LineaPedidoEN> lineaPedido)
         {
             this.init(idProducto, precio, administrador, categoria, lineaPedido);
         }
@@ -57,7 +57,7 @@ namespace BalumaProjectGenNHibernate.EN.BalumaProject
             this.init(producto.IdProducto, producto.Precio, producto.Administrador, producto.Categoria, producto.LineaPedido);
         }
 
-        private void init(int idProducto, int precio, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN> categoria, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido)
+        private void init(int idProducto, int precio, AdministradorEN administrador, IList<CategoriaEN> categoria, IList<LineaPedidoEN> lineaPedido)
         {
             this.IdProducto = idProducto;
             this.Precio = precio;
