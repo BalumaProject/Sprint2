@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="BalumaProjectGenNHibernate"
+		                   namespace="BalumaProjectGenNHibernate.EN.BalumaProject">
+				
+<joined-subclass name="ImprimirFacturaEN" extends="BalumaProjectGenNHibernate.EN.BalumaProject.FacturaEN" table="[ImprimirFactura]">
+	<key>
+    		<column name="[id]"/>
+   	</key>
+
+			
+		  			
+					
+							<many-to-one name="Pedido" class="BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN" >
+								<column name="[FK_idPedido_idPedido]"/>
+        					</many-to-one>
+					 
+						
+					
+		
+		  </joined-subclass>	
+		  
+		  <query name="ImprimirFacturaENReadAllHQL">from ImprimirFacturaEN</query>
+		</hibernate-mapping>
+	

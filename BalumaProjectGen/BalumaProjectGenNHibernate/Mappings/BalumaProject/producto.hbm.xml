@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="BalumaProjectGenNHibernate"
+		                   namespace="BalumaProjectGenNHibernate.EN.BalumaProject">
+			<class name="ProductoEN" table="[Producto]">
+						<id name="IdProducto" column="[idProducto]"/>
+					<property name="Precio" type="integer"> 
+						<column name="[precio]"  not-null="true"/>
+					</property>
+			
+			
+			
+		  			
+						<many-to-one name="Administrador" class="BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN" >	
+								<column name="[FK_NIF_idAdministrador]"/>
+						</many-to-one>
+											 					
+			
+		  			
+						<bag name="Categoria" >
+							<key>
+								<column name="[FK_idProducto_idProducto]"/>
+					      	</key>
+							<one-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN"/>
+					    </bag>
+					
+			
+		  			
+						<bag name="LineaPedido" >
+							<key>
+								<column name="[FK_idProducto_idProducto]"/>
+					      	</key>
+							<one-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN"/>
+					    </bag>
+					
+					
+					
+					
+					
+					
+		
+		  </class>
+		  
+		  <query name="ProductoENReadAllHQL">from ProductoEN</query>
+		</hibernate-mapping>
+	
