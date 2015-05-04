@@ -12,9 +12,6 @@
 		<p>Si ya tienes una cuenta con nosotros, loguéate y disfruta de nuestra gran variedad de productos para barcos</p>
 	<!-- start registration -->
 	<div class="registration">
-		
-		
-
 	<div class="registration_left">
 		
 		 <div class="registration_form">

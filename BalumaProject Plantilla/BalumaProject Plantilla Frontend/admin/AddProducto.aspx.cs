@@ -7,14 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace BalumaProject_Plantilla_Frontend.admin
 {
-    public partial class Site1 : System.Web.UI.MasterPage
+    public partial class AddProducto : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["admin"] == null)
-            {
-                Response.Redirect("LoginAdmin");
-            }
+
         }
     }
 }

@@ -61,10 +61,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="admin\AddProducto.aspx" />
     <Content Include="admin\editar_perfil.aspx" />
     <Content Include="admin\indiceAdmin.aspx" />
     <Content Include="admin\LoginAdmin.aspx" />
     <Content Include="admin\LoginAdministrador.aspx" />
+    <Content Include="admin\QuitarProducto.aspx" />
     <Content Include="Catalogo.aspx" />
     <Content Include="cliente\cliente.aspx" />
     <Content Include="cliente\editar_cliente.aspx" />
@@ -105,6 +107,13 @@
     <Content Include="_footer.ascx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="admin\AddProducto.aspx.cs">
+      <DependentUpon>AddProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\AddProducto.aspx.designer.cs">
+      <DependentUpon>AddProducto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\Administrador.Master.cs">
       <DependentUpon>Administrador.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -139,6 +148,13 @@
     </Compile>
     <Compile Include="admin\LoginAdministrador.aspx.designer.cs">
       <DependentUpon>LoginAdministrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\QuitarProducto.aspx.cs">
+      <DependentUpon>QuitarProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\QuitarProducto.aspx.designer.cs">
+      <DependentUpon>QuitarProducto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Catalogo.aspx.cs">
       <DependentUpon>Catalogo.aspx</DependentUpon>

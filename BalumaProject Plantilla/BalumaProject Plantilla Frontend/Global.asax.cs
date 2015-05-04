@@ -29,6 +29,18 @@ namespace BalumaProject_Plantilla_Frontend
                 "LoginAdmin",
                 "~/admin/LoginAdmin.aspx"
             );
+
+            r.MapPageRoute(
+                "AddProducto",
+                "AddProducto",
+                "~/admin/AddProducto.aspx"
+            );
+
+            r.MapPageRoute(
+                "QuitarProducto",
+                "QuitarProducto",
+                "~/admin/QuitarProducto.aspx"
+            );
         }
 
         protected void Session_Start(object sender, EventArgs e)
