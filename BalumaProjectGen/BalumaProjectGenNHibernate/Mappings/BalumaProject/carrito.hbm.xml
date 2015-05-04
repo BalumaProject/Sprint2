@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="BalumaProjectGenNHibernate"
+		                   namespace="BalumaProjectGenNHibernate.EN.BalumaProject">
+			<class name="CarritoEN" table="[Carrito]">
+				  	
+						<id name="IdCarrito" column="[idCarrito]" type="integer">
+							<generator class="identity"/>
+						</id>
+			
+		  			
+					
+							   <one-to-one name="Previsualizar" class="BalumaProjectGenNHibernate.EN.BalumaProject.PrevisualizarEN" property-ref="Carrito" />							
+					 
+						
+			
+		  			
+					
+							   <one-to-one name="Cliente" class="BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN" property-ref="Carrito" />							
+					 
+						
+			
+		  			
+						<bag name="LineaPedido" table="[lineaPedido_carrito]" inverse="true" >
+							<key>
+									<column name="[FK_idCarrito_idCarrito]"/>
+							</key>
+      						<many-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN">
+									<column name="[FK_numero_idLineaPedido]"/>
+      						</many-to-many>
+    					</bag>
+			
+					
+					
+					
+					
+		
+		  </class>
+		  
+		  <query name="CarritoENReadAllHQL">from CarritoEN</query>
+		</hibernate-mapping>
+	
