@@ -26,10 +26,18 @@
       <attributes xmi:type="es.ua.dlsi.ooh:Attribute" xmi:id="_hGWbAOU7EeSowv0KfF9jHw" alias="nombre" name="nombre"/>
     </elements>
     <elements xmi:type="es.ua.dlsi.ooh:Class" xmi:id="_wMyp4N6REeS2w5wgt2WtXA" name="Validar" alias="Validar" associationOrigin="_H4xEEN6fEeS2w5wgt2WtXA">
-      <operations xmi:type="es.ua.dlsi.ooh:Operation" xmi:id="_H4DPMN6bEeS2w5wgt2WtXA" name="validarNombreUsuario" type="Boolean"/>
-      <operations xmi:type="es.ua.dlsi.ooh:Operation" xmi:id="_QtjQQN6bEeS2w5wgt2WtXA" name="validarPassword" type="Boolean"/>
-      <operations xmi:type="es.ua.dlsi.ooh:Operation" xmi:id="_UyBLQN6bEeS2w5wgt2WtXA" name="validarPago" type="Boolean"/>
-      <operations xmi:type="es.ua.dlsi.ooh:Operation" xmi:id="_Wr6sIN6bEeS2w5wgt2WtXA" name="validarCorreo" type="Boolean"/>
+      <operations xmi:type="es.ua.dlsi.ooh:Operation" xmi:id="_H4DPMN6bEeS2w5wgt2WtXA" name="validarNombreUsuario" type="Boolean">
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_NbIEcPNbEeSmVZ5e3Abs5A" name="username"/>
+      </operations>
+      <operations xmi:type="es.ua.dlsi.ooh:Operation" xmi:id="_QtjQQN6bEeS2w5wgt2WtXA" name="validarPassword" type="Boolean">
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_K5oYEPNbEeSmVZ5e3Abs5A" name="password"/>
+      </operations>
+      <operations xmi:type="es.ua.dlsi.ooh:Operation" xmi:id="_UyBLQN6bEeS2w5wgt2WtXA" name="validarPago" type="Boolean">
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_Gw5oIPNbEeSmVZ5e3Abs5A" name="cuenta"/>
+      </operations>
+      <operations xmi:type="es.ua.dlsi.ooh:Operation" xmi:id="_Wr6sIN6bEeS2w5wgt2WtXA" name="validarCorreo" type="Boolean">
+        <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_BAizEPNbEeSmVZ5e3Abs5A" name="email"/>
+      </operations>
       <operations xmi:type="es.ua.dlsi.ooh:Operation" xmi:id="_u3YpQN6pEeS2w5wgt2WtXA" name="crear" operationType="New" type="Object" typeObject="_wMyp4N6REeS2w5wgt2WtXA">
         <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_wi-BUN6pEeS2w5wgt2WtXA" name="p_usuario" type="OID" typeObject="_e2qEgN6REeS2w5wgt2WtXA"/>
       </operations>
@@ -73,7 +81,6 @@
       <attributes xmi:type="es.ua.dlsi.ooh:Attribute" xmi:id="_mwdlwPM_EeS-k9n0N0YiLA" alias="url_foto" name="url_foto"/>
     </elements>
     <elements xmi:type="es.ua.dlsi.ooh:Class" xmi:id="_53VckN6REeS2w5wgt2WtXA" name="Administrador" alias="Administrador" inheritFathers="_R9TZMN6hEeS2w5wgt2WtXA" asociationTarget="_0pIfEN6hEeS2w5wgt2WtXA" associationOrigin="__hnEgN6hEeS2w5wgt2WtXA">
-      <operations xmi:type="es.ua.dlsi.ooh:Operation" xmi:id="_GDpjQN6kEeS2w5wgt2WtXA" name="realizarSeguimientoPedidosporCliente" type="Void"/>
       <operations xmi:type="es.ua.dlsi.ooh:Operation" xmi:id="_P4VJYN6kEeS2w5wgt2WtXA" name="modificarStock" type="Void">
         <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_UC6TcN6kEeS2w5wgt2WtXA" name="producto" type="Object" typeObject="_whdVgN6VEeS2w5wgt2WtXA"/>
         <arguments xmi:type="es.ua.dlsi.ooh:Argument" xmi:id="_W6XBsN6kEeS2w5wgt2WtXA" name="cantidad" type="Integer"/>
@@ -504,13 +511,6 @@
         <styles xmi:type="notation:FilteringStyle" xmi:id="_53fNmN6REeS2w5wgt2WtXA"/>
       </children>
       <children xmi:type="notation:BasicCompartment" xmi:id="_53fNmd6REeS2w5wgt2WtXA" type="7004">
-        <children xmi:type="notation:Node" xmi:id="_GDzUQN6kEeS2w5wgt2WtXA" type="3004" element="_GDpjQN6kEeS2w5wgt2WtXA">
-          <children xmi:type="notation:DecorationNode" xmi:id="_GDzURd6kEeS2w5wgt2WtXA" type="5004"/>
-          <styles xmi:type="notation:DescriptionStyle" xmi:id="_GDzUQd6kEeS2w5wgt2WtXA"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_GDzUQt6kEeS2w5wgt2WtXA" fontName="Segoe UI"/>
-          <styles xmi:type="notation:FillStyle" xmi:id="_GDzUQ96kEeS2w5wgt2WtXA"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GDzURN6kEeS2w5wgt2WtXA"/>
-        </children>
         <children xmi:type="notation:Node" xmi:id="_P4VJYt6kEeS2w5wgt2WtXA" type="3004" element="_P4VJYN6kEeS2w5wgt2WtXA">
           <children xmi:type="notation:DecorationNode" xmi:id="_P4VJZ96kEeS2w5wgt2WtXA" type="5004"/>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_P4VJY96kEeS2w5wgt2WtXA"/>
@@ -538,7 +538,7 @@
       <styles xmi:type="notation:DescriptionStyle" xmi:id="_53fNkd6REeS2w5wgt2WtXA"/>
       <styles xmi:type="notation:FontStyle" xmi:id="_53fNkt6REeS2w5wgt2WtXA" fontName="Segoe UI"/>
       <styles xmi:type="notation:FillStyle" xmi:id="_53fNk96REeS2w5wgt2WtXA" fillColor="12516090"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_53fNlN6REeS2w5wgt2WtXA" x="700" y="160" width="261" height="116"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_53fNlN6REeS2w5wgt2WtXA" x="700" y="160" width="261" height="86"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="__y3m4d6REeS2w5wgt2WtXA" type="2003" element="__y3m4N6REeS2w5wgt2WtXA">
       <children xmi:type="notation:DecorationNode" xmi:id="__y3m5t6REeS2w5wgt2WtXA" type="5005"/>
