@@ -23,6 +23,7 @@ namespace BalumaProject_Plantilla_Frontend.cliente
              local.Text = cli.Localidad;
              cp.Text = cli.CodigoPostal;
              telf.Text = cli.Telefono;
+             email.Text = cli.Email;
              cuenta.Text = cli.NumCuentaBancaria;
              string[] apellidos = cli.Apellidos.Split(' ');
              papellido.Text = apellidos[0];
@@ -37,7 +38,7 @@ namespace BalumaProject_Plantilla_Frontend.cliente
         {
             
             String apellidos = papellido.Text + sapellido.Text;
-            cliente.ModificarCliente(cli.NIF,apellidos,pass.Text,nickname.Text,nombre.Text,local.Text,cp.Text,cuenta.Text,telf.Text);
+            cliente.ModificarCliente(cli.NIF,apellidos,pass.Text,nickname.Text,nombre.Text,local.Text,cp.Text,cuenta.Text,telf.Text,email.Text,"url foto sin asignar aún");
             
         }
 

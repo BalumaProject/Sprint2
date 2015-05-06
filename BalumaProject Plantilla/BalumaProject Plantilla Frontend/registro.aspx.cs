@@ -57,9 +57,10 @@ namespace BalumaProject_Plantilla_Frontend
             String localidad = local.Text;
             String numtelf = telf.Text;
             String cuentaBancaria = cuenta.Text;
+            String correo = email.Text;
+            String url_foto = "Sin asignar";
 
-
-            cliente.CrearCliente(apellidos,password,nickname.Text,NIF,nom,localidad,cp.Text,cuentaBancaria,numtelf);
+            cliente.CrearCliente(apellidos,password,nickname.Text,NIF,nom,localidad,cp.Text,cuentaBancaria,numtelf,correo,url_foto);
         }
 
     }
