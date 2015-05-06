@@ -16,6 +16,17 @@
         					</many-to-one>
 					 
 						
+			
+		  			
+						<bag name="Factura" table="[factura_imprimirFactura_0]" inverse="true" >
+							<key>
+									<column name="[FK_id_idImprimirFactura_0]"/>
+							</key>
+      						<many-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.FacturaEN">
+									<column name="[FK_id_idFactura]"/>
+      						</many-to-many>
+    					</bag>
+					
 					
 		
 		  </joined-subclass>	

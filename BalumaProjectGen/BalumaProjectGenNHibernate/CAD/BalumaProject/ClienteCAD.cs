@@ -77,71 +77,6 @@ public string CrearCliente (ClienteEN cliente)
         return cliente.NIF;
 }
 
-public void AnyadirAlCarrito (string p_Cliente_OID, int p_carrito_OID)
-{
-        BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN clienteEN = null;
-        try
-        {
-                SessionInitializeTransaction ();
-                clienteEN = (ClienteEN)session.Load (typeof(ClienteEN), p_Cliente_OID);
-                clienteEN.Carrito = (BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN)session.Load (typeof(BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN), p_carrito_OID);
-
-                clienteEN.Carrito.Cliente = clienteEN;
-
-
-
-
-                session.Update (clienteEN);
-                SessionCommit ();
-        }
-
-        catch (Exception ex) {
-                SessionRollBack ();
-                if (ex is BalumaProjectGenNHibernate.Exceptions.ModelException)
-                        throw ex;
-                throw new BalumaProjectGenNHibernate.Exceptions.DataLayerException ("Error in ClienteCAD.", ex);
-        }
-
-
-        finally
-        {
-                SessionClose ();
-        }
-}
-
-public void QuitarDelCarrito (string p_Cliente_OID, int p_carrito_OID)
-{
-        try
-        {
-                SessionInitializeTransaction ();
-                BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN clienteEN = null;
-                clienteEN = (ClienteEN)session.Load (typeof(ClienteEN), p_Cliente_OID);
-
-                if (clienteEN.Carrito.IdCarrito == p_carrito_OID) {
-                        clienteEN.Carrito = null;
-                        BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN carritoEN = (BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN)session.Load (typeof(BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN), p_carrito_OID);
-                        carritoEN.Cliente = null;
-                }
-                else
-                        throw new ModelException ("The identifier " + p_carrito_OID + " in p_carrito_OID you are trying to unrelationer, doesn't exist in ClienteEN");
-
-                session.Update (clienteEN);
-                SessionCommit ();
-        }
-
-        catch (Exception ex) {
-                SessionRollBack ();
-                if (ex is BalumaProjectGenNHibernate.Exceptions.ModelException)
-                        throw ex;
-                throw new BalumaProjectGenNHibernate.Exceptions.DataLayerException ("Error in ClienteCAD.", ex);
-        }
-
-
-        finally
-        {
-                SessionClose ();
-        }
-}
 public void ModificarCliente (ClienteEN cliente)
 {
         try
@@ -171,6 +106,12 @@ public void ModificarCliente (ClienteEN cliente)
 
 
                 clienteEN.Telefono = cliente.Telefono;
+
+
+                clienteEN.Email = cliente.Email;
+
+
+                clienteEN.Url_foto = cliente.Url_foto;
 
                 session.Update (clienteEN);
                 SessionCommit ();

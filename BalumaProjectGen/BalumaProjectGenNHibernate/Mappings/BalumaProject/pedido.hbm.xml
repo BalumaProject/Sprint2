@@ -52,6 +52,17 @@
 							   <one-to-one name="Cliente" class="BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN" property-ref="Pedido" />							
 					 
 						
+			
+		  			
+						<bag name="SeguimientoCliente" table="[pedido_seguimientoCliente]"  >
+							<key>
+									<column name="[FK_idPedido_idPedido]"/>
+							</key>
+      						<many-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.SeguimientoClienteEN">
+									<column name="[FK_attribute_idSeguimientoCliente]"/>
+      						</many-to-many>
+    					</bag>
+					
 					
 					
 					

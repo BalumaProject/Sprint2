@@ -105,13 +105,10 @@
 	<Compile Include="CEN\BalumaProject\ClienteCEN.cs" />
 	<Compile Include="CAD\BalumaProject\IClienteCAD.cs" />
 	<Compile Include="CAD\BalumaProject\ClienteCAD.cs" />
-			<Compile Include="CEN\BalumaProject\ClienteCEN_RealizarCompra.cs" />
-			<Compile Include="CEN\BalumaProject\ClienteCEN_RealizarSeguimiento.cs" />
 	<Compile Include="EN\BalumaProject\AdministradorEN.cs" />
 	<Compile Include="CEN\BalumaProject\AdministradorCEN.cs" />
 	<Compile Include="CAD\BalumaProject\IAdministradorCAD.cs" />
 	<Compile Include="CAD\BalumaProject\AdministradorCAD.cs" />
-			<Compile Include="CEN\BalumaProject\AdministradorCEN_RealizarSeguimientoPedidosporCliente.cs" />
 			<Compile Include="CEN\BalumaProject\AdministradorCEN_ModificarStock.cs" />
 	<Compile Include="EN\BalumaProject\FacturaEN.cs" />
 	<Compile Include="CEN\BalumaProject\FacturaCEN.cs" />
@@ -132,10 +129,12 @@
 	<Compile Include="CEN\BalumaProject\CarritoCEN.cs" />
 	<Compile Include="CAD\BalumaProject\ICarritoCAD.cs" />
 	<Compile Include="CAD\BalumaProject\CarritoCAD.cs" />
+			<Compile Include="CEN\BalumaProject\CarritoCEN_AnyadirProducto.cs" />
 	<Compile Include="EN\BalumaProject\PedidoEN.cs" />
 	<Compile Include="CEN\BalumaProject\PedidoCEN.cs" />
 	<Compile Include="CAD\BalumaProject\IPedidoCAD.cs" />
 	<Compile Include="CAD\BalumaProject\PedidoCAD.cs" />
+			<Compile Include="CEN\BalumaProject\PedidoCEN_Comprar.cs" />
 	<Compile Include="EN\BalumaProject\LineaPedidoEN.cs" />
 	<Compile Include="CEN\BalumaProject\LineaPedidoCEN.cs" />
 	<Compile Include="CAD\BalumaProject\ILineaPedidoCAD.cs" />
@@ -154,6 +153,21 @@
 	<Compile Include="CAD\BalumaProject\PagarCAD.cs" />
 			<Compile Include="CEN\BalumaProject\PagarCEN_PagarPaypal.cs" />
 			<Compile Include="CEN\BalumaProject\PagarCEN_PagarVisa.cs" />
+	<Compile Include="EN\BalumaProject\SeguimientoEN.cs" />
+	<Compile Include="CEN\BalumaProject\SeguimientoCEN.cs" />
+	<Compile Include="CAD\BalumaProject\ISeguimientoCAD.cs" />
+	<Compile Include="CAD\BalumaProject\SeguimientoCAD.cs" />
+			<Compile Include="CEN\BalumaProject\SeguimientoCEN_RealizarSeguimiento.cs" />
+	<Compile Include="EN\BalumaProject\SeguimientoAdminEN.cs" />
+	<Compile Include="CEN\BalumaProject\SeguimientoAdminCEN.cs" />
+	<Compile Include="CAD\BalumaProject\ISeguimientoAdminCAD.cs" />
+	<Compile Include="CAD\BalumaProject\SeguimientoAdminCAD.cs" />
+			<Compile Include="CEN\BalumaProject\SeguimientoAdminCEN_RealizarSeguimiento.cs" />
+	<Compile Include="EN\BalumaProject\SeguimientoClienteEN.cs" />
+	<Compile Include="CEN\BalumaProject\SeguimientoClienteCEN.cs" />
+	<Compile Include="CAD\BalumaProject\ISeguimientoClienteCAD.cs" />
+	<Compile Include="CAD\BalumaProject\SeguimientoClienteCAD.cs" />
+			<Compile Include="CEN\BalumaProject\SeguimientoClienteCEN_RealizarSeguimiento.cs" />
 	<Compile Include="Enumerated\BalumaProject\EstadoPedidoEnum.cs" />
 	<Compile Include="Enumerated\BalumaProject\TipoPagoEnum.cs" />
 	
@@ -184,6 +198,9 @@
 	<EmbeddedResource Include="Mappings\BalumaProject\producto.hbm.xml" />
 	<EmbeddedResource Include="Mappings\BalumaProject\categoria.hbm.xml" />
 	<EmbeddedResource Include="Mappings\BalumaProject\pagar.hbm.xml" />
+	<EmbeddedResource Include="Mappings\BalumaProject\seguimiento.hbm.xml" />
+	<EmbeddedResource Include="Mappings\BalumaProject\seguimientoadmin.hbm.xml" />
+	<EmbeddedResource Include="Mappings\BalumaProject\seguimientocliente.hbm.xml" />
 	
 	
 

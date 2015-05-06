@@ -11,26 +11,26 @@ using BalumaProjectGenNHibernate.Exceptions;
 
 namespace BalumaProjectGenNHibernate.CAD.BalumaProject
 {
-public partial class CarritoCAD : BasicCAD, ICarritoCAD
+public partial class SeguimientoAdminCAD : BasicCAD, ISeguimientoAdminCAD
 {
-public CarritoCAD() : base ()
-{
-}
-
-public CarritoCAD(ISession sessionAux) : base (sessionAux)
+public SeguimientoAdminCAD() : base ()
 {
 }
 
-
-
-public CarritoEN ReadOIDDefault (int idCarrito)
+public SeguimientoAdminCAD(ISession sessionAux) : base (sessionAux)
 {
-        CarritoEN carritoEN = null;
+}
+
+
+
+public SeguimientoAdminEN ReadOIDDefault (string idSeguimiento)
+{
+        SeguimientoAdminEN seguimientoAdminEN = null;
 
         try
         {
                 SessionInitializeTransaction ();
-                carritoEN = (CarritoEN)session.Get (typeof(CarritoEN), idCarrito);
+                seguimientoAdminEN = (SeguimientoAdminEN)session.Get (typeof(SeguimientoAdminEN), idSeguimiento);
                 SessionCommit ();
         }
 
@@ -38,7 +38,7 @@ public CarritoEN ReadOIDDefault (int idCarrito)
                 SessionRollBack ();
                 if (ex is BalumaProjectGenNHibernate.Exceptions.ModelException)
                         throw ex;
-                throw new BalumaProjectGenNHibernate.Exceptions.DataLayerException ("Error in CarritoCAD.", ex);
+                throw new BalumaProjectGenNHibernate.Exceptions.DataLayerException ("Error in SeguimientoAdminCAD.", ex);
         }
 
 
@@ -47,22 +47,17 @@ public CarritoEN ReadOIDDefault (int idCarrito)
                 SessionClose ();
         }
 
-        return carritoEN;
+        return seguimientoAdminEN;
 }
 
 
-public int CrearCarrito (CarritoEN carrito)
+public string CrearSegAdmin (SeguimientoAdminEN seguimientoAdmin)
 {
         try
         {
                 SessionInitializeTransaction ();
-                if (carrito.Previsualizar != null) {
-                        carrito.Previsualizar = (BalumaProjectGenNHibernate.EN.BalumaProject.PrevisualizarEN)session.Load (typeof(BalumaProjectGenNHibernate.EN.BalumaProject.PrevisualizarEN), carrito.Previsualizar.Id);
 
-                        carrito.Previsualizar.Carrito = carrito;
-                }
-
-                session.Save (carrito);
+                session.Save (seguimientoAdmin);
                 SessionCommit ();
         }
 
@@ -70,7 +65,7 @@ public int CrearCarrito (CarritoEN carrito)
                 SessionRollBack ();
                 if (ex is BalumaProjectGenNHibernate.Exceptions.ModelException)
                         throw ex;
-                throw new BalumaProjectGenNHibernate.Exceptions.DataLayerException ("Error in CarritoCAD.", ex);
+                throw new BalumaProjectGenNHibernate.Exceptions.DataLayerException ("Error in SeguimientoAdminCAD.", ex);
         }
 
 
@@ -79,7 +74,7 @@ public int CrearCarrito (CarritoEN carrito)
                 SessionClose ();
         }
 
-        return carrito.IdCarrito;
+        return seguimientoAdmin.IdSeguimiento;
 }
 }
 }

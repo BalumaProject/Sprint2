@@ -14,22 +14,26 @@
 					 
 						
 			
-		  			
-					
-							   <one-to-one name="Cliente" class="BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN" property-ref="Carrito" />							
-					 
-						
 			
 		  			
-						<bag name="LineaPedido" table="[lineaPedido_carrito]" inverse="true" >
+						<bag name="Cliente" table="[cliente_carrito]" inverse="true" >
 							<key>
 									<column name="[FK_idCarrito_idCarrito]"/>
 							</key>
-      						<many-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN">
-									<column name="[FK_numero_idLineaPedido]"/>
+      						<many-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN">
+									<column name="[FK_NIF_idCliente]"/>
       						</many-to-many>
     					</bag>
 			
+		  			
+						<bag name="Producto" table="[producto_carrito]" inverse="true" >
+							<key>
+									<column name="[FK_idCarrito_idCarrito]"/>
+							</key>
+      						<many-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN">
+									<column name="[FK_idProducto_idProducto]"/>
+      						</many-to-many>
+    					</bag>
 					
 					
 					

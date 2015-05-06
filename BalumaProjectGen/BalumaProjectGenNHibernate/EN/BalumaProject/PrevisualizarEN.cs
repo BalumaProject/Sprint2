@@ -31,18 +31,18 @@ public PrevisualizarEN() : base ()
 
 
 
-public PrevisualizarEN(int id, BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN carrito, string hTML)
+public PrevisualizarEN(int id, BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN carrito, string hTML, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN> imprimirFactura)
 {
-        this.init (id, carrito, hTML);
+        this.init (id, carrito, hTML, imprimirFactura);
 }
 
 
 public PrevisualizarEN(PrevisualizarEN previsualizar)
 {
-        this.init (previsualizar.Id, previsualizar.Carrito, previsualizar.HTML);
+        this.init (previsualizar.Id, previsualizar.Carrito, previsualizar.HTML, previsualizar.ImprimirFactura);
 }
 
-private void init (int id, BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN carrito, string hTML)
+private void init (int id, BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN carrito, string hTML, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN> imprimirFactura)
 {
         this.Id = id;
 
@@ -50,6 +50,8 @@ private void init (int id, BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN
         this.Carrito = carrito;
 
         this.HTML = hTML;
+
+        this.ImprimirFactura = imprimirFactura;
 }
 
 public override bool Equals (object obj)

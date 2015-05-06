@@ -13,6 +13,12 @@ public partial class ImprimirFacturaEN                  :                       
 
 private BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido;
 
+/**
+ *
+ */
+
+private System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.FacturaEN> factura;
+
 
 
 
@@ -22,34 +28,44 @@ public virtual BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN Pedido {
 }
 
 
+public virtual System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.FacturaEN> Factura {
+        get { return factura; } set { factura = value;  }
+}
+
+
 
 
 
 public ImprimirFacturaEN() : base ()
 {
+        factura = new System.Collections.Generic.List<BalumaProjectGenNHibernate.EN.BalumaProject.FacturaEN>();
 }
 
 
 
-public ImprimirFacturaEN(int id, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido, string hTML)
+public ImprimirFacturaEN(int id, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.FacturaEN> factura, string hTML, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN> imprimirFactura)
 {
-        this.init (id, pedido, hTML);
+        this.init (id, pedido, factura, hTML, imprimirFactura);
 }
 
 
 public ImprimirFacturaEN(ImprimirFacturaEN imprimirFactura)
 {
-        this.init (imprimirFactura.Id, imprimirFactura.Pedido, imprimirFactura.HTML);
+        this.init (imprimirFactura.Id, imprimirFactura.Pedido, imprimirFactura.Factura, imprimirFactura.HTML, imprimirFactura.ImprimirFactura);
 }
 
-private void init (int id, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido, string hTML)
+private void init (int id, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.FacturaEN> factura, string hTML, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN> imprimirFactura)
 {
         this.Id = id;
 
 
         this.Pedido = pedido;
 
+        this.Factura = factura;
+
         this.HTML = hTML;
+
+        this.ImprimirFactura = imprimirFactura;
 }
 
 public override bool Equals (object obj)

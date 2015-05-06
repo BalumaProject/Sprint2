@@ -20,18 +20,16 @@
 					<property name="Telefono" type="string"> 
 						<column name="[telefono]"  not-null="true"/>
 					</property>
+					<property name="Email" type="string"> 
+						<column name="[email]"  not-null="true"/>
+					</property>
+					<property name="Url_foto" type="string"> 
+						<column name="[url_foto]"  not-null="true"/>
+					</property>
 			
 			
 			
 			
-			
-		  			
-					
-							<many-to-one name="Carrito" class="BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN" cascade="delete">
-								<column name="[FK_idCarrito_idCarrito]"/>
-        					</many-to-one>
-					 
-						
 			
 		  			
 					
@@ -40,6 +38,20 @@
         					</many-to-one>
 					 
 						
+			
+		  			
+						<bag name="Carrito" table="[cliente_carrito]"  >
+							<key>
+									<column name="[FK_NIF_idCliente]"/>
+							</key>
+      						<many-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN">
+									<column name="[FK_idCarrito_idCarrito]"/>
+      						</many-to-many>
+    					</bag>
+			
+			
+					
+					
 					
 					
 					

@@ -14,7 +14,7 @@ namespace BalumaProjectGenNHibernate.CEN.BalumaProject
 {
 public partial class ValidarCEN
 {
-public bool ValidarPassword ()
+public bool ValidarPassword (string password)
 {
         /*PROTECTED REGION ID(BalumaProjectGenNHibernate.CEN.BalumaProject_Validar_validarPassword) ENABLED START*/
 

@@ -21,12 +21,6 @@ private BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido;
  *
  */
 
-private System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN> carrito;
-
-/**
- *
- */
-
 private int numero;
 
 
@@ -43,11 +37,6 @@ public virtual BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN Pedido {
 }
 
 
-public virtual System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN> Carrito {
-        get { return carrito; } set { carrito = value;  }
-}
-
-
 public virtual int Numero {
         get { return numero; } set { numero = value;  }
 }
@@ -58,23 +47,22 @@ public virtual int Numero {
 
 public LineaPedidoEN()
 {
-        carrito = new System.Collections.Generic.List<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN>();
 }
 
 
 
-public LineaPedidoEN(int numero, BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN producto, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN> carrito)
+public LineaPedidoEN(int numero, BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN producto, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido)
 {
-        this.init (numero, producto, pedido, carrito);
+        this.init (numero, producto, pedido);
 }
 
 
 public LineaPedidoEN(LineaPedidoEN lineaPedido)
 {
-        this.init (lineaPedido.Numero, lineaPedido.Producto, lineaPedido.Pedido, lineaPedido.Carrito);
+        this.init (lineaPedido.Numero, lineaPedido.Producto, lineaPedido.Pedido);
 }
 
-private void init (int numero, BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN producto, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN> carrito)
+private void init (int numero, BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN producto, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido)
 {
         this.Numero = numero;
 
@@ -82,8 +70,6 @@ private void init (int numero, BalumaProjectGenNHibernate.EN.BalumaProject.Produ
         this.Producto = producto;
 
         this.Pedido = pedido;
-
-        this.Carrito = carrito;
 }
 
 public override bool Equals (object obj)

@@ -32,7 +32,7 @@ public ICarritoCAD get_ICarritoCAD ()
         return this._ICarritoCAD;
 }
 
-public int CrearCarrito (int p_previsualizar, string p_cliente)
+public int CrearCarrito (int p_previsualizar)
 {
         CarritoEN carritoEN = null;
         int oid;
@@ -43,12 +43,6 @@ public int CrearCarrito (int p_previsualizar, string p_cliente)
         if (p_previsualizar != -1) {
                 carritoEN.Previsualizar = new BalumaProjectGenNHibernate.EN.BalumaProject.PrevisualizarEN ();
                 carritoEN.Previsualizar.Id = p_previsualizar;
-        }
-
-
-        if (p_cliente != null) {
-                carritoEN.Cliente = new BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN ();
-                carritoEN.Cliente.NIF = p_cliente;
         }
 
         //Call to CarritoCAD

@@ -17,6 +17,12 @@ private int id;
 
 private string hTML;
 
+/**
+ *
+ */
+
+private System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN> imprimirFactura;
+
 
 
 
@@ -31,32 +37,40 @@ public virtual string HTML {
 }
 
 
+public virtual System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN> ImprimirFactura {
+        get { return imprimirFactura; } set { imprimirFactura = value;  }
+}
+
+
 
 
 
 public FacturaEN()
 {
+        imprimirFactura = new System.Collections.Generic.List<BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN>();
 }
 
 
 
-public FacturaEN(int id, string hTML)
+public FacturaEN(int id, string hTML, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN> imprimirFactura)
 {
-        this.init (id, hTML);
+        this.init (id, hTML, imprimirFactura);
 }
 
 
 public FacturaEN(FacturaEN factura)
 {
-        this.init (factura.Id, factura.HTML);
+        this.init (factura.Id, factura.HTML, factura.ImprimirFactura);
 }
 
-private void init (int id, string hTML)
+private void init (int id, string hTML, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN> imprimirFactura)
 {
         this.Id = id;
 
 
         this.HTML = hTML;
+
+        this.ImprimirFactura = imprimirFactura;
 }
 
 public override bool Equals (object obj)

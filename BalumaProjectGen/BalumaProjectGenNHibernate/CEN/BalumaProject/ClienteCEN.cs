@@ -32,7 +32,7 @@ public IClienteCAD get_IClienteCAD ()
         return this._IClienteCAD;
 }
 
-public string CrearCliente (string p_apellidos, string p_password, string p_username, string p_NIF, string p_nombre, string p_localidad, string p_codigoPostal, string p_numCuentaBancaria, string p_telefono)
+public string CrearCliente (string p_apellidos, string p_password, string p_username, string p_NIF, string p_nombre, string p_localidad, string p_codigoPostal, string p_numCuentaBancaria, string p_telefono, string p_email, string p_url_foto)
 {
         ClienteEN clienteEN = null;
         string oid;
@@ -57,25 +57,17 @@ public string CrearCliente (string p_apellidos, string p_password, string p_user
 
         clienteEN.Telefono = p_telefono;
 
+        clienteEN.Email = p_email;
+
+        clienteEN.Url_foto = p_url_foto;
+
         //Call to ClienteCAD
 
         oid = _IClienteCAD.CrearCliente (clienteEN);
         return oid;
 }
 
-public void AnyadirAlCarrito (string p_Cliente_OID, int p_carrito_OID)
-{
-        //Call to ClienteCAD
-
-        _IClienteCAD.AnyadirAlCarrito (p_Cliente_OID, p_carrito_OID);
-}
-public void QuitarDelCarrito (string p_Cliente_OID, int p_carrito_OID)
-{
-        //Call to ClienteCAD
-
-        _IClienteCAD.QuitarDelCarrito (p_Cliente_OID, p_carrito_OID);
-}
-public void ModificarCliente (string p_Cliente_OID, string p_apellidos, string p_password, string p_username, string p_nombre, string p_localidad, string p_codigoPostal, string p_numCuentaBancaria, string p_telefono)
+public void ModificarCliente (string p_Cliente_OID, string p_apellidos, string p_password, string p_username, string p_nombre, string p_localidad, string p_codigoPostal, string p_numCuentaBancaria, string p_telefono, string p_email, string p_url_foto)
 {
         ClienteEN clienteEN = null;
 
@@ -90,6 +82,8 @@ public void ModificarCliente (string p_Cliente_OID, string p_apellidos, string p
         clienteEN.CodigoPostal = p_codigoPostal;
         clienteEN.NumCuentaBancaria = p_numCuentaBancaria;
         clienteEN.Telefono = p_telefono;
+        clienteEN.Email = p_email;
+        clienteEN.Url_foto = p_url_foto;
         //Call to ClienteCAD
 
         _IClienteCAD.ModificarCliente (clienteEN);

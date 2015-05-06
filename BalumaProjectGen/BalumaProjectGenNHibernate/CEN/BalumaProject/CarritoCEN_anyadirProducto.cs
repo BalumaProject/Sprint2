@@ -12,15 +12,15 @@ using BalumaProjectGenNHibernate.CAD.BalumaProject;
 
 namespace BalumaProjectGenNHibernate.CEN.BalumaProject
 {
-public partial class ValidarCEN
+public partial class CarritoCEN
 {
-public bool ValidarPago (string cuenta)
+public void AnyadirProducto (int p_oid)
 {
-        /*PROTECTED REGION ID(BalumaProjectGenNHibernate.CEN.BalumaProject_Validar_validarPago) ENABLED START*/
+        /*PROTECTED REGION ID(BalumaProjectGenNHibernate.CEN.BalumaProject_Carrito_anyadirProducto) ENABLED START*/
 
         // Write here your custom code...
 
-        throw new NotImplementedException ("Method ValidarPago() not yet implemented.");
+        throw new NotImplementedException ("Method AnyadirProducto() not yet implemented.");
 
         /*PROTECTED REGION END*/
 }

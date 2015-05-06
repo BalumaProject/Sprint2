@@ -33,6 +33,17 @@
 							<one-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN"/>
 					    </bag>
 					
+			
+		  			
+						<bag name="Carrito" table="[producto_carrito]"  >
+							<key>
+									<column name="[FK_idProducto_idProducto]"/>
+							</key>
+      						<many-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN">
+									<column name="[FK_idCarrito_idCarrito]"/>
+      						</many-to-many>
+    					</bag>
+					
 					
 					
 					

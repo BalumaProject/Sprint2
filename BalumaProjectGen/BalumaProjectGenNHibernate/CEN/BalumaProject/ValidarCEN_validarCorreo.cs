@@ -14,7 +14,7 @@ namespace BalumaProjectGenNHibernate.CEN.BalumaProject
 {
 public partial class ValidarCEN
 {
-public bool ValidarCorreo ()
+public bool ValidarCorreo (string email)
 {
         /*PROTECTED REGION ID(BalumaProjectGenNHibernate.CEN.BalumaProject_Validar_validarCorreo) ENABLED START*/
 

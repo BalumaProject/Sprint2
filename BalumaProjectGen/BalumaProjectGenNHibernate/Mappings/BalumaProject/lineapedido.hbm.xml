@@ -17,17 +17,6 @@
 						</many-to-one>
 											 					
 			
-		  			
-						<bag name="Carrito" table="[lineaPedido_carrito]"  >
-							<key>
-									<column name="[FK_numero_idLineaPedido]"/>
-							</key>
-      						<many-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN">
-									<column name="[FK_idCarrito_idCarrito]"/>
-      						</many-to-many>
-    					</bag>
-			
-					
 					
 					
 					

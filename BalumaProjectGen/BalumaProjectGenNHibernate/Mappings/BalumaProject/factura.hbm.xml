@@ -9,6 +9,17 @@
 					</property>
 			
 			
+			
+		  			
+						<bag name="ImprimirFactura" table="[factura_imprimirFactura_0]"  >
+							<key>
+									<column name="[FK_id_idFactura]"/>
+							</key>
+      						<many-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN">
+									<column name="[FK_id_idImprimirFactura_0]"/>
+      						</many-to-many>
+    					</bag>
+					
 					
 					
 		
