@@ -4,7 +4,7 @@
 		                   namespace="BalumaProjectGenNHibernate.EN.BalumaProject">
 			<class name="ProductoEN" table="[Producto]">
 						<id name="IdProducto" column="[idProducto]"/>
-					<property name="Precio" type="integer"> 
+					<property name="Precio" type="float"> 
 						<column name="[precio]"  not-null="true"/>
 					</property>
 			
@@ -26,13 +26,10 @@
 					
 			
 		  			
-						<bag name="LineaPedido" >
-							<key>
-								<column name="[FK_idProducto_idProducto]"/>
-					      	</key>
-							<one-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN"/>
-					    </bag>
-					
+						<many-to-one name="LineaPedido" class="BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN" >	
+								<column name="[FK_numero_idLineaPedido]"/>
+						</many-to-one>
+											 					
 			
 		  			
 						<bag name="Carrito" table="[producto_carrito]"  >

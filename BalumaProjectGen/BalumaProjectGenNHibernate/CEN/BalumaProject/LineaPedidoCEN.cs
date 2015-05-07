@@ -32,19 +32,13 @@ public ILineaPedidoCAD get_ILineaPedidoCAD ()
         return this._ILineaPedidoCAD;
 }
 
-public int CrearLinea (int p_producto, int p_pedido, int p_numero)
+public int CrearLinea (int p_pedido, int p_numero)
 {
         LineaPedidoEN lineaPedidoEN = null;
         int oid;
 
         //Initialized LineaPedidoEN
         lineaPedidoEN = new LineaPedidoEN ();
-
-        if (p_producto != -1) {
-                lineaPedidoEN.Producto = new BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN ();
-                lineaPedidoEN.Producto.IdProducto = p_producto;
-        }
-
 
         if (p_pedido != -1) {
                 lineaPedidoEN.Pedido = new BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN ();

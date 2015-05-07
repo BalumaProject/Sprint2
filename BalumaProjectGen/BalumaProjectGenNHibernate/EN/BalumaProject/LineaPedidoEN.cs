@@ -9,7 +9,7 @@ public partial class LineaPedidoEN
  *
  */
 
-private BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN producto;
+private System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN> producto;
 
 /**
  *
@@ -27,7 +27,7 @@ private int numero;
 
 
 
-public virtual BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN Producto {
+public virtual System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN> Producto {
         get { return producto; } set { producto = value;  }
 }
 
@@ -47,11 +47,12 @@ public virtual int Numero {
 
 public LineaPedidoEN()
 {
+        producto = new System.Collections.Generic.List<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN>();
 }
 
 
 
-public LineaPedidoEN(int numero, BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN producto, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido)
+public LineaPedidoEN(int numero, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN> producto, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido)
 {
         this.init (numero, producto, pedido);
 }
@@ -62,7 +63,7 @@ public LineaPedidoEN(LineaPedidoEN lineaPedido)
         this.init (lineaPedido.Numero, lineaPedido.Producto, lineaPedido.Pedido);
 }
 
-private void init (int numero, BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN producto, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido)
+private void init (int numero, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN> producto, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido)
 {
         this.Numero = numero;
 

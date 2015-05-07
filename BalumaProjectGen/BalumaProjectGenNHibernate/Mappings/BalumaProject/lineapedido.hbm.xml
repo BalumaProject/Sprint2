@@ -6,10 +6,13 @@
 						<id name="Numero" column="[numero]"/>
 			
 		  			
-						<many-to-one name="Producto" class="BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN" >	
-								<column name="[FK_idProducto_idProducto]"/>
-						</many-to-one>
-											 					
+						<bag name="Producto" >
+							<key>
+								<column name="[FK_numero_idLineaPedido]"/>
+					      	</key>
+							<one-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN"/>
+					    </bag>
+					
 			
 		  			
 						<many-to-one name="Pedido" class="BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN" >	

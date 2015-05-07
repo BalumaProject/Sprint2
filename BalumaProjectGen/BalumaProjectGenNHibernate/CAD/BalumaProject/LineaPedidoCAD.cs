@@ -56,11 +56,6 @@ public int CrearLinea (LineaPedidoEN lineaPedido)
         try
         {
                 SessionInitializeTransaction ();
-                if (lineaPedido.Producto != null) {
-                        lineaPedido.Producto = (BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN)session.Load (typeof(BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN), lineaPedido.Producto.IdProducto);
-
-                        lineaPedido.Producto.LineaPedido.Add (lineaPedido);
-                }
                 if (lineaPedido.Pedido != null) {
                         lineaPedido.Pedido = (BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN)session.Load (typeof(BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN), lineaPedido.Pedido.IdPedido);
 

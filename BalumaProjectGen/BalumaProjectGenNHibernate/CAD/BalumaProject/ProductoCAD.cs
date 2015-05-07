@@ -61,6 +61,11 @@ public int CrearProducto (ProductoEN producto)
 
                         producto.Administrador.Producto.Add (producto);
                 }
+                if (producto.LineaPedido != null) {
+                        producto.LineaPedido = (BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN)session.Load (typeof(BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN), producto.LineaPedido.Numero);
+
+                        producto.LineaPedido.Producto.Add (producto);
+                }
 
                 session.Save (producto);
                 SessionCommit ();

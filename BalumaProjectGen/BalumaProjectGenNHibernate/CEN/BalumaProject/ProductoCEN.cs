@@ -32,7 +32,7 @@ public IProductoCAD get_IProductoCAD ()
         return this._IProductoCAD;
 }
 
-public int CrearProducto (int p_idProducto, int p_precio, string p_administrador)
+public int CrearProducto (int p_idProducto, float p_precio, string p_administrador, int p_lineaPedido)
 {
         ProductoEN productoEN = null;
         int oid;
@@ -49,13 +49,19 @@ public int CrearProducto (int p_idProducto, int p_precio, string p_administrador
                 productoEN.Administrador.NIF = p_administrador;
         }
 
+
+        if (p_lineaPedido != -1) {
+                productoEN.LineaPedido = new BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN ();
+                productoEN.LineaPedido.Numero = p_lineaPedido;
+        }
+
         //Call to ProductoCAD
 
         oid = _IProductoCAD.CrearProducto (productoEN);
         return oid;
 }
 
-public void ModificarProducto (int p_Producto_OID, int p_precio)
+public void ModificarProducto (int p_Producto_OID, float p_precio)
 {
         ProductoEN productoEN = null;
 

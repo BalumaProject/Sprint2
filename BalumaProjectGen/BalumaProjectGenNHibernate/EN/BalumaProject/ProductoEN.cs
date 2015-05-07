@@ -15,7 +15,7 @@ private int idProducto;
  *
  */
 
-private int precio;
+private float precio;
 
 /**
  *
@@ -50,7 +50,7 @@ public virtual int IdProducto {
 }
 
 
-public virtual int Precio {
+public virtual float Precio {
         get { return precio; } set { precio = value;  }
 }
 
@@ -81,13 +81,12 @@ public virtual System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.Ba
 public ProductoEN()
 {
         categoria = new System.Collections.Generic.List<BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN>();
-        lineaPedido = new System.Collections.Generic.List<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN>();
         carrito = new System.Collections.Generic.List<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN>();
 }
 
 
 
-public ProductoEN(int idProducto, int precio, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN> categoria, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN> carrito)
+public ProductoEN(int idProducto, float precio, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN> categoria, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN> carrito)
 {
         this.init (idProducto, precio, administrador, categoria, lineaPedido, carrito);
 }
@@ -98,7 +97,7 @@ public ProductoEN(ProductoEN producto)
         this.init (producto.IdProducto, producto.Precio, producto.Administrador, producto.Categoria, producto.LineaPedido, producto.Carrito);
 }
 
-private void init (int idProducto, int precio, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN> categoria, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN> carrito)
+private void init (int idProducto, float precio, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN> categoria, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN> carrito)
 {
         this.IdProducto = idProducto;
 
