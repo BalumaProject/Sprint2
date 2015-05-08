@@ -13,70 +13,72 @@ using BalumaProjectGenNHibernate.CAD.BalumaProject;
 
 namespace BalumaProjectGenNHibernate.CEN.BalumaProject
 {
-public partial class ProductoCEN
-{
-private IProductoCAD _IProductoCAD;
+    public partial class ProductoCEN
+    {
+        private IProductoCAD _IProductoCAD;
 
-public ProductoCEN()
-{
-        this._IProductoCAD = new ProductoCAD ();
-}
-
-public ProductoCEN(IProductoCAD _IProductoCAD)
-{
-        this._IProductoCAD = _IProductoCAD;
-}
-
-public IProductoCAD get_IProductoCAD ()
-{
-        return this._IProductoCAD;
-}
-
-public int CrearProducto (int p_idProducto, float p_precio, string p_administrador, int p_lineaPedido)
-{
-        ProductoEN productoEN = null;
-        int oid;
-
-        //Initialized ProductoEN
-        productoEN = new ProductoEN ();
-        productoEN.IdProducto = p_idProducto;
-
-        productoEN.Precio = p_precio;
-
-
-        if (p_administrador != null) {
-                productoEN.Administrador = new BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN ();
-                productoEN.Administrador.NIF = p_administrador;
+        public ProductoCEN()
+        {
+            this._IProductoCAD = new ProductoCAD();
         }
 
+        public ProductoCEN(IProductoCAD _IProductoCAD)
+        {
+            this._IProductoCAD = _IProductoCAD;
+        }
 
-        if (p_lineaPedido != -1) {
+        public IProductoCAD get_IProductoCAD()
+        {
+            return this._IProductoCAD;
+        }
+
+        public int CrearProducto(int p_idProducto, float p_precio, string p_administrador, int p_lineaPedido)
+        {
+            ProductoEN productoEN = null;
+            int oid;
+
+            //Initialized ProductoEN
+            productoEN = new ProductoEN();
+            productoEN.IdProducto = p_idProducto;
+
+            productoEN.Precio = p_precio;
+
+
+            if (p_administrador != null)
+            {
+                productoEN.Administrador = new BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN();
+                productoEN.Administrador.NIF = p_administrador;
+            }
+
+
+            if (p_lineaPedido != -1)
+            {
                 // productoEN.LineaPedido = new BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN ();
                 // productoEN.LineaPedido.Numero = p_lineaPedido;
+            }
+
+            //Call to ProductoCAD
+
+            oid = _IProductoCAD.CrearProducto(productoEN);
+            return oid;
         }
 
-        //Call to ProductoCAD
+        public void ModificarProducto(int p_Producto_OID, float p_precio)
+        {
+            ProductoEN productoEN = null;
 
-        oid = _IProductoCAD.CrearProducto (productoEN);
-        return oid;
-}
+            //Initialized ProductoEN
+            productoEN = new ProductoEN();
+            productoEN.IdProducto = p_Producto_OID;
+            productoEN.Precio = p_precio;
+            //Call to ProductoCAD
 
-public void ModificarProducto (int p_Producto_OID, float p_precio)
-{
-        ProductoEN productoEN = null;
+            _IProductoCAD.ModificarProducto(productoEN);
+        }
 
-        //Initialized ProductoEN
-        productoEN = new ProductoEN ();
-        productoEN.IdProducto = p_Producto_OID;
-        productoEN.Precio = p_precio;
-        //Call to ProductoCAD
-
-        _IProductoCAD.ModificarProducto (productoEN);
-}
-
-public void BorrarProducto (int idProducto)
-{
-        _IProductoCAD.BorrarProducto (idProducto);
-}
-}
+        public void BorrarProducto(int idProducto)
+        {
+            _IProductoCAD.BorrarProducto(idProducto);
+        }
+    }
 }
