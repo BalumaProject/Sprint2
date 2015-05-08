@@ -60,8 +60,8 @@ namespace BalumaProject_Plantilla_Frontend
             String correo = email.Text;
             String url_foto = "Sin asignar";
 
-            cliente.CrearCliente(apellidos,password,nickname.Text,NIF,nom,localidad,cp.Text,cuentaBancaria,numtelf,correo,url_foto);
+            cliente.CrearCliente(apellidos, password, nickname.Text, NIF, nom, 
+                localidad, cp.Text, cuentaBancaria, numtelf, correo, url_foto);
         }
-
     }
 }

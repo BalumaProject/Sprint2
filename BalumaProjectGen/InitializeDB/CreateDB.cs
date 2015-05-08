@@ -79,7 +79,29 @@ public static void InitializeData ()
         {
             var admin = new AdministradorCEN();
             admin.CrearAdministrador("admin", "admin", "admin", "admin", "admin");
-                
+
+            var usuario = new UsuarioCEN();
+            usuario.CrearUsuario("usuario1", "usuario1", "usuario1", "usuario1", "usuario1");
+            usuario.CrearUsuario("usuario2", "usuario2", "usuario2", "usuario2", "usuario2");
+            usuario.CrearUsuario("usuario3", "usuario3", "usuario3", "usuario3", "usuario3");
+            usuario.CrearUsuario("usuario4", "usuario4", "usuario4", "usuario4", "usuario4");
+            usuario.CrearUsuario("usuario5", "usuario5", "usuario5", "usuario5", "usuario5");
+            usuario.CrearUsuario("usuario6", "usuario6", "usuario6", "usuario6", "usuario6");
+            usuario.CrearUsuario("usuario7", "usuario7", "usuario7", "usuario7", "usuario7");
+
+            var cliente = new ClienteCEN();
+            cliente.CrearCliente("cliente1", "cliente1", "cliente1",
+                "cliente1", "cliente1", "cliente1", "cliente1", "cliente1",
+                "cliente1", "cliente1", "cliente1");
+            cliente.CrearCliente("cliente2", "cliente2", "cliente2",
+                "cliente2", "cliente2", "cliente2", "cliente2", "cliente2",
+                "cliente2", "cliente2", "cliente2");
+            cliente.CrearCliente("cliente3", "cliente3", "cliente3",
+                "cliente3", "cliente3", "cliente3", "cliente3", "cliente3",
+                "cliente3", "cliente3", "cliente3");
+            cliente.CrearCliente("cliente4", "cliente4", "cliente4",
+                "cliente4", "cliente4", "cliente4", "cliente4", "cliente4",
+                "cliente4", "cliente4", "cliente4");
         }
         catch (Exception ex)
         {

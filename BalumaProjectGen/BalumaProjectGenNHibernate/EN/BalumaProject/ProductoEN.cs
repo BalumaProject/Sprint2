@@ -67,7 +67,8 @@ namespace BalumaProjectGenNHibernate.EN.BalumaProject
                 producto.Categoria, producto.LineaPedido, producto.Carrito);
         }
 
-        private void init(int idProducto, float precio, AdministradorEN administrador, IList<CategoriaEN> categoria, IList<LineaPedidoEN> lineaPedido, IList<CarritoEN> carrito)
+        private void init(int idProducto, float precio, AdministradorEN administrador, 
+            IList<CategoriaEN> categoria, IList<LineaPedidoEN> lineaPedido, IList<CarritoEN> carrito)
         {
             this.IdProducto = idProducto;
             this.Precio = precio;
