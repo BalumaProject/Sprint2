@@ -11,7 +11,10 @@ namespace BalumaProject_Plantilla_Frontend.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("~/admin/LoginAdministrador.aspx");
+            }
         }
     }
 }

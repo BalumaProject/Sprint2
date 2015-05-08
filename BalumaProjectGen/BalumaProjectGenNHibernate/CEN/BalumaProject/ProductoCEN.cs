@@ -51,8 +51,8 @@ public int CrearProducto (int p_idProducto, float p_precio, string p_administrad
 
 
         if (p_lineaPedido != -1) {
-                productoEN.LineaPedido = new BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN ();
-                productoEN.LineaPedido.Numero = p_lineaPedido;
+                // productoEN.LineaPedido = new BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN ();
+                // productoEN.LineaPedido.Numero = p_lineaPedido;
         }
 
         //Call to ProductoCAD

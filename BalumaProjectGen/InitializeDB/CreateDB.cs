@@ -77,43 +77,9 @@ public static void InitializeData ()
         /*PROTECTED REGION ID(initializeDataMethod) ENABLED START*/
         try
         {
-                /*List<BalumaProjectGenNHibernate.EN.Mediaplayer.MusicTrackEN> musicTracks = new List<BalumaProjectGenNHibernate.EN.Mediaplayer.MusicTrackEN>();
-                 * BalumaProjectGenNHibernate.EN.Mediaplayer.UserEN userEN = new BalumaProjectGenNHibernate.EN.Mediaplayer.UserEN();
-                 * BalumaProjectGenNHibernate.EN.Mediaplayer.ArtistEN artistEN = new BalumaProjectGenNHibernate.EN.Mediaplayer.ArtistEN();
-                 * BalumaProjectGenNHibernate.EN.Mediaplayer.MusicTrackEN musicTrackEN = new BalumaProjectGenNHibernate.EN.Mediaplayer.MusicTrackEN();
-                 * BalumaProjectGenNHibernate.CEN.Mediaplayer.ArtistCEN artistCEN = new BalumaProjectGenNHibernate.CEN.Mediaplayer.ArtistCEN();
-                 * BalumaProjectGenNHibernate.CEN.Mediaplayer.UserCEN userCEN = new BalumaProjectGenNHibernate.CEN.Mediaplayer.UserCEN();
-                 * BalumaProjectGenNHibernate.CEN.Mediaplayer.MusicTrackCEN musicTrackCEN = new BalumaProjectGenNHibernate.CEN.Mediaplayer.MusicTrackCEN();
-                 * BalumaProjectGenNHibernate.CEN.Mediaplayer.PlayListCEN playListCEN = new BalumaProjectGenNHibernate.CEN.Mediaplayer.PlayListCEN();
-                 *
-                 *              //Add Users
-                 * userEN.Email = "user@user.com";
-                 * userEN.Name = "user";
-                 * userEN.Surname = "userSurname";
-                 * userEN.Password = "user";
-                 * userCEN.New_(userEN.Name, userEN.Surname, userEN.Email, userEN.Password);
-                 *
-                 * //Add Music Track1
-                 * musicTrackEN.Id = "http://www2.b3ta.com/mp3/Beer Beer Beer (YOB mix).mp3";
-                 * musicTrackEN.Format = "mp3";
-                 * musicTrackEN.Lyrics = "Beer Beer Beer Beer Beer Beer ..";
-                 * musicTrackEN.Name = "Beer Beer Beer";
-                 * musicTrackEN.Company = "Company";
-                 * musicTrackEN.Cover = "http://www.tomasabraham.com.ar/cajadig/2007/images/nro18-2/beer1.jpg";
-                 * musicTrackEN.Price = 20;
-                 * musicTrackEN.Rating = 5;
-                 * musicTrackEN.CommunityRating = 5;
-                 * musicTrackEN.Duration = 200;
-                 * musicTrackCEN.New_(musicTrackEN.Id, musicTrackEN.Format, musicTrackEN.Lyrics, musicTrackEN.Name,
-                 *  musicTrackEN.Company, musicTrackEN.Cover, musicTrackEN.CommunityRating, musicTrackEN.Rating,
-                 *  musicTrackEN.Price, musicTrackEN.Duration);
-                 * musicTracks.Add(musicTrackEN);
-                 * musicTrackCEN.AsignUser(musicTrackEN.Id,userEN.Email);
-                 *
-                 * //Define Album
-                 * //BalumaProjectGenNHibernate.CEN.Mediaplayer.AlbumCEN albumCEN = new BalumaProjectGenNHibernate.CEN.Mediaplayer.AlbumCEN();
-                 * //albumCEN.New_("Album 1", "This is a Album 1", artists, musicTracks);*/
-                /*PROTECTED REGION END*/
+            var admin = new AdministradorCEN();
+            admin.CrearAdministrador("admin", "admin", "admin", "admin", "admin");
+                
         }
         catch (Exception ex)
         {

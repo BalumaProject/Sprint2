@@ -1,98 +1,71 @@
-
 using System;
+using System.Collections.Generic;
 
 namespace BalumaProjectGenNHibernate.EN.BalumaProject
 {
-public partial class AdministradorEN                    :                           BalumaProjectGenNHibernate.EN.BalumaProject.UsuarioEN
+    public partial class AdministradorEN : UsuarioEN
+    {
+        private IList<ProductoEN> producto;
+        private PedidoEN pedido;
 
+        public virtual IList<ProductoEN> Producto
+        {
+            get { return producto; }
+            set { producto = value; }
+        }
 
-{
-/**
- *
- */
+        public virtual PedidoEN Pedido
+        {
+            get { return pedido; }
+            set { pedido = value; }
+        }
 
-private System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN> producto;
+        public AdministradorEN() : base()
+        {
+            producto = new List<ProductoEN>();
+        }
 
-/**
- *
- */
+        public AdministradorEN(string nif, IList<ProductoEN> producto, PedidoEN pedido, string apellidos, string password, string username, ValidarEN validar, string nombre)
+        {
+            this.init(nif, producto, pedido, apellidos, password, username, validar, nombre);
+        }
 
-private BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido;
+        public AdministradorEN(AdministradorEN administrador)
+        {
+            this.init(administrador.NIF, administrador.Producto, administrador.Pedido, administrador.Apellidos, administrador.Password, administrador.Username, administrador.Validar, administrador.Nombre);
+        }
 
+        private void init(string nIF, IList<ProductoEN> producto, PedidoEN pedido, string apellidos, string password, string username, ValidarEN validar, string nombre)
+        {
+            this.NIF = NIF;
+            this.Producto = producto;
+            this.Pedido = pedido;
+            this.Apellidos = apellidos;
+            this.Password = password;
+            this.Username = username;
+            this.Validar = validar;
+            this.Nombre = nombre;
+        }
 
-
-
-
-public virtual System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN> Producto {
-        get { return producto; } set { producto = value;  }
-}
-
-
-public virtual BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN Pedido {
-        get { return pedido; } set { pedido = value;  }
-}
-
-
-
-
-
-public AdministradorEN() : base ()
-{
-        producto = new System.Collections.Generic.List<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN>();
-}
-
-
-
-public AdministradorEN(string nIF, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN> producto, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido, string apellidos, string password, string username, BalumaProjectGenNHibernate.EN.BalumaProject.ValidarEN validar, string nombre)
-{
-        this.init (nIF, producto, pedido, apellidos, password, username, validar, nombre);
-}
-
-
-public AdministradorEN(AdministradorEN administrador)
-{
-        this.init (administrador.NIF, administrador.Producto, administrador.Pedido, administrador.Apellidos, administrador.Password, administrador.Username, administrador.Validar, administrador.Nombre);
-}
-
-private void init (string nIF, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN> producto, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido, string apellidos, string password, string username, BalumaProjectGenNHibernate.EN.BalumaProject.ValidarEN validar, string nombre)
-{
-        this.NIF = NIF;
-
-
-        this.Producto = producto;
-
-        this.Pedido = pedido;
-
-        this.Apellidos = apellidos;
-
-        this.Password = password;
-
-        this.Username = username;
-
-        this.Validar = validar;
-
-        this.Nombre = nombre;
-}
-
-public override bool Equals (object obj)
-{
-        if (obj == null)
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
                 return false;
-        AdministradorEN t = obj as AdministradorEN;
-        if (t == null)
+            AdministradorEN t = obj as AdministradorEN;
+            if (t == null)
                 return false;
-        if (NIF.Equals (t.NIF))
+            if (NIF.Equals(t.NIF))
                 return true;
-        else
+            else
                 return false;
-}
+        }
 
-public override int GetHashCode ()
-{
-        int hash = 13;
+        public override int GetHashCode()
+        {
+            int hash = 13;
 
-        hash += this.NIF.GetHashCode ();
-        return hash;
-}
-}
+            hash += this.NIF.GetHashCode();
+            return hash;
+        }
+    }
 }
