@@ -27,6 +27,13 @@
 						
 			
 			
+			
+		  			
+						<many-to-one name="Administrador" class="BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN" >	
+								<column name="[FK_NIF_idAdministrador]"/>
+						</many-to-one>
+											 					
+					
 					
 					
 					

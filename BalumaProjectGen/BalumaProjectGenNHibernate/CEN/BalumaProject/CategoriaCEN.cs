@@ -32,7 +32,7 @@ public ICategoriaCAD get_ICategoriaCAD ()
         return this._ICategoriaCAD;
 }
 
-public string CrearCategoria (string p_nombre, string p_descripcion, int p_producto)
+public string CrearCategoria (string p_nombre, string p_descripcion)
 {
         CategoriaEN categoriaEN = null;
         string oid;
@@ -42,12 +42,6 @@ public string CrearCategoria (string p_nombre, string p_descripcion, int p_produ
         categoriaEN.Nombre = p_nombre;
 
         categoriaEN.Descripcion = p_descripcion;
-
-
-        if (p_producto != -1) {
-                categoriaEN.Producto = new BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN ();
-                categoriaEN.Producto.IdProducto = p_producto;
-        }
 
         //Call to CategoriaCAD
 

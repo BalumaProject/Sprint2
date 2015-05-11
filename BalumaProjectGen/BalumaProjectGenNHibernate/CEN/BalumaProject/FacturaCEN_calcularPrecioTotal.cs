@@ -18,14 +18,13 @@ public float CalcularPrecioTotal (int p_oid, System.Collections.Generic.IList<Ba
 {
         /*PROTECTED REGION ID(BalumaProjectGenNHibernate.CEN.BalumaProject_Factura_calcularPrecioTotal) ENABLED START*/
 
-    float precio_total = 0.0f;
+        float precio_total = 0.0f;
 
-    foreach (ProductoEN producto in pedido)
-    {
-        precio_total = producto.Precio + precio_total;
-    }
+        foreach (ProductoEN producto in pedido) {
+                precio_total = producto.Precio + precio_total;
+        }
 
-    return precio_total;
+        return precio_total;
 
 
         /*PROTECTED REGION END*/

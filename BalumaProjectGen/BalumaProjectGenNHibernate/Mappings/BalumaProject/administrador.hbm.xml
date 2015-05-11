@@ -25,6 +25,16 @@
         					</many-to-one>
 					 
 						
+			
+		  			
+						<bag name="Usuario" >
+							<key>
+								<column name="[FK_NIF_idAdministrador]"/>
+					      	</key>
+							<one-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.UsuarioEN"/>
+					    </bag>
+					
+					
 					
 					
 		

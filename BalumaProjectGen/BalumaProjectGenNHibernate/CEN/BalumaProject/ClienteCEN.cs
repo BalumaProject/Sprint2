@@ -32,6 +32,7 @@ namespace BalumaProjectGenNHibernate.CEN.BalumaProject
             return this._IClienteCAD;
         }
 
+<<<<<<< HEAD
         public string CrearCliente(string p_apellidos, string p_password,
             string p_username, string p_NIF, string p_nombre,
             string p_localidad, string p_codigoPostal, string p_numCuentaBancaria,
@@ -39,6 +40,12 @@ namespace BalumaProjectGenNHibernate.CEN.BalumaProject
         {
             ClienteEN clienteEN = null;
             string oid;
+=======
+public string CrearCliente (string p_apellidos, string p_password, string p_username, string p_NIF, string p_nombre, string p_administrador, string p_localidad, string p_codigoPostal, string p_numCuentaBancaria, string p_telefono, string p_email, string p_url_foto)
+{
+        ClienteEN clienteEN = null;
+        string oid;
+>>>>>>> diagrama-UML
 
             //Initialized ClienteEN
             clienteEN = new ClienteEN();
@@ -52,7 +59,17 @@ namespace BalumaProjectGenNHibernate.CEN.BalumaProject
 
             clienteEN.Nombre = p_nombre;
 
+<<<<<<< HEAD
             clienteEN.Localidad = p_localidad;
+=======
+
+        if (p_administrador != null) {
+                clienteEN.Administrador = new BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN ();
+                clienteEN.Administrador.NIF = p_administrador;
+        }
+
+        clienteEN.Localidad = p_localidad;
+>>>>>>> diagrama-UML
 
             clienteEN.CodigoPostal = p_codigoPostal;
 

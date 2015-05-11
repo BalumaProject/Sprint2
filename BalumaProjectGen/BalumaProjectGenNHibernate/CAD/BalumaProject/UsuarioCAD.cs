@@ -25,17 +25,19 @@ namespace BalumaProjectGenNHibernate.CAD.BalumaProject
 
         public UsuarioEN ReadOIDDefault(string NIF)
         {
-            UsuarioEN usuarioEN = null;
+                SessionInitializeTransaction ();
+                if (usuario.Administrador != null) {
+                        usuario.Administrador = (BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN)session.Load (typeof(BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN), usuario.Administrador.NIF);
 
-            try
-            {
-                SessionInitializeTransaction();
-                usuarioEN = (UsuarioEN)session.Get(typeof(UsuarioEN), NIF);
-                SessionCommit();
-            }
-            catch (Exception ex)
-            {
-                SessionRollBack();
+                        usuario.Administrador.Usuario.Add (usuario);
+                }
+
+                session.Save (usuario);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
                 if (ex is BalumaProjectGenNHibernate.Exceptions.ModelException)
                     throw ex;
                 throw new BalumaProjectGenNHibernate.Exceptions.DataLayerException("Error in UsuarioCAD.", ex);
