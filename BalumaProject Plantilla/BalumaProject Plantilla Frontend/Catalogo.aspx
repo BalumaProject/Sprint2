@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Catalogo.aspx.cs" Inherits="BalumaProject_Plantilla_Frontend.Catalogo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
- 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -30,26 +29,27 @@
     </div>
     </div>
     
-</form>
-</div>
-	<!-- start grids_of_3 -->
-	<div class="grids_of_3">
+    <div class="grids_of_3">
+        <div class = "registration_form">
 		<div class="grid1_of_3">
-			<a href="details.html">
+			<a href="#">
 				<img src="Content/images/bavaria.jpg" alt=""/>
 				<h3>Vela clásica</h3>
 				<span class="price">$145,99</span>
+                <asp:Button ID = "compra_1" Text = "Añadir al carrito" runat = "server" />
 			</a>
+             </div>
+            
 		</div>
 		<div class="grid1_of_3">
-			<a href="details.html">
+			<a href="#">
 				<img src="Content/images/bavaria.jpg" alt=""/>
 				<h3>Vela latina</h3>
 				<span class="price">$185,99</span>
 			</a>
 		</div>
 		<div class="grid1_of_3">
-			<a href="details.html">
+			<a href="#">
 				<img src="Content/images/bavaria.jpg" alt=""/>
 				<h3>Regata 100%</h3>
 				<span class="price">$145,99</span>
@@ -61,21 +61,21 @@
 	<!-- start grids_of_3 -->
 	<div class="grids_of_3">
 		<div class="grid1_of_3">
-			<a href="details.html">
+			<a href="#">
 				<img src="Content/images/bavaria.jpg" alt=""/>
 				<h3>Regata</h3>
 				<span class="price">$145,99</span>
 			</a>
 		</div>
 		<div class="grid1_of_3">
-			<a href="details.html">
+			<a href="#">
 				<img src="Content/images/bavaria.jpg" alt=""/>
 				<h3>Crucero</h3>
 				<span class="price">$185,99</span>
 			</a>
 		</div>
 		<div class="grid1_of_3">
-			<a href="details.html">
+			<a href="#">
 				<img src="Content/images/bavaria.jpg" alt=""/>
 				<h3>Vela Ligera</h3>
 				<span class="price">$145,99</span>
@@ -89,21 +89,21 @@
     <!-- start grids_of_3 -->
 	<div class="grids_of_3">
 		<div class="grid1_of_3">
-			<a href="details.html">
+			<a href="#">
 				<img src="Content/images/bavaria.jpg" alt=""/>
 				<h3>Regata</h3>
 				<span class="price">$145,99</span>
 			</a>
 		</div>
 		<div class="grid1_of_3">
-			<a href="details.html">
+			<a href="#">
 				<img src="Content/images/bavaria.jpg" alt=""/>
 				<h3>Crucero</h3>
 				<span class="price">$185,99</span>
 			</a>
 		</div>
 		<div class="grid1_of_3">
-			<a href="details.html">
+			<a href="#">
 				<img src="Content/images/bavaria.jpg" alt=""/>
 				<h3>Vela Ligera</h3>
 				<span class="price">$145,99</span>
@@ -113,7 +113,8 @@
 		<div class="clear"></div>
 	</div>
 	<div class="clear"></div>
-	
+    
+</form>
 </div>
 </div>
 </div>

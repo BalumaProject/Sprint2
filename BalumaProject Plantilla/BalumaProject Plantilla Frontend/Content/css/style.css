@@ -369,7 +369,21 @@ height: 100%;
 	padding-bottom: 10px;
 }
 
+.cart{
+			float:right;
+			position:relative;
+			width:260px;
+			height:100%;
+			background:#ccc;
+			padding:0px 10px;
+}
 
+.ctitle{
+			text-align:center;
+			color:#555;
+			font-size:18px;
+			padding:10px;
+}
 
 /* start header_right */
 .header_right{

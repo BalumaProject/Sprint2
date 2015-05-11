@@ -78,6 +78,7 @@
     <Content Include="Scripts\cloud-zoom.1.0.3.min.js" />
     <Content Include="Scripts\easing.js" />
     <Content Include="Scripts\jquery-2.1.3.min.js" />
+    <Content Include="Scripts\jquery.easyui.min.js" />
     <Content Include="Scripts\jquery.eislideshow.js" />
     <Content Include="Scripts\jquery.fancybox.pack.js" />
     <Content Include="Scripts\jquery.min.js" />
