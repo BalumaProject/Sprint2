@@ -21,7 +21,7 @@ namespace BalumaProject_Plantilla_Frontend.admin
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["admin"] != null)
+            try
             {
                 ad = (AdministradorEN)Session["admin"];
                 nombre.Text = ad.Nombre;
@@ -30,11 +30,14 @@ namespace BalumaProject_Plantilla_Frontend.admin
                 prapellido.Text = apellidos[0];
                 //sgapellido.Text = apellidos[1];
                 pass.Text = ad.Password;
-            }
-            else
+            }catch (Exception ex)
             {
                 Response.Redirect("~/admin/LoginAdministrador.aspx");
             }
+            finally
+            {
+
+            }            
         }
 
         protected void editar_admin(object sender, EventArgs ev)

@@ -33,7 +33,7 @@ private BalumaProjectGenNHibernate.EN.BalumaProject.ValidarEN validar;
  *
  */
 
-private string nIF;
+private string nif;
 
 /**
  *
@@ -66,7 +66,7 @@ public virtual BalumaProjectGenNHibernate.EN.BalumaProject.ValidarEN Validar {
 
 
 public virtual string NIF {
-        get { return nIF; } set { nIF = value;  }
+        get { return nif; } set { nif = value;  }
 }
 
 

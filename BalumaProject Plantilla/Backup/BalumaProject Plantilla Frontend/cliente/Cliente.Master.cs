@@ -5,15 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BalumaProjectGenNHibernate.EN.BalumaProject;
-namespace BalumaProject_Plantilla_Frontend.admin
+namespace BalumaProject_Plantilla_Frontend.cliente
 {
     public partial class Site1 : System.Web.UI.MasterPage
     {
-        AdministradorEN admin;
+        ClienteEN cli;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //admin = (AdministradorEN)Session["admin"];
-
+            cli = (ClienteEN)Session["cliente"];
+            nombre_usu.Text = cli.Username;
         }
     }
 }

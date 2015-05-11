@@ -4,16 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using BalumaProjectGenNHibernate.EN.BalumaProject;
+
 namespace BalumaProject_Plantilla_Frontend.admin
 {
-    public partial class Site1 : System.Web.UI.MasterPage
+    public partial class indiceAdmin : System.Web.UI.Page
     {
-        AdministradorEN admin;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //admin = (AdministradorEN)Session["admin"];
-
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("~/admin/LoginAdministrador.aspx");
+            }
         }
     }
 }
