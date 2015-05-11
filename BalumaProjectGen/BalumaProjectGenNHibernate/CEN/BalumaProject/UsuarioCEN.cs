@@ -32,7 +32,7 @@ public IUsuarioCAD get_IUsuarioCAD ()
         return this._IUsuarioCAD;
 }
 
-public string CrearUsuario (string p_apellidos, string p_password, string p_username, string p_NIF, string p_nombre)
+public string CrearUsuario (string p_apellidos, string p_password, string p_username, string p_NIF, string p_nombre, string p_administrador)
 {
         UsuarioEN usuarioEN = null;
         string oid;
@@ -48,6 +48,12 @@ public string CrearUsuario (string p_apellidos, string p_password, string p_user
         usuarioEN.NIF = p_NIF;
 
         usuarioEN.Nombre = p_nombre;
+
+
+        if (p_administrador != null) {
+                usuarioEN.Administrador = new BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN ();
+                usuarioEN.Administrador.NIF = p_administrador;
+        }
 
         //Call to UsuarioCAD
 

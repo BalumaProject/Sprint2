@@ -33,7 +33,7 @@ private BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN supercategoria;
  *
  */
 
-private BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN producto;
+private System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN> producto;
 
 
 
@@ -59,7 +59,7 @@ public virtual BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN Supercate
 }
 
 
-public virtual BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN Producto {
+public virtual System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN> Producto {
         get { return producto; } set { producto = value;  }
 }
 
@@ -70,11 +70,12 @@ public virtual BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN Producto {
 public CategoriaEN()
 {
         subcategoria = new System.Collections.Generic.List<BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN>();
+        producto = new System.Collections.Generic.List<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN>();
 }
 
 
 
-public CategoriaEN(string nombre, string descripcion, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN> subcategoria, BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN supercategoria, BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN producto)
+public CategoriaEN(string nombre, string descripcion, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN> subcategoria, BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN supercategoria, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN> producto)
 {
         this.init (nombre, descripcion, subcategoria, supercategoria, producto);
 }
@@ -85,7 +86,7 @@ public CategoriaEN(CategoriaEN categoria)
         this.init (categoria.Nombre, categoria.Descripcion, categoria.Subcategoria, categoria.Supercategoria, categoria.Producto);
 }
 
-private void init (string nombre, string descripcion, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN> subcategoria, BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN supercategoria, BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN producto)
+private void init (string nombre, string descripcion, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN> subcategoria, BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN supercategoria, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN> producto)
 {
         this.Nombre = nombre;
 

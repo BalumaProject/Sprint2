@@ -41,6 +41,12 @@ private string nIF;
 
 private string nombre;
 
+/**
+ *
+ */
+
+private BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador;
+
 
 
 
@@ -75,6 +81,11 @@ public virtual string Nombre {
 }
 
 
+public virtual BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN Administrador {
+        get { return administrador; } set { administrador = value;  }
+}
+
+
 
 
 
@@ -84,18 +95,18 @@ public UsuarioEN()
 
 
 
-public UsuarioEN(string nIF, string apellidos, string password, string username, BalumaProjectGenNHibernate.EN.BalumaProject.ValidarEN validar, string nombre)
+public UsuarioEN(string nIF, string apellidos, string password, string username, BalumaProjectGenNHibernate.EN.BalumaProject.ValidarEN validar, string nombre, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador)
 {
-        this.init (nIF, apellidos, password, username, validar, nombre);
+        this.init (nIF, apellidos, password, username, validar, nombre, administrador);
 }
 
 
 public UsuarioEN(UsuarioEN usuario)
 {
-        this.init (usuario.NIF, usuario.Apellidos, usuario.Password, usuario.Username, usuario.Validar, usuario.Nombre);
+        this.init (usuario.NIF, usuario.Apellidos, usuario.Password, usuario.Username, usuario.Validar, usuario.Nombre, usuario.Administrador);
 }
 
-private void init (string nIF, string apellidos, string password, string username, BalumaProjectGenNHibernate.EN.BalumaProject.ValidarEN validar, string nombre)
+private void init (string nIF, string apellidos, string password, string username, BalumaProjectGenNHibernate.EN.BalumaProject.ValidarEN validar, string nombre, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador)
 {
         this.NIF = NIF;
 
@@ -109,6 +120,8 @@ private void init (string nIF, string apellidos, string password, string usernam
         this.Validar = validar;
 
         this.Nombre = nombre;
+
+        this.Administrador = administrador;
 }
 
 public override bool Equals (object obj)

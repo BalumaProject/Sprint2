@@ -7,6 +7,12 @@
 					<property name="Precio" type="float"> 
 						<column name="[precio]"  not-null="true"/>
 					</property>
+					<property name="Nombre" type="string"> 
+						<column name="[nombre]"  unique="true" not-null="true"/>
+					</property>
+					<property name="Cantidad" type="integer"> 
+						<column name="[cantidad]"  not-null="true"/>
+					</property>
 			
 			
 			
@@ -17,13 +23,10 @@
 											 					
 			
 		  			
-						<bag name="Categoria" >
-							<key>
-								<column name="[FK_idProducto_idProducto]"/>
-					      	</key>
-							<one-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN"/>
-					    </bag>
-					
+						<many-to-one name="Categoria" class="BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN" >	
+								<column name="[FK_nombre_idCategoria]"/>
+						</many-to-one>
+											 					
 			
 		  			
 						<many-to-one name="LineaPedido" class="BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN" >	
@@ -40,6 +43,10 @@
 									<column name="[FK_idCarrito_idCarrito]"/>
       						</many-to-many>
     					</bag>
+			
+			
+					
+					
 					
 					
 					
@@ -50,5 +57,7 @@
 		  </class>
 		  
 		  <query name="ProductoENReadAllHQL">from ProductoEN</query>
+		  <query name="ProductoENdamePorCategoríaHQL"><![CDATA[FROM ProductoEN producto where producto.Categoria = :p_categoria]]></query>
+		  <query name="ProductoENdamePorNombreHQL"><![CDATA[FROM ProductoEN producto where producto.nombre = :p_nombre]]></query>
 		</hibernate-mapping>
 	

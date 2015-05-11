@@ -56,6 +56,11 @@ public string CrearCliente (ClienteEN cliente)
         try
         {
                 SessionInitializeTransaction ();
+                if (cliente.Administrador != null) {
+                        cliente.Administrador = (BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN)session.Load (typeof(BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN), cliente.Administrador.NIF);
+
+                        cliente.Administrador.Usuario.Add (cliente);
+                }
 
                 session.Save (cliente);
                 SessionCommit ();

@@ -56,11 +56,6 @@ public string CrearCategoria (CategoriaEN categoria)
         try
         {
                 SessionInitializeTransaction ();
-                if (categoria.Producto != null) {
-                        categoria.Producto = (BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN)session.Load (typeof(BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN), categoria.Producto.IdProducto);
-
-                        categoria.Producto.Categoria.Add (categoria);
-                }
 
                 session.Save (categoria);
                 SessionCommit ();

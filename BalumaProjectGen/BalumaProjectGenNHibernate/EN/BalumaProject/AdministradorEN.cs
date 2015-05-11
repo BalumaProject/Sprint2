@@ -19,6 +19,12 @@ private System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaPro
 
 private BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido;
 
+/**
+ *
+ */
+
+private System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.UsuarioEN> usuario;
+
 
 
 
@@ -33,28 +39,34 @@ public virtual BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN Pedido {
 }
 
 
+public virtual System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.UsuarioEN> Usuario {
+        get { return usuario; } set { usuario = value;  }
+}
+
+
 
 
 
 public AdministradorEN() : base ()
 {
         producto = new System.Collections.Generic.List<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN>();
+        usuario = new System.Collections.Generic.List<BalumaProjectGenNHibernate.EN.BalumaProject.UsuarioEN>();
 }
 
 
 
-public AdministradorEN(string nIF, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN> producto, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido, string apellidos, string password, string username, BalumaProjectGenNHibernate.EN.BalumaProject.ValidarEN validar, string nombre)
+public AdministradorEN(string nIF, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN> producto, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.UsuarioEN> usuario, string apellidos, string password, string username, BalumaProjectGenNHibernate.EN.BalumaProject.ValidarEN validar, string nombre, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador)
 {
-        this.init (nIF, producto, pedido, apellidos, password, username, validar, nombre);
+        this.init (nIF, producto, pedido, usuario, apellidos, password, username, validar, nombre, administrador);
 }
 
 
 public AdministradorEN(AdministradorEN administrador)
 {
-        this.init (administrador.NIF, administrador.Producto, administrador.Pedido, administrador.Apellidos, administrador.Password, administrador.Username, administrador.Validar, administrador.Nombre);
+        this.init (administrador.NIF, administrador.Producto, administrador.Pedido, administrador.Usuario, administrador.Apellidos, administrador.Password, administrador.Username, administrador.Validar, administrador.Nombre, administrador.Administrador);
 }
 
-private void init (string nIF, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN> producto, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido, string apellidos, string password, string username, BalumaProjectGenNHibernate.EN.BalumaProject.ValidarEN validar, string nombre)
+private void init (string nIF, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN> producto, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.UsuarioEN> usuario, string apellidos, string password, string username, BalumaProjectGenNHibernate.EN.BalumaProject.ValidarEN validar, string nombre, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador)
 {
         this.NIF = NIF;
 
@@ -62,6 +74,8 @@ private void init (string nIF, System.Collections.Generic.IList<BalumaProjectGen
         this.Producto = producto;
 
         this.Pedido = pedido;
+
+        this.Usuario = usuario;
 
         this.Apellidos = apellidos;
 
@@ -72,6 +86,8 @@ private void init (string nIF, System.Collections.Generic.IList<BalumaProjectGen
         this.Validar = validar;
 
         this.Nombre = nombre;
+
+        this.Administrador = administrador;
 }
 
 public override bool Equals (object obj)

@@ -32,7 +32,7 @@ public IAdministradorCAD get_IAdministradorCAD ()
         return this._IAdministradorCAD;
 }
 
-public string CrearAdministrador (string p_apellidos, string p_password, string p_username, string p_NIF, string p_nombre)
+public string CrearAdministrador (string p_apellidos, string p_password, string p_username, string p_NIF, string p_nombre, string p_administrador)
 {
         AdministradorEN administradorEN = null;
         string oid;
@@ -48,6 +48,12 @@ public string CrearAdministrador (string p_apellidos, string p_password, string 
         administradorEN.NIF = p_NIF;
 
         administradorEN.Nombre = p_nombre;
+
+
+        if (p_administrador != null) {
+                administradorEN.Administrador = new BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN ();
+                administradorEN.Administrador.NIF = p_administrador;
+        }
 
         //Call to AdministradorCAD
 

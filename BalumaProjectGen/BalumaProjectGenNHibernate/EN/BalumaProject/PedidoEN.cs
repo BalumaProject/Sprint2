@@ -59,12 +59,6 @@ private BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN imprimirFa
 
 private BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN cliente;
 
-/**
- *
- */
-
-private System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.SeguimientoClienteEN> seguimientoCliente;
-
 
 
 
@@ -114,34 +108,28 @@ public virtual BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN Cliente {
 }
 
 
-public virtual System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.SeguimientoClienteEN> SeguimientoCliente {
-        get { return seguimientoCliente; } set { seguimientoCliente = value;  }
-}
-
-
 
 
 
 public PedidoEN()
 {
         lineaPedido = new System.Collections.Generic.List<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN>();
-        seguimientoCliente = new System.Collections.Generic.List<BalumaProjectGenNHibernate.EN.BalumaProject.SeguimientoClienteEN>();
 }
 
 
 
-public PedidoEN(int idPedido, Nullable<DateTime> fecha, BalumaProjectGenNHibernate.Enumerated.BalumaProject.EstadoPedidoEnum estado, BalumaProjectGenNHibernate.Enumerated.BalumaProject.TipoPagoEnum tipoPago, BalumaProjectGenNHibernate.EN.BalumaProject.PagarEN pagar, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido, BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN imprimirFactura, BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN cliente, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.SeguimientoClienteEN> seguimientoCliente)
+public PedidoEN(int idPedido, Nullable<DateTime> fecha, BalumaProjectGenNHibernate.Enumerated.BalumaProject.EstadoPedidoEnum estado, BalumaProjectGenNHibernate.Enumerated.BalumaProject.TipoPagoEnum tipoPago, BalumaProjectGenNHibernate.EN.BalumaProject.PagarEN pagar, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido, BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN imprimirFactura, BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN cliente)
 {
-        this.init (idPedido, fecha, estado, tipoPago, pagar, administrador, lineaPedido, imprimirFactura, cliente, seguimientoCliente);
+        this.init (idPedido, fecha, estado, tipoPago, pagar, administrador, lineaPedido, imprimirFactura, cliente);
 }
 
 
 public PedidoEN(PedidoEN pedido)
 {
-        this.init (pedido.IdPedido, pedido.Fecha, pedido.Estado, pedido.TipoPago, pedido.Pagar, pedido.Administrador, pedido.LineaPedido, pedido.ImprimirFactura, pedido.Cliente, pedido.SeguimientoCliente);
+        this.init (pedido.IdPedido, pedido.Fecha, pedido.Estado, pedido.TipoPago, pedido.Pagar, pedido.Administrador, pedido.LineaPedido, pedido.ImprimirFactura, pedido.Cliente);
 }
 
-private void init (int idPedido, Nullable<DateTime> fecha, BalumaProjectGenNHibernate.Enumerated.BalumaProject.EstadoPedidoEnum estado, BalumaProjectGenNHibernate.Enumerated.BalumaProject.TipoPagoEnum tipoPago, BalumaProjectGenNHibernate.EN.BalumaProject.PagarEN pagar, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido, BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN imprimirFactura, BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN cliente, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.SeguimientoClienteEN> seguimientoCliente)
+private void init (int idPedido, Nullable<DateTime> fecha, BalumaProjectGenNHibernate.Enumerated.BalumaProject.EstadoPedidoEnum estado, BalumaProjectGenNHibernate.Enumerated.BalumaProject.TipoPagoEnum tipoPago, BalumaProjectGenNHibernate.EN.BalumaProject.PagarEN pagar, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido, BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN imprimirFactura, BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN cliente)
 {
         this.IdPedido = idPedido;
 
@@ -161,8 +149,6 @@ private void init (int idPedido, Nullable<DateTime> fecha, BalumaProjectGenNHibe
         this.ImprimirFactura = imprimirFactura;
 
         this.Cliente = cliente;
-
-        this.SeguimientoCliente = seguimientoCliente;
 }
 
 public override bool Equals (object obj)

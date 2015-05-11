@@ -27,7 +27,7 @@ private BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrado
  *
  */
 
-private System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN> categoria;
+private BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN categoria;
 
 /**
  *
@@ -40,6 +40,18 @@ private System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaPro
  */
 
 private System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN> carrito;
+
+/**
+ *
+ */
+
+private string nombre;
+
+/**
+ *
+ */
+
+private int cantidad;
 
 
 
@@ -60,7 +72,7 @@ public virtual BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN Admin
 }
 
 
-public virtual System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN> Categoria {
+public virtual BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN Categoria {
         get { return categoria; } set { categoria = value;  }
 }
 
@@ -75,29 +87,38 @@ public virtual System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.Ba
 }
 
 
+public virtual string Nombre {
+        get { return nombre; } set { nombre = value;  }
+}
+
+
+public virtual int Cantidad {
+        get { return cantidad; } set { cantidad = value;  }
+}
+
+
 
 
 
 public ProductoEN()
 {
-        categoria = new System.Collections.Generic.List<BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN>();
         carrito = new System.Collections.Generic.List<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN>();
 }
 
 
 
-public ProductoEN(int idProducto, float precio, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN> categoria, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN> carrito)
+public ProductoEN(int idProducto, float precio, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN categoria, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN> carrito, string nombre, int cantidad)
 {
-        this.init (idProducto, precio, administrador, categoria, lineaPedido, carrito);
+        this.init (idProducto, precio, administrador, categoria, lineaPedido, carrito, nombre, cantidad);
 }
 
 
 public ProductoEN(ProductoEN producto)
 {
-        this.init (producto.IdProducto, producto.Precio, producto.Administrador, producto.Categoria, producto.LineaPedido, producto.Carrito);
+        this.init (producto.IdProducto, producto.Precio, producto.Administrador, producto.Categoria, producto.LineaPedido, producto.Carrito, producto.Nombre, producto.Cantidad);
 }
 
-private void init (int idProducto, float precio, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN> categoria, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN> carrito)
+private void init (int idProducto, float precio, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN categoria, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN> carrito, string nombre, int cantidad)
 {
         this.IdProducto = idProducto;
 
@@ -111,6 +132,10 @@ private void init (int idProducto, float precio, BalumaProjectGenNHibernate.EN.B
         this.LineaPedido = lineaPedido;
 
         this.Carrito = carrito;
+
+        this.Nombre = nombre;
+
+        this.Cantidad = cantidad;
 }
 
 public override bool Equals (object obj)

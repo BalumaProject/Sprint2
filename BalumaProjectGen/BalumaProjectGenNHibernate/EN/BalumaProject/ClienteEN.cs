@@ -109,18 +109,18 @@ public ClienteEN() : base ()
 
 
 
-public ClienteEN(string nIF, string localidad, string codigoPostal, string numCuentaBancaria, string telefono, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN> carrito, string email, string url_foto, string apellidos, string password, string username, BalumaProjectGenNHibernate.EN.BalumaProject.ValidarEN validar, string nombre)
+public ClienteEN(string nIF, string localidad, string codigoPostal, string numCuentaBancaria, string telefono, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN> carrito, string email, string url_foto, string apellidos, string password, string username, BalumaProjectGenNHibernate.EN.BalumaProject.ValidarEN validar, string nombre, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador)
 {
-        this.init (nIF, localidad, codigoPostal, numCuentaBancaria, telefono, pedido, carrito, email, url_foto, apellidos, password, username, validar, nombre);
+        this.init (nIF, localidad, codigoPostal, numCuentaBancaria, telefono, pedido, carrito, email, url_foto, apellidos, password, username, validar, nombre, administrador);
 }
 
 
 public ClienteEN(ClienteEN cliente)
 {
-        this.init (cliente.NIF, cliente.Localidad, cliente.CodigoPostal, cliente.NumCuentaBancaria, cliente.Telefono, cliente.Pedido, cliente.Carrito, cliente.Email, cliente.Url_foto, cliente.Apellidos, cliente.Password, cliente.Username, cliente.Validar, cliente.Nombre);
+        this.init (cliente.NIF, cliente.Localidad, cliente.CodigoPostal, cliente.NumCuentaBancaria, cliente.Telefono, cliente.Pedido, cliente.Carrito, cliente.Email, cliente.Url_foto, cliente.Apellidos, cliente.Password, cliente.Username, cliente.Validar, cliente.Nombre, cliente.Administrador);
 }
 
-private void init (string nIF, string localidad, string codigoPostal, string numCuentaBancaria, string telefono, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN> carrito, string email, string url_foto, string apellidos, string password, string username, BalumaProjectGenNHibernate.EN.BalumaProject.ValidarEN validar, string nombre)
+private void init (string nIF, string localidad, string codigoPostal, string numCuentaBancaria, string telefono, BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN pedido, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN> carrito, string email, string url_foto, string apellidos, string password, string username, BalumaProjectGenNHibernate.EN.BalumaProject.ValidarEN validar, string nombre, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador)
 {
         this.NIF = NIF;
 
@@ -150,6 +150,8 @@ private void init (string nIF, string localidad, string codigoPostal, string num
         this.Validar = validar;
 
         this.Nombre = nombre;
+
+        this.Administrador = administrador;
 }
 
 public override bool Equals (object obj)

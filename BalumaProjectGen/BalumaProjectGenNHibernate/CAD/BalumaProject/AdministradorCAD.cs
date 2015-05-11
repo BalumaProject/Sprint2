@@ -56,6 +56,11 @@ public string CrearAdministrador (AdministradorEN administrador)
         try
         {
                 SessionInitializeTransaction ();
+                if (administrador.Administrador != null) {
+                        administrador.Administrador = (BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN)session.Load (typeof(BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN), administrador.Administrador.NIF);
+
+                        administrador.Administrador.Usuario.Add (administrador);
+                }
 
                 session.Save (administrador);
                 SessionCommit ();
