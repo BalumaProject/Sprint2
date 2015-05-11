@@ -23,25 +23,28 @@ namespace BalumaProjectGenNHibernate.CAD.BalumaProject
         {
         }
 
+
+
         public UsuarioEN ReadOIDDefault(string NIF)
         {
-                SessionInitializeTransaction ();
-                if (usuario.Administrador != null) {
-                        usuario.Administrador = (BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN)session.Load (typeof(BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN), usuario.Administrador.NIF);
+            UsuarioEN usuarioEN = null;
 
-                        usuario.Administrador.Usuario.Add (usuario);
-                }
+            try
+            {
+                SessionInitializeTransaction();
+                usuarioEN = (UsuarioEN)session.Get(typeof(UsuarioEN), NIF);
+                SessionCommit();
+            }
 
-                session.Save (usuario);
-                SessionCommit ();
-        }
-
-        catch (Exception ex) {
-                SessionRollBack ();
+            catch (Exception ex)
+            {
+                SessionRollBack();
                 if (ex is BalumaProjectGenNHibernate.Exceptions.ModelException)
                     throw ex;
                 throw new BalumaProjectGenNHibernate.Exceptions.DataLayerException("Error in UsuarioCAD.", ex);
             }
+
+
             finally
             {
                 SessionClose();
@@ -50,22 +53,32 @@ namespace BalumaProjectGenNHibernate.CAD.BalumaProject
             return usuarioEN;
         }
 
+
         public string CrearUsuario(UsuarioEN usuario)
         {
             try
             {
                 SessionInitializeTransaction();
+                if (usuario.Administrador != null)
+                {
+                    usuario.Administrador = (BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN)session.Load(typeof(BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN), usuario.Administrador.NIF);
+
+                    usuario.Administrador.Usuario.Add(usuario);
+                }
 
                 session.Save(usuario);
                 SessionCommit();
             }
+
             catch (Exception ex)
             {
                 SessionRollBack();
-                if (ex is ModelException)
+                if (ex is BalumaProjectGenNHibernate.Exceptions.ModelException)
                     throw ex;
-                throw new DataLayerException("Error in UsuarioCAD.", ex);
+                throw new BalumaProjectGenNHibernate.Exceptions.DataLayerException("Error in UsuarioCAD.", ex);
             }
+
+
             finally
             {
                 SessionClose();
@@ -74,7 +87,7 @@ namespace BalumaProjectGenNHibernate.CAD.BalumaProject
             return usuario.NIF;
         }
 
-        public UsuarioEN LeerPorNombreCliente(string p_username)
+        public BalumaProjectGenNHibernate.EN.BalumaProject.UsuarioEN LeerPorNombreCliente(string p_username)
         {
             BalumaProjectGenNHibernate.EN.BalumaProject.UsuarioEN result;
             try
@@ -86,16 +99,19 @@ namespace BalumaProjectGenNHibernate.CAD.BalumaProject
                 query.SetParameter("p_username", p_username);
 
 
-                result = query.UniqueResult<UsuarioEN>();
+                result = query.UniqueResult<BalumaProjectGenNHibernate.EN.BalumaProject.UsuarioEN>();
                 SessionCommit();
             }
+
             catch (Exception ex)
             {
                 SessionRollBack();
-                if (ex is ModelException)
+                if (ex is BalumaProjectGenNHibernate.Exceptions.ModelException)
                     throw ex;
-                throw new DataLayerException("Error in UsuarioCAD.", ex);
+                throw new BalumaProjectGenNHibernate.Exceptions.DataLayerException("Error in UsuarioCAD.", ex);
             }
+
+
             finally
             {
                 SessionClose();
@@ -103,9 +119,9 @@ namespace BalumaProjectGenNHibernate.CAD.BalumaProject
 
             return result;
         }
-        public UsuarioEN LeerPorNombreAdministrador(string p_username)
+        public BalumaProjectGenNHibernate.EN.BalumaProject.UsuarioEN LeerPorNombreAdministrador(string p_username)
         {
-            UsuarioEN result;
+            BalumaProjectGenNHibernate.EN.BalumaProject.UsuarioEN result;
             try
             {
                 SessionInitializeTransaction();
@@ -115,16 +131,19 @@ namespace BalumaProjectGenNHibernate.CAD.BalumaProject
                 query.SetParameter("p_username", p_username);
 
 
-                result = query.UniqueResult<UsuarioEN>();
+                result = query.UniqueResult<BalumaProjectGenNHibernate.EN.BalumaProject.UsuarioEN>();
                 SessionCommit();
             }
+
             catch (Exception ex)
             {
                 SessionRollBack();
-                if (ex is ModelException)
+                if (ex is BalumaProjectGenNHibernate.Exceptions.ModelException)
                     throw ex;
-                throw new DataLayerException("Error in UsuarioCAD.", ex);
+                throw new BalumaProjectGenNHibernate.Exceptions.DataLayerException("Error in UsuarioCAD.", ex);
             }
+
+
             finally
             {
                 SessionClose();
@@ -141,13 +160,16 @@ namespace BalumaProjectGenNHibernate.CAD.BalumaProject
                 session.Delete(usuarioEN);
                 SessionCommit();
             }
+
             catch (Exception ex)
             {
                 SessionRollBack();
-                if (ex is ModelException)
+                if (ex is BalumaProjectGenNHibernate.Exceptions.ModelException)
                     throw ex;
-                throw new DataLayerException("Error in UsuarioCAD.", ex);
+                throw new BalumaProjectGenNHibernate.Exceptions.DataLayerException("Error in UsuarioCAD.", ex);
             }
+
+
             finally
             {
                 SessionClose();
