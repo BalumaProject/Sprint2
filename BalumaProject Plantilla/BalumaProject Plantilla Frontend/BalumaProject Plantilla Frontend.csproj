@@ -59,6 +59,7 @@
     <Content Include="about.aspx" />
     <Content Include="admin\AdministrarClientes.aspx" />
     <Content Include="admin\AdministrarProductos.aspx" />
+    <Content Include="admin\EditarProducto.aspx" />
     <Content Include="admin\editar_perfil.aspx" />
     <Content Include="admin\indiceAdmin.aspx" />
     <Content Include="admin\LoginAdministrador.aspx" />
@@ -131,6 +132,13 @@
     </Compile>
     <Compile Include="admin\AdministrarProductos.aspx.designer.cs">
       <DependentUpon>AdministrarProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\EditarProducto.aspx.cs">
+      <DependentUpon>EditarProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\EditarProducto.aspx.designer.cs">
+      <DependentUpon>EditarProducto.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\editar_perfil.aspx.cs">
       <DependentUpon>editar_perfil.aspx</DependentUpon>

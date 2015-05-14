@@ -19,7 +19,7 @@
             <td><%= p.Nombre %></td>
             <td><%= p.Precio %></td>
             <td><%= p.Cantidad %></td>
-            <td><a href="#">editar</a></td>
+            <td><a href="EditarProducto.aspx?id=<%: p.IdProducto %>&nombre=<%: p.Nombre %>">editar</a></td>
         </tr>
         <% } %>
     </table>
