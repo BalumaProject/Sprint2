@@ -24,7 +24,7 @@ namespace BalumaProject_Plantilla_Frontend
              * Al cargar, la página debe leer los productos que se encuentran disponibles en stock de la
              * base de datos y colocarlos dinámicamente en una tabla
              * */
-
+           // precio.Text = String.Empty;
            lista_productos = productos.DameTodosLosProductos(0, 100);
             crea_contenido(lista_productos);
         }
@@ -39,19 +39,25 @@ namespace BalumaProject_Plantilla_Frontend
             bool encontrado = true;
             string opcion = lista.SelectedItem.Text.ToLower();
             float price;
-            if (!opcion.Equals("todos") && (precio.Text == null || precio.Text.Equals("")))
+           
+            if (!opcion.Equals("todos") && precio.Text == String.Empty)
             {
                 lista_busqueda = productos.DamePorCategoria(opcion);
             }
-            else if (precio.Text!=null||!precio.Text.Equals(""))
+            else if (opcion.Equals("todos") && precio.Text != String.Empty)
             {
                 price = float.Parse(precio.Text);
                 lista_busqueda = productos.DamePorPrecio(price);
             }
-            else 
+            else if (opcion.Equals("todos") && precio.Text == String.Empty)
+            {
+                lista_busqueda = productos.DameTodosLosProductos(0,100);
+            }
+            else if (!opcion.Equals("todos") && precio.Text != String.Empty)
             {
                 price = float.Parse(precio.Text);
-                lista_busqueda = productos.DamePorCategoriayPrecio(opcion,price);
+                lista_busqueda = productos.DamePorCategoriayPrecio(opcion, price);
+
             }
 
             if (lista_busqueda == null || lista_busqueda.Count == 0) encontrado = false;
