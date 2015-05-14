@@ -63,21 +63,29 @@ namespace BalumaProject_Plantilla_Frontend
 
         private void crea_contenido(IList<ProductoEN> lista_contenido)
         {
+           
             int cuenta_trío = 0;
            
             content += "<div class=\"grids_of_3\">"; //envoltura por cada trío de productos
+           
             foreach (ProductoEN prod in lista_contenido)
             {
                 if (cuenta_trío == 3)
                 {
                     content += "<div class=\"clear\"></div>";
-                    content += "<div class=\"grids_of_3\">";
+                   
+                    content += "<div class=\"grids_of_3 \">";
                     cuenta_trío = 0;
                 }
+              
                 content += "<div class=\"grid1_of_3\">";
                 prod_nombre = prod.Nombre;
                 prod_precio = prod.Precio;
-                content += "<a href=\"details.html\"> <img src=\"Content/images/bavaria.jpg\" alt=\"\"/><h3>" + prod_nombre + "</h3> <span class=\"price\">" + prod_precio + "€</span> </a> </div> ";
+                content += "<a href=\"details.html\"> <img src=\"Content/images/bavaria.jpg\" alt=\"\"/><h3>" + prod_nombre + "</h3> <span class=\"price\">" + prod_precio + "€</span> </a>  ";
+                content += "<div class=\"registration_form\">";
+                content += "<button runat=\"server\">Añadir al carrito</button>";
+               
+                content += "</div>";
                 cuenta_trío++;
                
             }

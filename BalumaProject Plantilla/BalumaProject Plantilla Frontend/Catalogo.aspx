@@ -8,7 +8,7 @@
 <div class="wrap">
 <div class="main">
 
-<form runat="server">
+<form ID = "form" runat="server">
 
 	<div class="panel-buscar">
     
