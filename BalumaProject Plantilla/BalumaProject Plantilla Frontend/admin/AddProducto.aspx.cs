@@ -20,7 +20,8 @@ namespace BalumaProject_Plantilla_Frontend.admin
             var cad = new ProductoCEN();
             var productos = cad.DameTodosLosProductos(0, 100);
             var id = productos.Max(p => p.IdProducto) + 1;
-            cad.CrearProducto(id, float.Parse(Precio.Text), "admin", null, Nombre.Text, int.Parse(Cantidad.Text));
+            cad.CrearProducto(id, float.Parse(Precio.Text), "admin", Categoria.SelectedItem.Text.ToLower(), 
+                Nombre.Text, int.Parse(Cantidad.Text));
             Response.Redirect("AdministrarProductos.aspx");
         }
     }

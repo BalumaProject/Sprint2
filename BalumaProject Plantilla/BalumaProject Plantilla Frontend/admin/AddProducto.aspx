@@ -13,6 +13,15 @@
         </div>
 
         <div class="form-group">
+            <label for="Categoria">Categoria</label>
+            <asp:DropDownList ID="Categoria" CssClass="form-control" runat="server">
+                <asp:ListItem Text="Latina" />
+                <asp:ListItem Text="De Cuchillo" />
+                <asp:ListItem Text="Cuadra" />
+            </asp:DropDownList>
+        </div>
+
+        <div class="form-group">
             <label for="Precio">
                 Precio</label>
             <asp:TextBox ID="Precio" CssClass="form-control" runat="server" />

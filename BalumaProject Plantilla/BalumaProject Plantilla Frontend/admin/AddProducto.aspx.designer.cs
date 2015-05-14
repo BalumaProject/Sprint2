@@ -22,6 +22,15 @@ namespace BalumaProject_Plantilla_Frontend.admin {
         protected global::System.Web.UI.WebControls.TextBox Nombre;
         
         /// <summary>
+        /// Control Categoria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList Categoria;
+        
+        /// <summary>
         /// Control Precio.
         /// </summary>
         /// <remarks>
