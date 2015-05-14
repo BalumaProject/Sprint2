@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="BalumaProjectGenNHibernate"
+		                   namespace="BalumaProjectGenNHibernate.EN.BalumaProject">
+				
+<joined-subclass name="SeguimientoAdminEN" extends="BalumaProjectGenNHibernate.EN.BalumaProject.SeguimientoEN" table="[seguimientoAdmin]">
+	<key>
+    		<column name="[attribute]"/>
+   	</key>
+
+			
+		  			
+						<bag name="Seguimiento" table="[seguimiento_seguimientoAdmin]" inverse="true" >
+							<key>
+									<column name="[FK_attribute_idSeguimientoAdmin]"/>
+							</key>
+      						<many-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.SeguimientoEN">
+									<column name="[FK_attribute_idSeguimiento]"/>
+      						</many-to-many>
+    					</bag>
+					
+		
+		  </joined-subclass>	
+		  
+		  <query name="SeguimientoAdminENReadAllHQL">from SeguimientoAdminEN</query>
+		</hibernate-mapping>
+	

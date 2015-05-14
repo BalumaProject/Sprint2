@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="BalumaProjectGenNHibernate"
+		                   namespace="BalumaProjectGenNHibernate.EN.BalumaProject">
+			<class name="ProductoEN" table="[Producto]">
+						<id name="IdProducto" column="[idProducto]"/>
+					<property name="Precio" type="float"> 
+						<column name="[precio]"  not-null="true"/>
+					</property>
+					<property name="Nombre" type="string"> 
+						<column name="[nombre]"  unique="true" not-null="true"/>
+					</property>
+					<property name="Cantidad" type="integer"> 
+						<column name="[cantidad]"  not-null="true"/>
+					</property>
+			
+			
+			
+		  			
+						<many-to-one name="Administrador" class="BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN" >	
+								<column name="[FK_NIF_idAdministrador]"/>
+						</many-to-one>
+											 					
+			
+		  			
+						<many-to-one name="Categoria" class="BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN" >	
+								<column name="[FK_nombre_idCategoria]"/>
+						</many-to-one>
+											 					
+			
+		  			
+						<bag name="LineaPedido" >
+							<key>
+								<column name="[FK_idProducto_idProducto]"/>
+					      	</key>
+							<one-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN"/>
+					    </bag>
+					
+			
+			
+			
+		  			
+						<bag name="Carrito" table="[carrito_producto]" inverse="true" >
+							<key>
+									<column name="[FK_idProducto_idProducto]"/>
+							</key>
+      						<many-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN">
+									<column name="[FK_idCarrito_idCarrito]"/>
+      						</many-to-many>
+    					</bag>
+					
+					
+					
+					
+					
+					
+					
+					
+		
+		  </class>
+		  
+		  <query name="ProductoENReadAllHQL">from ProductoEN</query>
+		  <query name="ProductoENdamePorCategoriaHQL"><![CDATA[Select producto FROM ProductoEN producto,CategoriaEN categoria where producto.Categoria.Nombre = categoria.Nombre and producto.Categoria.Nombre = :p_categoria ]]></query>
+		  <query name="ProductoENdamePorNombreHQL"><![CDATA[FROM ProductoEN producto where producto.Nombre = :p_nombre]]></query>
+		  <query name="ProductoENdamePorPrecioHQL"><![CDATA[FROM ProductoEN producto where producto.Precio = :p_precio]]></query>
+		  <query name="ProductoENdamePorCategoriayPrecioHQL"><![CDATA[select producto FROM ProductoEN producto, CategoriaEN categoria where producto.Categoria.Nombre = categoria.Nombre and producto.Categoria.Nombre = :p_categoria and producto.Precio = :p_precio]]></query>
+		</hibernate-mapping>
+	
