@@ -96,11 +96,11 @@ namespace BalumaProject_Plantilla_Frontend
 
         }
 
-        protected void anyadeCarrito(object sender, EventArgs e)
-        {
-            Master.HtmlGenericControl.InnerText = "1";
-
-        }
+       // protected void anyadeCarrito(object sender, EventArgs e)
+       // {
+            //Master.HtmlGenericControl.InnerText = "1";
+        //}
 
     }
 }
+
