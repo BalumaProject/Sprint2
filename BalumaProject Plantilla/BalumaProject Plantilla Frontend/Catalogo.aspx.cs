@@ -83,7 +83,7 @@ namespace BalumaProject_Plantilla_Frontend
                 prod_precio = prod.Precio;
                 content += "<a href=\"details.html\"> <img src=\"Content/images/bavaria.jpg\" alt=\"\"/><h3>" + prod_nombre + "</h3> <span class=\"price\">" + prod_precio + "€</span> </a>  ";
                
-                content += "<button OnServerClick = \"anyadeCarrito\" runat=\"server\">Añadir al carrito</button>";
+                content += "<button OnServerClick = \"anyadeCarrito\">Añadir al carrito</button>";
                
                 content += "</div>";
                 cuenta_trío++;
@@ -96,10 +96,10 @@ namespace BalumaProject_Plantilla_Frontend
 
         }
 
-       // protected void anyadeCarrito(object sender, EventArgs e)
-       // {
-            //Master.HtmlGenericControl.InnerText = "1";
-        //}
+        protected void anyadeCarrito(object sender, EventArgs e)
+        {
+            Master.HtmlGenericControl.InnerText = "1";
+       }
 
     }
 }

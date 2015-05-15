@@ -14,9 +14,9 @@ namespace WebApplication1
         {
         }
 
-       // public HtmlGenericControl HtmlGenericControl
-       // {
-       //     get { return cantidad; }
-       // }
+        public HtmlGenericControl HtmlGenericControl
+        {
+            get { return cantidad; }
+        }
     }
 }
