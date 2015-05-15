@@ -7,20 +7,36 @@
 <div class="main_bg">
 <div class="wrap">
 <div class="main">
-    <div class="factura">
-           <h3>VISTA PREVIA</h3>
-           <div class="registration_form">
-
+        <table class="table">
+            <tr>
+               <th>ID</th>
+               <th>Nombre</th>
+               <th>Precio</th>
+               <th>Cantidad</th>
+               <th>Eliminar</th>
+            </tr>
+            <% var productos = ObtenerProductos(); %>
+            <% foreach (var p in productos) %>
+            <% { %>
+            <tr>
+                    <td><%= p.IdProducto %></td>
+                    <td><%= p.Nombre %></td>
+                    <td><%= p.Precio %></td>
+                    <td><%= p.Cantidad %></td>
+                    <td><a href="EliminarProducto.aspx?id=<%: p.IdProducto %>">eliminar</a></td>
+            </tr>
+            <% } %>
+        </table>
+        <div class="registration_form">
                 <asp:RadioButtonList ID="RadioButtonList1" runat="server">
                     <asp:ListItem>VISA</asp:ListItem>
                     <asp:ListItem>Paypal</asp:ListItem>
                 </asp:RadioButtonList>
                 <div>
-                    <asp:Button ID="Descargar" text="Descargar"  runat = "server" />
+                    <asp:Button ID="Descargar" text="Descargar" OnClick = "generar_factura" runat = "server"/>
                     <asp:Button ID="Continuar" text="Continuar compra"  runat = "server" />
 				</div>
            </div>
-    </div>
     <div class="clear"></div>
 </div>
 </div>
