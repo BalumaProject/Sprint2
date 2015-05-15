@@ -146,6 +146,8 @@
 	<Compile Include="CAD\BalumaProject\ICarritoCAD.cs" />
 	<Compile Include="CAD\BalumaProject\CarritoCAD.cs" />
 			<Compile Include="CEN\BalumaProject\CarritoCEN_AnyadirProducto.cs" />
+			<Compile Include="CEN\BalumaProject\CarritoCEN_BorrarProducto.cs" />
+			<Compile Include="CEN\BalumaProject\CarritoCEN_ListarProductos.cs" />
 	<Compile Include="EN\BalumaProject\PedidoEN.cs" />
 	<Compile Include="CEN\BalumaProject\PedidoCEN.cs" />
 	<Compile Include="CAD\BalumaProject\IPedidoCAD.cs" />
