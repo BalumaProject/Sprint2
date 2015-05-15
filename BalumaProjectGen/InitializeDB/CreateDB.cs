@@ -100,7 +100,7 @@ public static void InitializeData ()
         prod2.CrearProducto (4, 200f, "admin", "de cuchillo", "cuchillo clasica", 1);
 
         CarritoCEN carrito = new CarritoCEN ();
-        carrito.CrearCarrito (1);
+        carrito.CrearCarrito (1, 1);
         /*   IList<ProductoEN> productos = new List<ProductoEN>();
          * productos = prod.DameTodosLosProductos(0, 100);
          * carrito.AnyadirProducto(1, productos);*/
