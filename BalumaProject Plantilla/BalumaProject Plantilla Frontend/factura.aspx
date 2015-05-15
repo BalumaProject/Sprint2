@@ -10,9 +10,13 @@
     <div class="factura">
            <h3>VISTA PREVIA</h3>
            <div class="registration_form">
-                <iframe width="100%" height="450" src="sesion5_problemas.pdf"></iframe>
+
+                <asp:RadioButtonList ID="RadioButtonList1" runat="server">
+                    <asp:ListItem>VISA</asp:ListItem>
+                    <asp:ListItem>Paypal</asp:ListItem>
+                </asp:RadioButtonList>
                 <div>
-					<asp:Button ID="Descargar" text="Descargar"  runat="server"/>
+                    <asp:Button ID="Descargar" text="Descargar"  runat = "server" />
                     <asp:Button ID="Continuar" text="Continuar compra"  runat = "server" />
 				</div>
            </div>

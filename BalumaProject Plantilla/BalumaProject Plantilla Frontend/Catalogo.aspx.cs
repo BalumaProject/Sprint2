@@ -24,9 +24,9 @@ namespace BalumaProject_Plantilla_Frontend
              * Al cargar, la página debe leer los productos que se encuentran disponibles en stock de la
              * base de datos y colocarlos dinámicamente en una tabla
              * */
-           // precio.Text = String.Empty;
+
            lista_productos = productos.DameTodosLosProductos(0, 100);
-            crea_contenido(lista_productos);
+           crea_contenido(lista_productos);
         }
 
 
@@ -39,25 +39,19 @@ namespace BalumaProject_Plantilla_Frontend
             bool encontrado = true;
             string opcion = lista.SelectedItem.Text.ToLower();
             float price;
-           
-            if (!opcion.Equals("todos") && precio.Text == String.Empty)
+            if (!opcion.Equals("todos") && (precio.Text == null || precio.Text.Equals("")))
             {
                 lista_busqueda = productos.DamePorCategoria(opcion);
             }
-            else if (opcion.Equals("todos") && precio.Text != String.Empty)
+            else if (precio.Text!=null||!precio.Text.Equals(""))
             {
                 price = float.Parse(precio.Text);
                 lista_busqueda = productos.DamePorPrecio(price);
             }
-            else if (opcion.Equals("todos") && precio.Text == String.Empty)
-            {
-                lista_busqueda = productos.DameTodosLosProductos(0,100);
-            }
-            else if (!opcion.Equals("todos") && precio.Text != String.Empty)
+            else 
             {
                 price = float.Parse(precio.Text);
-                lista_busqueda = productos.DamePorCategoriayPrecio(opcion, price);
-
+                lista_busqueda = productos.DamePorCategoriayPrecio(opcion,price);
             }
 
             if (lista_busqueda == null || lista_busqueda.Count == 0) encontrado = false;
@@ -104,6 +98,8 @@ namespace BalumaProject_Plantilla_Frontend
 
         protected void anyadeCarrito(object sender, EventArgs e)
         {
+            Master.HtmlGenericControl.InnerText = "1";
+
         }
 
     }
