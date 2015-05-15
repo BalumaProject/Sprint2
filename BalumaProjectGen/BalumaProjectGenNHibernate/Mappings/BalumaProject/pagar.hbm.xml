@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+		<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+		                   assembly="BalumaProjectGenNHibernate"
+		                   namespace="BalumaProjectGenNHibernate.EN.BalumaProject">
+			<class name="PagarEN" table="[Pagar]">
+				  	
+						<id name="Id" column="[id]" type="integer">
+							<generator class="identity"/>
+						</id>
+			
+		  			
+					
+							   <one-to-one name="Pedido" class="BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN" property-ref="Pagar" />							
+					 
+						
+			
+					
+					
+		
+		  </class>
+		  
+		  <query name="PagarENReadAllHQL">from PagarEN</query>
+		</hibernate-mapping>
+	
