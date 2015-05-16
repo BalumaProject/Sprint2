@@ -68,12 +68,14 @@
     <Content Include="about.aspx" />
     <Content Include="admin\AddProducto.aspx" />
     <Content Include="admin\Seguimiento.aspx" />
+    <Content Include="admin\Seguimiento1.aspx" />
     <Content Include="admin\AdministrarProductos.aspx" />
     <Content Include="admin\EditarProducto.aspx" />
     <Content Include="admin\editar_perfil.aspx" />
     <Content Include="admin\EliminarProducto.aspx" />
     <Content Include="admin\indiceAdmin.aspx" />
     <Content Include="admin\LoginAdministrador.aspx" />
+    <Content Include="admin\SeguimientoCliente.aspx" />
     <Content Include="admin\WebForm1.aspx" />
     <Content Include="Catalogo.aspx" />
     <Content Include="cliente\cliente.aspx" />
@@ -137,12 +139,19 @@
     <Compile Include="admin\Administrador.Master.designer.cs">
       <DependentUpon>Administrador.Master</DependentUpon>
     </Compile>
-    <Compile Include="admin\AdministrarClientes.aspx.cs">
+    <Compile Include="admin\Seguimiento.aspx.cs">
       <DependentUpon>Seguimiento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\AdministrarClientes.aspx.designer.cs">
+    <Compile Include="admin\Seguimiento.aspx.designer.cs">
       <DependentUpon>Seguimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Seguimiento1.aspx.cs">
+      <DependentUpon>Seguimiento1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Seguimiento1.aspx.designer.cs">
+      <DependentUpon>Seguimiento1.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\AdministrarProductos.aspx.cs">
       <DependentUpon>AdministrarProductos.aspx</DependentUpon>
@@ -185,6 +194,13 @@
     </Compile>
     <Compile Include="admin\LoginAdministrador.aspx.designer.cs">
       <DependentUpon>LoginAdministrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\SeguimientoCliente.aspx.cs">
+      <DependentUpon>SeguimientoCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\SeguimientoCliente.aspx.designer.cs">
+      <DependentUpon>SeguimientoCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

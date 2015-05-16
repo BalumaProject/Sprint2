@@ -33,12 +33,6 @@ private BalumaProjectGenNHibernate.Enumerated.BalumaProject.TipoPagoEnum tipoPag
  *
  */
 
-private BalumaProjectGenNHibernate.EN.BalumaProject.PagarEN pagar;
-
-/**
- *
- */
-
 private BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador;
 
 /**
@@ -83,11 +77,6 @@ public virtual BalumaProjectGenNHibernate.Enumerated.BalumaProject.TipoPagoEnum 
 }
 
 
-public virtual BalumaProjectGenNHibernate.EN.BalumaProject.PagarEN Pagar {
-        get { return pagar; } set { pagar = value;  }
-}
-
-
 public virtual BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN Administrador {
         get { return administrador; } set { administrador = value;  }
 }
@@ -118,18 +107,18 @@ public PedidoEN()
 
 
 
-public PedidoEN(int idPedido, Nullable<DateTime> fecha, BalumaProjectGenNHibernate.Enumerated.BalumaProject.EstadoPedidoEnum estado, BalumaProjectGenNHibernate.Enumerated.BalumaProject.TipoPagoEnum tipoPago, BalumaProjectGenNHibernate.EN.BalumaProject.PagarEN pagar, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido, BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN imprimirFactura, BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN cliente)
+public PedidoEN(int idPedido, Nullable<DateTime> fecha, BalumaProjectGenNHibernate.Enumerated.BalumaProject.EstadoPedidoEnum estado, BalumaProjectGenNHibernate.Enumerated.BalumaProject.TipoPagoEnum tipoPago, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido, BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN imprimirFactura, BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN cliente)
 {
-        this.init (idPedido, fecha, estado, tipoPago, pagar, administrador, lineaPedido, imprimirFactura, cliente);
+        this.init (idPedido, fecha, estado, tipoPago, administrador, lineaPedido, imprimirFactura, cliente);
 }
 
 
 public PedidoEN(PedidoEN pedido)
 {
-        this.init (pedido.IdPedido, pedido.Fecha, pedido.Estado, pedido.TipoPago, pedido.Pagar, pedido.Administrador, pedido.LineaPedido, pedido.ImprimirFactura, pedido.Cliente);
+        this.init (pedido.IdPedido, pedido.Fecha, pedido.Estado, pedido.TipoPago, pedido.Administrador, pedido.LineaPedido, pedido.ImprimirFactura, pedido.Cliente);
 }
 
-private void init (int idPedido, Nullable<DateTime> fecha, BalumaProjectGenNHibernate.Enumerated.BalumaProject.EstadoPedidoEnum estado, BalumaProjectGenNHibernate.Enumerated.BalumaProject.TipoPagoEnum tipoPago, BalumaProjectGenNHibernate.EN.BalumaProject.PagarEN pagar, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido, BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN imprimirFactura, BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN cliente)
+private void init (int idPedido, Nullable<DateTime> fecha, BalumaProjectGenNHibernate.Enumerated.BalumaProject.EstadoPedidoEnum estado, BalumaProjectGenNHibernate.Enumerated.BalumaProject.TipoPagoEnum tipoPago, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido, BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN imprimirFactura, BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN cliente)
 {
         this.IdPedido = idPedido;
 
@@ -139,8 +128,6 @@ private void init (int idPedido, Nullable<DateTime> fecha, BalumaProjectGenNHibe
         this.Estado = estado;
 
         this.TipoPago = tipoPago;
-
-        this.Pagar = pagar;
 
         this.Administrador = administrador;
 

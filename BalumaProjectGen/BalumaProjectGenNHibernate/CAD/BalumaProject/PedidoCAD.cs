@@ -56,25 +56,15 @@ public int CrearPedido (PedidoEN pedido)
         try
         {
                 SessionInitializeTransaction ();
-                if (pedido.Pagar != null) {
-                        pedido.Pagar = (BalumaProjectGenNHibernate.EN.BalumaProject.PagarEN)session.Load (typeof(BalumaProjectGenNHibernate.EN.BalumaProject.PagarEN), pedido.Pagar.Id);
-
-                        pedido.Pagar.Pedido = pedido;
-                }
                 if (pedido.Administrador != null) {
                         pedido.Administrador = (BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN)session.Load (typeof(BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN), pedido.Administrador.NIF);
 
                         pedido.Administrador.Pedido = pedido;
                 }
-                if (pedido.ImprimirFactura != null) {
-                        pedido.ImprimirFactura = (BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN)session.Load (typeof(BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN), pedido.ImprimirFactura.Id);
-
-                        pedido.ImprimirFactura.Pedido = pedido;
-                }
                 if (pedido.Cliente != null) {
                         pedido.Cliente = (BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN)session.Load (typeof(BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN), pedido.Cliente.NIF);
 
-                        pedido.Cliente.Pedido = pedido;
+                        pedido.Cliente.Pedidos.Add (pedido);
                 }
 
                 session.Save (pedido);
@@ -229,6 +219,36 @@ public void BorrarLinea (int p_Pedido_OID, System.Collections.Generic.IList<int>
         {
                 SessionClose ();
         }
+}
+public System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN> ObtenerPorCliente (string cliente)
+{
+        System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN> result;
+        try
+        {
+                SessionInitializeTransaction ();
+                //String sql = @"FROM PedidoEN self where FROM PedidoEN pedido WHERE pedido.cliente = :cliente";
+                //IQuery query = session.CreateQuery(sql);
+                IQuery query = (IQuery)session.GetNamedQuery ("PedidoENObtenerPorClienteHQL");
+                query.SetParameter ("cliente", cliente);
+
+                result = query.List<BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is BalumaProjectGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new BalumaProjectGenNHibernate.Exceptions.DataLayerException ("Error in PedidoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
 }
 }
 }

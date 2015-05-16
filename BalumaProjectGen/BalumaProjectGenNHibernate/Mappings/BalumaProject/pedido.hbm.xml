@@ -20,14 +20,6 @@
 			
 		  			
 					
-							<many-to-one name="Pagar" class="BalumaProjectGenNHibernate.EN.BalumaProject.PagarEN" >
-								<column name="[FK_id_idPagar]"/>
-        					</many-to-one>
-					 
-						
-			
-		  			
-					
 							   <one-to-one name="Administrador" class="BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN" property-ref="Pedido" />							
 					 
 						
@@ -48,11 +40,10 @@
 						
 			
 		  			
-					
-							   <one-to-one name="Cliente" class="BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN" property-ref="Pedido" />							
-					 
-						
-					
+						<many-to-one name="Cliente" class="BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN" >	
+								<column name="[FK_NIF_idCliente]"/>
+						</many-to-one>
+											 					
 					
 					
 					
@@ -65,5 +56,6 @@
 		  </class>
 		  
 		  <query name="PedidoENReadAllHQL">from PedidoEN</query>
+		  <query name="PedidoENObtenerPorClienteHQL"><![CDATA[FROM PedidoEN pedido WHERE pedido.cliente = :cliente]]></query>
 		</hibernate-mapping>
 	
