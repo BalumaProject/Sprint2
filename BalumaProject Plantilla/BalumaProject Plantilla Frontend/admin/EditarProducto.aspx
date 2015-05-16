@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form runat="server">
-    <div class="content">
+    <div class="container">
         <div class="form-group">
             <label for="Nombre">
                 Nombre</label>

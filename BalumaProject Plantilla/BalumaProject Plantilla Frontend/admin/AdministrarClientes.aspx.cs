@@ -21,26 +21,10 @@ namespace BalumaProject_Plantilla_Frontend.admin
 
         protected IList<ClienteEN> ObtenerClientes()
         {
-            var clientes = new List<ClienteEN>();
-            var usuCen = new UsuarioCEN();
-            var nombres = new List<string>(){
-                "cliente1",
-                "cliente2",
-                "cliente3",
-                "cliente4"
-            };
-
-            nombres.ForEach(n =>
-            {
-                var usu = usuCen.LeerPorNombreCliente(n);
-                if (usu is ClienteEN)
-                {
-                    var c = (ClienteEN)usu;
-                    clientes.Add(c);
-                }
-            });
-
-            return clientes;
+            var cen = new ClienteCEN();
+            return cen.ObtenerTodos(0, 100);
         }
+
+        
     }
 }

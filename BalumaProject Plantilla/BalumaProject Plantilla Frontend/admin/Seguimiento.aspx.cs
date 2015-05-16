@@ -29,5 +29,10 @@ namespace BalumaProject_Plantilla_Frontend.admin
             var cenPedido = new PedidoCEN();
             return cenPedido.ObtenerPorCliente(_id);
         }
+
+        protected void VolverClientes(object sender, EventArgs e)
+        {
+            Response.Redirect("~/admin/AdministrarClientes.aspx");
+        }
     }
 }
