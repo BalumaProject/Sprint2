@@ -32,12 +32,13 @@
 			
 			
 		  			
+						<bag name="Pedidos" cascade="delete">
+							<key>
+								<column name="[FK_NIF_idCliente]"/>
+					      	</key>
+							<one-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN"/>
+					    </bag>
 					
-							<many-to-one name="Pedido" class="BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN" cascade="delete">
-								<column name="[FK_idPedido_idPedido_0]"/>
-        					</many-to-one>
-					 
-						
 			
 		  			
 						<many-to-one name="Carrito" class="BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN" >	

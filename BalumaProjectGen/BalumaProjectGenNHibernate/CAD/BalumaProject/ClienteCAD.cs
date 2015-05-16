@@ -130,5 +130,61 @@ public void ModificarCliente (ClienteEN cliente)
                 SessionClose ();
         }
 }
+public System.Collections.Generic.IList<ClienteEN> ObtenerTodos (int first, int size)
+{
+        System.Collections.Generic.IList<ClienteEN> result = null;
+        try
+        {
+                SessionInitializeTransaction ();
+                if (size > 0)
+                        result = session.CreateCriteria (typeof(ClienteEN)).
+                                 SetFirstResult (first).SetMaxResults (size).List<ClienteEN>();
+                else
+                        result = session.CreateCriteria (typeof(ClienteEN)).List<ClienteEN>();
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is BalumaProjectGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new BalumaProjectGenNHibernate.Exceptions.DataLayerException ("Error in ClienteCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return result;
+}
+
+public ClienteEN Obtener (string NIF)
+{
+        ClienteEN clienteEN = null;
+
+        try
+        {
+                SessionInitializeTransaction ();
+                clienteEN = (ClienteEN)session.Get (typeof(ClienteEN), NIF);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is BalumaProjectGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new BalumaProjectGenNHibernate.Exceptions.DataLayerException ("Error in ClienteCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return clienteEN;
+}
 }
 }
