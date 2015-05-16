@@ -67,7 +67,7 @@
   <ItemGroup>
     <Content Include="about.aspx" />
     <Content Include="admin\AddProducto.aspx" />
-    <Content Include="admin\AdministrarClientes.aspx" />
+    <Content Include="admin\Seguimiento.aspx" />
     <Content Include="admin\AdministrarProductos.aspx" />
     <Content Include="admin\EditarProducto.aspx" />
     <Content Include="admin\editar_perfil.aspx" />
@@ -138,11 +138,11 @@
       <DependentUpon>Administrador.Master</DependentUpon>
     </Compile>
     <Compile Include="admin\AdministrarClientes.aspx.cs">
-      <DependentUpon>AdministrarClientes.aspx</DependentUpon>
+      <DependentUpon>Seguimiento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\AdministrarClientes.aspx.designer.cs">
-      <DependentUpon>AdministrarClientes.aspx</DependentUpon>
+      <DependentUpon>Seguimiento.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\AdministrarProductos.aspx.cs">
       <DependentUpon>AdministrarProductos.aspx</DependentUpon>

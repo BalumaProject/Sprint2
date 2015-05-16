@@ -77,11 +77,10 @@
         <div class="header_btm">
             <div class="menu">
                 <ul>
-                    <li><a href="~/admin/AdministrarClientes.aspx" runat="server">Clientes</a></li>
                     <li><a href="~/admin/AdministrarProductos.aspx" runat="server">Editar Productos</a></li>
                     <li><a href="~/admin/AddProducto.aspx" runat="server">Añadir producto</a></li>
                     <li><a href="~/admin/EliminarProducto.aspx" runat="server">Quitar producto </a></li>
-                    <li><a href="#">Seguimiento de pedidos</a></li>
+                    <li><a href="~/admin/Seguimiento.aspx" runat="server">Seguimiento de pedidos</a></li>
                     <li><a href="../admin/editar_perfil.aspx">Editar perfil</a></li>
                 </ul>
             </div>

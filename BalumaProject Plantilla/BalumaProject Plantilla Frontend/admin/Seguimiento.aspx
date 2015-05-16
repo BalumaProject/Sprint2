@@ -1,10 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Administrador.Master" AutoEventWireup="true"
-    CodeBehind="AdministrarClientes.aspx.cs" Inherits="BalumaProject_Plantilla_Frontend.admin.AdministrarClientes" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Administrador.Master" AutoEventWireup="true" CodeBehind="Seguimiento.aspx.cs" Inherits="BalumaProject_Plantilla_Frontend.admin.Seguimiento" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headAdmin" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h2>
+<h2>
         Clientes</h2>
     <table class="table">
         <tr>
