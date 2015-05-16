@@ -14,7 +14,6 @@ namespace BalumaProject_Plantilla_Frontend
 {
     public partial class factura : System.Web.UI.Page
     {
-        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request["id"] != null)
@@ -64,7 +63,7 @@ namespace BalumaProject_Plantilla_Frontend
 
             doc.Add(new Chunk("FECHA DE VENCIMIENTO:", _boldFont));
             doc.Add(new Chunk(fin.ToString(), _standardFont));
-            
+
             doc.Add(linea2);
 
             Paragraph linea3 = new Paragraph();
@@ -74,20 +73,20 @@ namespace BalumaProject_Plantilla_Frontend
             doc.Add(linea3);
 
             Paragraph linea4 = new Paragraph();
-            
+
             doc.Add(new Paragraph("DIRECCIÓN:", _boldFont));
 
             doc.Add(linea4);
 
             Paragraph linea5 = new Paragraph();
-            
+
             doc.Add(new Paragraph("TEL:", _boldFont));
 
             doc.Add(linea5);
-            
+
             doc.Add(Chunk.NEWLINE);
-            
-            
+
+
             // Creamos una tabla que contendrá el nombre, apellido y país
             // de nuestros visitante.
             PdfPTable tblPrueba = new PdfPTable(3);
@@ -112,13 +111,13 @@ namespace BalumaProject_Plantilla_Frontend
             tblPrueba.AddCell(clPais);
 
             // Llenamos la tabla con información
-            clNombre = new PdfPCell(new Phrase("Roberto", _standardFont));
+            clNombre = new PdfPCell(new Phrase("", _standardFont));
             clNombre.BorderWidth = 0;
 
-            clApellido = new PdfPCell(new Phrase("Torres", _standardFont));
+            clApellido = new PdfPCell(new Phrase("", _standardFont));
             clApellido.BorderWidth = 0;
 
-            clPais = new PdfPCell(new Phrase("Puerto Rico", _standardFont));
+            clPais = new PdfPCell(new Phrase("", _standardFont));
             clPais.BorderWidth = 0;
 
             // Añadimos las celdas a la tabla
@@ -165,6 +164,11 @@ namespace BalumaProject_Plantilla_Frontend
             writer.Close();
         }
 
+        protected void continuar(object sender, EventArgs e)
+        {
+            Response.Redirect("Catalogo.aspx");
+        }
+
         protected IList<ProductoEN> ObtenerProductos()
         {
             var p = new ProductoCEN();
@@ -175,7 +179,7 @@ namespace BalumaProject_Plantilla_Frontend
         {
             var id = int.Parse(Request["id"]);
             var cen = new CarritoCEN();
-            // cen.BorrarProducto(id);
+            cen.BorrarProducto(id);
             Response.Redirect("factura.aspx");
         }
     }
