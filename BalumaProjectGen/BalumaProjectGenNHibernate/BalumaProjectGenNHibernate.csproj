@@ -166,12 +166,6 @@
 	<Compile Include="CAD\BalumaProject\ICategoriaCAD.cs" />
 	<Compile Include="CAD\BalumaProject\CategoriaCAD.cs" />
 			<Compile Include="CEN\BalumaProject\CategoriaCEN_AsignarCategoria.cs" />
-	<Compile Include="EN\BalumaProject\PagarEN.cs" />
-	<Compile Include="CEN\BalumaProject\PagarCEN.cs" />
-	<Compile Include="CAD\BalumaProject\IPagarCAD.cs" />
-	<Compile Include="CAD\BalumaProject\PagarCAD.cs" />
-			<Compile Include="CEN\BalumaProject\PagarCEN_PagarPaypal.cs" />
-			<Compile Include="CEN\BalumaProject\PagarCEN_PagarVisa.cs" />
 	<Compile Include="Enumerated\BalumaProject\EstadoPedidoEnum.cs" />
 	<Compile Include="Enumerated\BalumaProject\TipoPagoEnum.cs" />
 	
@@ -201,7 +195,6 @@
 	<EmbeddedResource Include="Mappings\BalumaProject\lineapedido.hbm.xml" />
 	<EmbeddedResource Include="Mappings\BalumaProject\producto.hbm.xml" />
 	<EmbeddedResource Include="Mappings\BalumaProject\categoria.hbm.xml" />
-	<EmbeddedResource Include="Mappings\BalumaProject\pagar.hbm.xml" />
 	
 	
 

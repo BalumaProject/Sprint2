@@ -12,6 +12,7 @@
             <th>Nombre</th>
             <th>Apellidos</th>
             <th>Username</th>
+            <th>Seguimiento</th>
         </tr>
         <% var clientes = ObtenerClientes(); %>
         <% foreach (var c in clientes) %>
@@ -21,7 +22,7 @@
             <td><%= c.Nombre %></td>
             <td><%= c.Apellidos %></td>
             <td><%= c.Username %></td>
-        </tr>
+            <td><a href="Seguimiento.aspx?id=<%: c.NIF %>">Seguimiento</a></td></tr>
         <% } %>
     </table>
 </asp:Content>

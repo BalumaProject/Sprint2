@@ -88,5 +88,20 @@ public void ModificarCliente (string p_Cliente_OID, string p_apellidos, string p
 
         _IClienteCAD.ModificarCliente (clienteEN);
 }
+
+public System.Collections.Generic.IList<ClienteEN> ObtenerTodos (int first, int size)
+{
+        System.Collections.Generic.IList<ClienteEN> list = null;
+
+        list = _IClienteCAD.ObtenerTodos (first, size);
+        return list;
+}
+public ClienteEN Obtener (string NIF)
+{
+        ClienteEN clienteEN = null;
+
+        clienteEN = _IClienteCAD.Obtener (NIF);
+        return clienteEN;
+}
 }
 }

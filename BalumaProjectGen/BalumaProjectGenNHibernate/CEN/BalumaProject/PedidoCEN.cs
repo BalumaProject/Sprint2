@@ -32,7 +32,7 @@ public IPedidoCAD get_IPedidoCAD ()
         return this._IPedidoCAD;
 }
 
-public int CrearPedido (int p_idPedido, Nullable<DateTime> p_fecha, BalumaProjectGenNHibernate.Enumerated.BalumaProject.EstadoPedidoEnum p_estado, BalumaProjectGenNHibernate.Enumerated.BalumaProject.TipoPagoEnum p_tipoPago, int p_pagar, string p_administrador, int p_imprimirFactura, string p_cliente)
+public int CrearPedido (int p_idPedido, Nullable<DateTime> p_fecha, BalumaProjectGenNHibernate.Enumerated.BalumaProject.EstadoPedidoEnum p_estado, BalumaProjectGenNHibernate.Enumerated.BalumaProject.TipoPagoEnum p_tipoPago, string p_administrador, string p_cliente)
 {
         PedidoEN pedidoEN = null;
         int oid;
@@ -48,21 +48,9 @@ public int CrearPedido (int p_idPedido, Nullable<DateTime> p_fecha, BalumaProjec
         pedidoEN.TipoPago = p_tipoPago;
 
 
-        if (p_pagar != -1) {
-                pedidoEN.Pagar = new BalumaProjectGenNHibernate.EN.BalumaProject.PagarEN ();
-                pedidoEN.Pagar.Id = p_pagar;
-        }
-
-
         if (p_administrador != null) {
                 pedidoEN.Administrador = new BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN ();
                 pedidoEN.Administrador.NIF = p_administrador;
-        }
-
-
-        if (p_imprimirFactura != -1) {
-                pedidoEN.ImprimirFactura = new BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN ();
-                pedidoEN.ImprimirFactura.Id = p_imprimirFactura;
         }
 
 
@@ -108,6 +96,10 @@ public void BorrarLinea (int p_Pedido_OID, System.Collections.Generic.IList<int>
         //Call to PedidoCAD
 
         _IPedidoCAD.BorrarLinea (p_Pedido_OID, p_lineaPedido_OIDs);
+}
+public System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN> ObtenerPorCliente (string p_cliente)
+{
+        return _IPedidoCAD.ObtenerPorCliente (p_cliente);
 }
 }
 }

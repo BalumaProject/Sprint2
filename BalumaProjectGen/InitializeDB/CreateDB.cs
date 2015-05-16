@@ -8,6 +8,7 @@ using System.Data;
 using BalumaProjectGenNHibernate.EN.BalumaProject;
 using BalumaProjectGenNHibernate.CEN.BalumaProject;
 using BalumaProjectGenNHibernate.CAD.BalumaProject;
+using BalumaProjectGenNHibernate.Enumerated.BalumaProject;
 
 /*PROTECTED REGION END*/
 namespace InitializeDB
@@ -88,8 +89,24 @@ public static void InitializeData ()
         categoria.CrearCategoria ("cuadra", "vela");
         categoria.CrearCategoria ("latina", "vela");
         categoria.CrearCategoria ("de cuchillo", "vela");
+
         ClienteCEN cliente = new ClienteCEN ();
         cliente.CrearCliente ("a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a");
+        cliente.CrearCliente ("cliente1", "cliente1", "cliente1", "cliente1",
+                "cliente1", "cliente1", "cliente1", "cliente1",
+                "cliente1", "cliente1", "cliente1");
+        cliente.CrearCliente ("cliente2", "cliente2", "cliente2", "cliente2",
+                "cliente2", "cliente2", "cliente2", "cliente2",
+                "cliente2", "cliente2", "cliente2");
+        cliente.CrearCliente ("cliente3", "cliente3", "cliente3", "cliente3",
+                "cliente3", "cliente3", "cliente3", "cliente3",
+                "cliente3", "cliente3", "cliente3");
+
+        var pedido = new PedidoCEN ();
+        pedido.CrearPedido (1, DateTime.Now, EstadoPedidoEnum.en_curso, TipoPagoEnum.paypal, "admin", "cliente1");
+        pedido.CrearPedido (2, DateTime.Now, EstadoPedidoEnum.en_curso, TipoPagoEnum.paypal, "admin", "cliente1");
+        pedido.CrearPedido (3, DateTime.Now, EstadoPedidoEnum.en_curso, TipoPagoEnum.paypal, "admin", "cliente1");
+
         PrevisualizarCEN prev = new PrevisualizarCEN ();
         prev.CrearFactura (1, "html");
         ProductoCEN prod = new ProductoCEN ();

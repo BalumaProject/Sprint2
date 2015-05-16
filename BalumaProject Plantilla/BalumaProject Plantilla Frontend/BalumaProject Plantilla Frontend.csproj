@@ -74,6 +74,7 @@
     <Content Include="admin\EliminarProducto.aspx" />
     <Content Include="admin\indiceAdmin.aspx" />
     <Content Include="admin\LoginAdministrador.aspx" />
+    <Content Include="admin\Seguimiento.aspx" />
     <Content Include="admin\WebForm1.aspx" />
     <Content Include="Catalogo.aspx" />
     <Content Include="cliente\cliente.aspx" />
@@ -185,6 +186,13 @@
     </Compile>
     <Compile Include="admin\LoginAdministrador.aspx.designer.cs">
       <DependentUpon>LoginAdministrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Seguimiento.aspx.cs">
+      <DependentUpon>Seguimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Seguimiento.aspx.designer.cs">
+      <DependentUpon>Seguimiento.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
