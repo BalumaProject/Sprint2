@@ -8,30 +8,21 @@ using BalumaProjectGenNHibernate.CEN.BalumaProject;
 using BalumaProjectGenNHibernate.EN.BalumaProject;
 namespace BalumaProject_Plantilla_Frontend.cliente
 {
+    
     public partial class SeguimientoCliente : System.Web.UI.Page
     {
-        protected ClienteEN _cliente;
-        protected string _id;
-
+        ClienteEN cli;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request["id"] != null)
-            {
-                _id = Request["id"];
-                var cen = new ClienteCEN();
-                _cliente = cen.Obtener(_id);
-            }
-        }
+            cli = (ClienteEN)Session["cliente"];
 
+        }
         protected IList<PedidoEN> ObtenerPedidos()
         {
             var cenPedido = new PedidoCEN();
-            return cenPedido.ObtenerPorCliente(_id);
+            return cenPedido.ObtenerPorCliente(cli.NIF);
         }
 
-        protected void VolverClientes(object sender, EventArgs e)
-        {
-            Response.Redirect("~/admin/AdministrarClientes.aspx");
-        }
+        
     }
 }

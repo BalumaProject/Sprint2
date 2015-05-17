@@ -10,18 +10,20 @@ using System.IO;
 using BalumaProjectGenNHibernate.EN.BalumaProject;
 using BalumaProjectGenNHibernate.CEN.BalumaProject;
 using System.Web.UI.HtmlControls;
+using BalumaProjectGenNHibernate.Enumerated.BalumaProject;
 namespace BalumaProject_Plantilla_Frontend
 {
     public partial class facturaCliente : System.Web.UI.Page
     {
         bool user_loged = false;
+        IList<ProductoEN> pedido = new List<ProductoEN>();
         void Page_PreInit(object sender, EventArgs e)
         {
             
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            IList<ProductoEN> pedido = new List<ProductoEN>();
+           
             if (Session["carrito"] != null)
             {
                 pedido = (IList<ProductoEN>)Session["carrito"];
@@ -31,14 +33,34 @@ namespace BalumaProject_Plantilla_Frontend
             {
                 Eliminar();
             }
+            if (Session["cliente"] != null)
+            {
+                user_loged = true;
+            }
         }
 
         protected void generar_factura(object sender, EventArgs e)
         {
             if (user_loged == false)
             {
-                
+
                 Response.Redirect("registro.aspx");
+            }
+            else
+            {
+                ClienteEN cliente = (ClienteEN)Session["cliente"];
+                ClienteCEN cliCen = new ClienteCEN();
+                PedidoCEN pedCen = new PedidoCEN();
+                pedCen.CrearPedido(7, DateTime.Now, EstadoPedidoEnum.en_curso, TipoPagoEnum.paypal, "admin", cliente.NIF);
+                LineaPedidoCEN licen = new LineaPedidoCEN();
+                int numLinea = 0;
+                foreach(ProductoEN prod in pedido)
+                {
+                    licen.CrearLinea(prod.IdProducto, 7, numLinea);
+                    numLinea++;
+                }
+                Session["cliente"] = cliente;
+
             }
             Document doc = new Document(PageSize.LETTER);
             // Indicamos donde vamos a guardar el documento
