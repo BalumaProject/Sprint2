@@ -10,19 +10,14 @@ using System.IO;
 using BalumaProjectGenNHibernate.EN.BalumaProject;
 using BalumaProjectGenNHibernate.CEN.BalumaProject;
 using System.Web.UI.HtmlControls;
-
 namespace BalumaProject_Plantilla_Frontend
 {
-    public partial class factura : System.Web.UI.Page
+    public partial class facturaCliente : System.Web.UI.Page
     {
         bool user_loged = false;
         void Page_PreInit(object sender, EventArgs e)
         {
-            if (Session["cliente"] != null)
-            {
-                this.MasterPageFile = "~/cliente/Cliente.Master";
-                user_loged = true; 
-            }
+            
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,7 +26,7 @@ namespace BalumaProject_Plantilla_Frontend
             {
                 pedido = (IList<ProductoEN>)Session["carrito"];
             }
-            if (pedido != null) Master.HtmlGenericControl.InnerText = pedido.Count.ToString();
+            if(pedido != null) Master.HtmlGenericControl.InnerText = pedido.Count.ToString();
             if (Request["id"] != null)
             {
                 Eliminar();
@@ -193,7 +188,7 @@ namespace BalumaProject_Plantilla_Frontend
 
         protected IList<ProductoEN> ObtenerProductos()
         {
-           
+
             return (IList<ProductoEN>)Session["carrito"];
         }
 

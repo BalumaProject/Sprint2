@@ -294,5 +294,31 @@ public System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProj
 
         return result;
 }
+public ProductoEN DamePorOID (int idProducto)
+{
+        ProductoEN productoEN = null;
+
+        try
+        {
+                SessionInitializeTransaction ();
+                productoEN = (ProductoEN)session.Get (typeof(ProductoEN), idProducto);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is BalumaProjectGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new BalumaProjectGenNHibernate.Exceptions.DataLayerException ("Error in ProductoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return productoEN;
+}
 }
 }

@@ -108,5 +108,12 @@ public System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProj
 {
         return _IProductoCAD.DamePorCategoriayPrecio (p_categoria, p_precio);
 }
+public ProductoEN DamePorOID (int idProducto)
+{
+        ProductoEN productoEN = null;
+
+        productoEN = _IProductoCAD.DamePorOID (idProducto);
+        return productoEN;
+}
 }
 }

@@ -14,7 +14,7 @@ namespace BalumaProjectGenNHibernate.CEN.BalumaProject
 {
 public partial class CarritoCEN
 {
-public void BorrarProducto (int p_oid)
+public void BorrarProducto (int p_oid, BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN producto)
 {
         /*PROTECTED REGION ID(BalumaProjectGenNHibernate.CEN.BalumaProject_Carrito_borrarProducto) ENABLED START*/
 

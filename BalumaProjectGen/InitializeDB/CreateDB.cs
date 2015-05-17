@@ -91,31 +91,30 @@ public static void InitializeData ()
         categoria.CrearCategoria ("de cuchillo", "vela");
 
         ClienteCEN cliente = new ClienteCEN ();
-        cliente.CrearCliente ("a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a");
-        cliente.CrearCliente ("cliente1", "cliente1", "cliente1", "cliente1",
+        cliente.CrearCliente ("a a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a");
+        cliente.CrearCliente ("cliente1 cliente1", "cliente1", "cliente1", "cliente1",
                 "cliente1", "cliente1", "cliente1", "cliente1",
                 "cliente1", "cliente1", "cliente1");
-        cliente.CrearCliente ("cliente2", "cliente2", "cliente2", "cliente2",
+        cliente.CrearCliente ("cliente2 cliente2", "cliente2", "cliente2", "cliente2",
                 "cliente2", "cliente2", "cliente2", "cliente2",
                 "cliente2", "cliente2", "cliente2");
-        cliente.CrearCliente ("cliente3", "cliente3", "cliente3", "cliente3",
+        cliente.CrearCliente ("cliente3 cliente3", "cliente3", "cliente3", "cliente3",
                 "cliente3", "cliente3", "cliente3", "cliente3",
                 "cliente3", "cliente3", "cliente3");
-        cliente.CrearCliente("Manuel", "Manuel", "Manuel", "Manuel", 
-            "Manuel", "Manuel", "Manuel", "Manuel", 
-            "Manuel", "Manuel", "Manuel");
+        cliente.CrearCliente ("Manuel Manuel", "Manuel", "Manuel", "Manuel",
+                "Manuel", "Manuel", "Manuel", "Manuel",
+                "Manuel", "Manuel", "Manuel");
 
         var pedido = new PedidoCEN ();
         pedido.CrearPedido (1, DateTime.Now, EstadoPedidoEnum.en_curso, TipoPagoEnum.paypal, "admin", "cliente1");
         pedido.CrearPedido (2, DateTime.Now, EstadoPedidoEnum.cancelado, TipoPagoEnum.visa, "admin", "cliente1");
         pedido.CrearPedido (3, DateTime.Now, EstadoPedidoEnum.entregado, TipoPagoEnum.paypal, "admin", "cliente1");
 
-        pedido.CrearPedido(4, DateTime.Now, EstadoPedidoEnum.en_curso, TipoPagoEnum.paypal, "admin", "Manuel");
-        pedido.CrearPedido(5, DateTime.Now, EstadoPedidoEnum.cancelado, TipoPagoEnum.visa, "admin", "Manuel");
-        pedido.CrearPedido(6, DateTime.Now, EstadoPedidoEnum.entregado, TipoPagoEnum.paypal, "admin", "Manuel");
+        pedido.CrearPedido (4, DateTime.Now, EstadoPedidoEnum.en_curso, TipoPagoEnum.paypal, "admin", "Manuel");
+        pedido.CrearPedido (5, DateTime.Now, EstadoPedidoEnum.cancelado, TipoPagoEnum.visa, "admin", "Manuel");
+        pedido.CrearPedido (6, DateTime.Now, EstadoPedidoEnum.entregado, TipoPagoEnum.paypal, "admin", "Manuel");
 
-        PrevisualizarCEN prev = new PrevisualizarCEN ();
-        prev.CrearFactura (1, "html");
+
         ProductoCEN prod = new ProductoCEN ();
         ProductoCEN prod2 = new ProductoCEN ();
         prod.CrearProducto (1, 300f, "admin", "latina", "latina clasica", 1);

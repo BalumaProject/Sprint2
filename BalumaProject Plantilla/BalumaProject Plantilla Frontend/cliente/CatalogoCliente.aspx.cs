@@ -9,7 +9,7 @@ using BalumaProjectGenNHibernate.EN.BalumaProject;
 using System.Web.UI.HtmlControls;
 namespace BalumaProject_Plantilla_Frontend
 {
-    public partial class Catalogo : System.Web.UI.Page
+    public partial class CatalogoCliente : System.Web.UI.Page
     {
         public string content;
         private string prod_nombre;

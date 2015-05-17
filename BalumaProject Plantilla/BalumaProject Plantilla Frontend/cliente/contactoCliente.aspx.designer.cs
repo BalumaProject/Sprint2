@@ -7,54 +7,75 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace BalumaProject_Plantilla_Frontend.cliente {
+namespace BalumaProject_Plantilla_Frontend {
     
     
-    public partial class Site1 {
+    public partial class contactoCliente {
         
         /// <summary>
-        /// Control headente.
+        /// Control Form1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead headente;
+        protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
         
         /// <summary>
-        /// Control head.
+        /// Control nombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.TextBox nombre;
         
         /// <summary>
-        /// Control nombre_usu.
+        /// Control tema.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nombre_usu;
+        protected global::System.Web.UI.WebControls.TextBox tema;
         
         /// <summary>
-        /// Control cantidad.
+        /// Control email.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cantidad;
+        protected global::System.Web.UI.WebControls.TextBox email;
         
         /// <summary>
-        /// Control ContentPlaceHolder1.
+        /// Control mensaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.TextBox mensaje;
+        
+        /// <summary>
+        /// Control send.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button send;
+        
+        /// <summary>
+        /// Propiedad Master.
+        /// </summary>
+        /// <remarks>
+        /// Propiedad generada automáticamente.
+        /// </remarks>
+        public new BalumaProject_Plantilla_Frontend.cliente.Site1 Master {
+            get {
+                return ((BalumaProject_Plantilla_Frontend.cliente.Site1)(base.Master));
+            }
+        }
     }
 }

@@ -14,13 +14,18 @@ namespace BalumaProjectGenNHibernate.CEN.BalumaProject
 {
 public partial class CarritoCEN
 {
-public void AnyadirProducto (int p_oid, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN> arg1)
+   
+public void AnyadirProducto (int p_oid, BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN producto)
 {
         /*PROTECTED REGION ID(BalumaProjectGenNHibernate.CEN.BalumaProject_Carrito_anyadirProducto) ENABLED START*/
 
         // Write here your custom code...
+    
+    int cantidad = carrito.Cantidad; 
+        cantidad++;
+        this.ModificarCarrito (1, cantidad);
 
-        throw new NotImplementedException ("Method AnyadirProducto() not yet implemented.");
+
 
         /*PROTECTED REGION END*/
 }

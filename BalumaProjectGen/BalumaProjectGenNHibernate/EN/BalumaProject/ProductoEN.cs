@@ -47,12 +47,6 @@ private string nombre;
 
 private int cantidad;
 
-/**
- *
- */
-
-private System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN> carrito;
-
 
 
 
@@ -92,34 +86,28 @@ public virtual int Cantidad {
 }
 
 
-public virtual System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN> Carrito {
-        get { return carrito; } set { carrito = value;  }
-}
-
-
 
 
 
 public ProductoEN()
 {
         lineaPedido = new System.Collections.Generic.List<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN>();
-        carrito = new System.Collections.Generic.List<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN>();
 }
 
 
 
-public ProductoEN(int idProducto, float precio, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN categoria, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido, string nombre, int cantidad, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN> carrito)
+public ProductoEN(int idProducto, float precio, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN categoria, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido, string nombre, int cantidad)
 {
-        this.init (idProducto, precio, administrador, categoria, lineaPedido, nombre, cantidad, carrito);
+        this.init (idProducto, precio, administrador, categoria, lineaPedido, nombre, cantidad);
 }
 
 
 public ProductoEN(ProductoEN producto)
 {
-        this.init (producto.IdProducto, producto.Precio, producto.Administrador, producto.Categoria, producto.LineaPedido, producto.Nombre, producto.Cantidad, producto.Carrito);
+        this.init (producto.IdProducto, producto.Precio, producto.Administrador, producto.Categoria, producto.LineaPedido, producto.Nombre, producto.Cantidad);
 }
 
-private void init (int idProducto, float precio, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN categoria, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido, string nombre, int cantidad, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN> carrito)
+private void init (int idProducto, float precio, BalumaProjectGenNHibernate.EN.BalumaProject.AdministradorEN administrador, BalumaProjectGenNHibernate.EN.BalumaProject.CategoriaEN categoria, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.LineaPedidoEN> lineaPedido, string nombre, int cantidad)
 {
         this.IdProducto = idProducto;
 
@@ -135,8 +123,6 @@ private void init (int idProducto, float precio, BalumaProjectGenNHibernate.EN.B
         this.Nombre = nombre;
 
         this.Cantidad = cantidad;
-
-        this.Carrito = carrito;
 }
 
 public override bool Equals (object obj)

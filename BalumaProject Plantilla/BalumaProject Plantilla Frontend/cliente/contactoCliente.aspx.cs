@@ -9,7 +9,7 @@ using BalumaProjectGenNHibernate.EN.BalumaProject;
 using System.Web.UI.HtmlControls;
 namespace BalumaProject_Plantilla_Frontend
 {
-    public partial class contacto : System.Web.UI.Page
+    public partial class contactoCliente : System.Web.UI.Page
     {
         void Page_PreInit(object sender, EventArgs e)
         {

@@ -65,5 +65,17 @@ namespace BalumaProject_Plantilla_Frontend {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button send;
+        
+        /// <summary>
+        /// Propiedad Master.
+        /// </summary>
+        /// <remarks>
+        /// Propiedad generada automáticamente.
+        /// </remarks>
+        public new WebApplication1.Site1 Master {
+            get {
+                return ((WebApplication1.Site1)(base.Master));
+            }
+        }
     }
 }

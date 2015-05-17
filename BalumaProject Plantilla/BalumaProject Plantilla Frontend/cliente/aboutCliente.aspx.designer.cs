@@ -7,10 +7,19 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace WebApplication1 {
+namespace BalumaProject_Plantilla_Frontend {
     
     
-    public partial class WebForm1 {
+    public partial class aboutCliente {
+        
+        /// <summary>
+        /// Control Form1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
         
         /// <summary>
         /// Propiedad Master.
@@ -18,9 +27,9 @@ namespace WebApplication1 {
         /// <remarks>
         /// Propiedad generada automáticamente.
         /// </remarks>
-        public new WebApplication1.Site1 Master {
+        public new BalumaProject_Plantilla_Frontend.cliente.Site1 Master {
             get {
-                return ((WebApplication1.Site1)(base.Master));
+                return ((BalumaProject_Plantilla_Frontend.cliente.Site1)(base.Master));
             }
         }
     }

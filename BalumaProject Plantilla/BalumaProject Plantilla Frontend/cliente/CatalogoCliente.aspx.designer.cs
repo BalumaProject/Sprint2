@@ -7,54 +7,48 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace BalumaProject_Plantilla_Frontend.cliente {
+namespace BalumaProject_Plantilla_Frontend {
     
     
-    public partial class Site1 {
+    public partial class CatalogoCliente {
         
         /// <summary>
-        /// Control headente.
+        /// Control form.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead headente;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form;
         
         /// <summary>
-        /// Control head.
+        /// Control lista.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.DropDownList lista;
         
         /// <summary>
-        /// Control nombre_usu.
+        /// Control precio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nombre_usu;
+        protected global::System.Web.UI.WebControls.TextBox precio;
         
         /// <summary>
-        /// Control cantidad.
+        /// Propiedad Master.
         /// </summary>
         /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// Propiedad generada automáticamente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cantidad;
-        
-        /// <summary>
-        /// Control ContentPlaceHolder1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        public new BalumaProject_Plantilla_Frontend.cliente.Site1 Master {
+            get {
+                return ((BalumaProject_Plantilla_Frontend.cliente.Site1)(base.Master));
+            }
+        }
     }
 }

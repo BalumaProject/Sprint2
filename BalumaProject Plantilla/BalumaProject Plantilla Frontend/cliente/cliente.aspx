@@ -1,7 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/cliente/Cliente.Master" AutoEventWireup="true" CodeBehind="cliente.aspx.cs" Inherits="BalumaProject_Plantilla_Frontend.cliente.cliente" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="headCli" runat="server">
+<%@ MasterType VirtualPath="~/cliente/Cliente.Master" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
 <div class="main_bg">
 <div class="wrap">
 <div class="main">

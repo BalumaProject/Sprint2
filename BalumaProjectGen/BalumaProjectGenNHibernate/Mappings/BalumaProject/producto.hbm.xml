@@ -38,17 +38,6 @@
 					
 			
 			
-			
-		  			
-						<bag name="Carrito" table="[carrito_producto]" inverse="true" >
-							<key>
-									<column name="[FK_idProducto_idProducto]"/>
-							</key>
-      						<many-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN">
-									<column name="[FK_idCarrito_idCarrito]"/>
-      						</many-to-many>
-    					</bag>
-					
 					
 					
 					

@@ -77,8 +77,13 @@
     <Content Include="admin\Seguimiento.aspx" />
     <Content Include="admin\WebForm1.aspx" />
     <Content Include="Catalogo.aspx" />
+    <Content Include="cliente\aboutCliente.aspx" />
+    <Content Include="cliente\CatalogoCliente.aspx" />
     <Content Include="cliente\cliente.aspx" />
     <Content Include="cliente\editar_cliente.aspx" />
+    <Content Include="cliente\facturaCliente.aspx" />
+    <Content Include="cliente\contactoCliente.aspx" />
+    <Content Include="cliente\SeguimientoCliente.aspx" />
     <Content Include="contacto.aspx" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
@@ -208,6 +213,20 @@
     <Compile Include="Catalogo.aspx.designer.cs">
       <DependentUpon>Catalogo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="cliente\aboutCliente.aspx.cs">
+      <DependentUpon>aboutCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cliente\aboutCliente.aspx.designer.cs">
+      <DependentUpon>aboutCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cliente\CatalogoCliente.aspx.cs">
+      <DependentUpon>CatalogoCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cliente\CatalogoCliente.aspx.designer.cs">
+      <DependentUpon>CatalogoCliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="cliente\cliente.aspx.cs">
       <DependentUpon>cliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -228,6 +247,27 @@
     </Compile>
     <Compile Include="cliente\editar_cliente.aspx.designer.cs">
       <DependentUpon>editar_cliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cliente\facturaCliente.aspx.cs">
+      <DependentUpon>facturaCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cliente\facturaCliente.aspx.designer.cs">
+      <DependentUpon>facturaCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cliente\contactoCliente.aspx.cs">
+      <DependentUpon>contactoCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cliente\contactoCliente.aspx.designer.cs">
+      <DependentUpon>contactoCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cliente\SeguimientoCliente.aspx.cs">
+      <DependentUpon>SeguimientoCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cliente\SeguimientoCliente.aspx.designer.cs">
+      <DependentUpon>SeguimientoCliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="contacto.aspx.cs">
       <DependentUpon>contacto.aspx</DependentUpon>

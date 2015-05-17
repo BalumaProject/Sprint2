@@ -34,16 +34,20 @@
 					
 			
 		  			
-					
-							   <one-to-one name="ImprimirFactura" class="BalumaProjectGenNHibernate.EN.BalumaProject.ImprimirFacturaEN" property-ref="Pedido" />							
-					 
-						
-			
-		  			
 						<many-to-one name="Cliente" class="BalumaProjectGenNHibernate.EN.BalumaProject.ClienteEN" >	
 								<column name="[FK_NIF_idCliente]"/>
 						</many-to-one>
 											 					
+			
+		  			
+						<bag name="Factura" table="[pedido_factura]"  >
+							<key>
+									<column name="[FK_idPedido_idPedido]"/>
+							</key>
+      						<many-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.FacturaEN">
+									<column name="[FK_id_idFactura]"/>
+      						</many-to-many>
+    					</bag>
 					
 					
 					

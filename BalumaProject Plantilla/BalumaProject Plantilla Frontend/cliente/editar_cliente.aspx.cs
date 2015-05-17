@@ -17,6 +17,9 @@ namespace BalumaProject_Plantilla_Frontend.cliente
         ClienteEN cli;
         protected void Page_Load(object sender, EventArgs e)
         {
+            IList<ProductoEN> pedido = (IList<ProductoEN>)Session["carrito"];
+            if (pedido != null) Master.HtmlGenericControl.InnerText = pedido.Count.ToString();
+
              cli = (ClienteEN)Session["cliente"];
              nombre.Text = cli.Nombre;
              nickname.Text = cli.Username;

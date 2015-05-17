@@ -2,7 +2,7 @@
 
 <!DOCTYPE HTML>
 <html>
-<head runat="server">
+<head id="Head1" runat="server">
     <title>Baluma</title>
     <!--<link href="Content/css/bootstrap.css" rel="stylesheet", type="text/css">-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

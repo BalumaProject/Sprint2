@@ -40,14 +40,7 @@
 					    </bag>
 					
 			
-		  			
-						<many-to-one name="Carrito" class="BalumaProjectGenNHibernate.EN.BalumaProject.CarritoEN" >	
-								<column name="[FK_idCarrito_idCarrito]"/>
-						</many-to-one>
-											 					
 			
-			
-					
 					
 					
 					

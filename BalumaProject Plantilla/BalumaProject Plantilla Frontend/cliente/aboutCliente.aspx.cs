@@ -6,10 +6,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BalumaProjectGenNHibernate.EN.BalumaProject;
 using System.Web.UI.HtmlControls;
-namespace WebApplication1
+
+namespace BalumaProject_Plantilla_Frontend
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class aboutCliente : System.Web.UI.Page
     {
+
         void Page_PreInit(object sender, EventArgs e)
         {
             if (Session["cliente"] != null)

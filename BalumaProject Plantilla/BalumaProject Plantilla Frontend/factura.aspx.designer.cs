@@ -22,6 +22,15 @@ namespace BalumaProject_Plantilla_Frontend {
         protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
         
         /// <summary>
+        /// Control RadioButtonList1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
+        
+        /// <summary>
         /// Control Descargar.
         /// </summary>
         /// <remarks>
@@ -47,5 +56,17 @@ namespace BalumaProject_Plantilla_Frontend {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor A1;
+        
+        /// <summary>
+        /// Propiedad Master.
+        /// </summary>
+        /// <remarks>
+        /// Propiedad generada automáticamente.
+        /// </remarks>
+        public new WebApplication1.Site1 Master {
+            get {
+                return ((WebApplication1.Site1)(base.Master));
+            }
+        }
     }
 }

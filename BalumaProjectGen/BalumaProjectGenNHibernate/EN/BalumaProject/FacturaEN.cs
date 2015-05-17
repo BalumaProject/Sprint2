@@ -17,6 +17,12 @@ private int id;
 
 private string hTML;
 
+/**
+ *
+ */
+
+private System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN> pedido;
+
 
 
 
@@ -31,32 +37,40 @@ public virtual string HTML {
 }
 
 
+public virtual System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN> Pedido {
+        get { return pedido; } set { pedido = value;  }
+}
+
+
 
 
 
 public FacturaEN()
 {
+        pedido = new System.Collections.Generic.List<BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN>();
 }
 
 
 
-public FacturaEN(int id, string hTML)
+public FacturaEN(int id, string hTML, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN> pedido)
 {
-        this.init (id, hTML);
+        this.init (id, hTML, pedido);
 }
 
 
 public FacturaEN(FacturaEN factura)
 {
-        this.init (factura.Id, factura.HTML);
+        this.init (factura.Id, factura.HTML, factura.Pedido);
 }
 
-private void init (int id, string hTML)
+private void init (int id, string hTML, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN> pedido)
 {
         this.Id = id;
 
 
         this.HTML = hTML;
+
+        this.Pedido = pedido;
 }
 
 public override bool Equals (object obj)

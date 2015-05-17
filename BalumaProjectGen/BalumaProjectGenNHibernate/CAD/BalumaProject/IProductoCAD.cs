@@ -29,5 +29,8 @@ System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.Pro
 
 
 System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN> DamePorCategoriayPrecio (string p_categoria, float p_precio);
+
+
+ProductoEN DamePorOID (int idProducto);
 }
 }

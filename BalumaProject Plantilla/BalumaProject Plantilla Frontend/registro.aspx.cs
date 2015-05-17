@@ -8,6 +8,7 @@ using BalumaProjectGenNHibernate.CEN.BalumaProject;
 using BalumaProjectGenNHibernate.EN.BalumaProject;
 using BalumaProjectGenNHibernate.CAD.BalumaProject;
 using BalumaProjectGenNHibernate.Enumerated.BalumaProject;
+using System.Web.UI.HtmlControls;
 namespace BalumaProject_Plantilla_Frontend
 {
     public partial class WebForm1 : System.Web.UI.Page
@@ -15,6 +16,8 @@ namespace BalumaProject_Plantilla_Frontend
         ClienteCEN cliente = new ClienteCEN();
         protected void Page_Load(object sender, EventArgs e)
         {
+            IList<ProductoEN> pedido = (IList<ProductoEN>)Session["carrito"];
+            if (pedido != null) Master.HtmlGenericControl.InnerText = pedido.Count.ToString();
 
         }
 
@@ -60,8 +63,8 @@ namespace BalumaProject_Plantilla_Frontend
             String correo = email.Text;
             String url_foto = "Sin asignar";
 
-            //cliente.CrearCliente(apellidos, password, nickname.Text, NIF, nom, 
-            //    localidad, cp.Text, cuentaBancaria, numtelf, correo, url_foto);
+            cliente.CrearCliente(apellidos, password, nickname.Text, NIF, nom, 
+                localidad, cp.Text, cuentaBancaria, numtelf, correo, url_foto);
         }
     }
 }

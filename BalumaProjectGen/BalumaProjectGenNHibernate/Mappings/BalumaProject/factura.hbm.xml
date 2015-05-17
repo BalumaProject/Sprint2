@@ -9,6 +9,17 @@
 					</property>
 			
 			
+			
+		  			
+						<bag name="Pedido" table="[pedido_factura]" inverse="true" >
+							<key>
+									<column name="[FK_id_idFactura]"/>
+							</key>
+      						<many-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN">
+									<column name="[FK_idPedido_idPedido]"/>
+      						</many-to-many>
+    					</bag>
+					
 					
 					
 		

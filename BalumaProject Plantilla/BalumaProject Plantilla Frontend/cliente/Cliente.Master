@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head id="headCliente" runat="server">
+<head id="headente" runat="server">
     <title>Baluma</title>
     <!--<link href="Content/css/bootstrap.css" rel="stylesheet", type="text/css">-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -45,7 +45,7 @@
            });
        });
 	</script>
-    <asp:ContentPlaceHolder ID="headCli" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
@@ -74,15 +74,15 @@
 		<div class="menu">
 			<ul>
 				<li><a href="cliente.aspx">Inicio</a></li>
-				<li><a href="../Catalogo.aspx">Catálogo</a></li>
-				<li><a href="#">Sobre nosotros...</a></li>
-				<li><a href="#">Contacta con nosotros...</a></li>
+				<li><a href="CatalogoCliente.aspx">Catálogo</a></li>
+				<li><a href="aboutCliente.aspx">Sobre nosotros...</a></li>
+				<li><a href="contactoCliente.aspx">Contacta con nosotros...</a></li>
 				<div class="clear"></div>
 			</ul>
 		</div>
          <div class="header_right">
 		<ul>
-			<li><a href="#"><img src="../Content/images/cart.png" alt="" />&nbsp &nbsp<span>0</span></a></li>
+			<li><a href="facturaCliente.aspx"><img src="../Content/images/cart.png" alt="" />&nbsp &nbsp<span id="cantidad" runat="server">0</span></a></li>
 		</ul>
 	</div>
 	<div class="clear"></div>

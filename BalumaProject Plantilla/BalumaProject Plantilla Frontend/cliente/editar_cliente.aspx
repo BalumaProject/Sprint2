@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/cliente/Cliente.Master" AutoEventWireup="true" CodeBehind="editar_cliente.aspx.cs" Inherits="BalumaProject_Plantilla_Frontend.cliente.editar_cliente" %>
 
 <%@ Register TagPrefix="uc" TagName="Footer" Src="~/_footer.ascx"  %>
-
+<%@ MasterType VirtualPath="~/cliente/Cliente.Master" %>
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <script>

@@ -56,11 +56,6 @@ public int CrearCarrito (CarritoEN carrito)
         try
         {
                 SessionInitializeTransaction ();
-                if (carrito.Previsualizar != null) {
-                        carrito.Previsualizar = (BalumaProjectGenNHibernate.EN.BalumaProject.PrevisualizarEN)session.Load (typeof(BalumaProjectGenNHibernate.EN.BalumaProject.PrevisualizarEN), carrito.Previsualizar.Id);
-
-                        carrito.Previsualizar.Carrito = carrito;
-                }
 
                 session.Save (carrito);
                 SessionCommit ();
@@ -80,6 +75,83 @@ public int CrearCarrito (CarritoEN carrito)
         }
 
         return carrito.IdCarrito;
+}
+
+public void BorrarCarrito (int idCarrito)
+{
+        try
+        {
+                SessionInitializeTransaction ();
+                CarritoEN carritoEN = (CarritoEN)session.Load (typeof(CarritoEN), idCarrito);
+                session.Delete (carritoEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is BalumaProjectGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new BalumaProjectGenNHibernate.Exceptions.DataLayerException ("Error in CarritoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
+
+public void ModificarCarrito (CarritoEN carrito)
+{
+        try
+        {
+                SessionInitializeTransaction ();
+                CarritoEN carritoEN = (CarritoEN)session.Load (typeof(CarritoEN), carrito.IdCarrito);
+
+                carritoEN.Cantidad = carrito.Cantidad;
+
+                session.Update (carritoEN);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is BalumaProjectGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new BalumaProjectGenNHibernate.Exceptions.DataLayerException ("Error in CarritoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+}
+public CarritoEN DamePorOID (int idCarrito)
+{
+        CarritoEN carritoEN = null;
+
+        try
+        {
+                SessionInitializeTransaction ();
+                carritoEN = (CarritoEN)session.Get (typeof(CarritoEN), idCarrito);
+                SessionCommit ();
+        }
+
+        catch (Exception ex) {
+                SessionRollBack ();
+                if (ex is BalumaProjectGenNHibernate.Exceptions.ModelException)
+                        throw ex;
+                throw new BalumaProjectGenNHibernate.Exceptions.DataLayerException ("Error in CarritoCAD.", ex);
+        }
+
+
+        finally
+        {
+                SessionClose ();
+        }
+
+        return carritoEN;
 }
 }
 }

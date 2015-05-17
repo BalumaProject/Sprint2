@@ -1,12 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true"
-    CodeBehind="Catalogo.aspx.cs" Inherits="BalumaProject_Plantilla_Frontend.Catalogo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/cliente/Cliente.Master" AutoEventWireup="true"
+    CodeBehind="CatalogoCliente.aspx.cs" Inherits="BalumaProject_Plantilla_Frontend.CatalogoCliente" %>
 
-<%@ MasterType VirtualPath="~/Site1.Master" %>
+<%@ MasterType VirtualPath="~/cliente/Cliente.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
 
 <form id="form" runat="server">
     <div class="main_bg">
@@ -47,11 +46,11 @@
                     <%} %>
                     <div class="grid1_of_3">
                         <a href="#">
-                            <img src="Content/images/bavaria.jpg" alt="Imagen del producto" />
+                            <img src="../Content/images/bavaria.jpg" alt="Imagen del producto" />
                         </a>
                         <%= p.Nombre %>
                         <span class="price"><%= p.Precio %> €</span> 
-                        <a href="Catalogo.aspx?id=<%: p.IdProducto %>&nombre=<%: p.Nombre %>">Añadir al carrito</a>
+                        <a href="CatalogoCliente.aspx?id=<%: p.IdProducto %>&nombre=<%: p.Nombre %>">Añadir al carrito</a>
                     </div>
                     <% contador++; %>
                     <% } %>
