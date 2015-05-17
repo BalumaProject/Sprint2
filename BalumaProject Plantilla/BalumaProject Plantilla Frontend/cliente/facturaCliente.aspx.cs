@@ -51,21 +51,24 @@ namespace BalumaProject_Plantilla_Frontend
                 ClienteEN cliente = (ClienteEN)Session["cliente"];
                 ClienteCEN cliCen = new ClienteCEN();
                 PedidoCEN pedCen = new PedidoCEN();
-                pedCen.CrearPedido(7, DateTime.Now, EstadoPedidoEnum.en_curso, TipoPagoEnum.paypal, "admin", cliente.NIF);
-                LineaPedidoCEN licen = new LineaPedidoCEN();
-                int numLinea = 0;
-                foreach(ProductoEN prod in pedido)
+                if (Session["pedidio"] == null)
                 {
-                    licen.CrearLinea(prod.IdProducto, 7, numLinea);
-                    numLinea++;
+                    pedCen.CrearPedido(7, DateTime.Now, EstadoPedidoEnum.en_curso, TipoPagoEnum.paypal, "admin", cliente.NIF);
+                    Session["pedido"] = pedCen;
+                    LineaPedidoCEN licen = new LineaPedidoCEN();
+                    int numLinea = 0;
+                    foreach (ProductoEN prod in pedido)
+                    {
+                        licen.CrearLinea(prod.IdProducto, 7, numLinea);
+                        numLinea++;
+                    }
+                    Session["cliente"] = cliente;
                 }
-                Session["cliente"] = cliente;
-
             }
             Document doc = new Document(PageSize.LETTER);
             // Indicamos donde vamos a guardar el documento
             PdfWriter writer = PdfWriter.GetInstance(doc,
-                                        new FileStream(@"C:\prueba.pdf", FileMode.Create));
+                                        new FileStream(@"D:\prueba.pdf", FileMode.Create));
 
             // Le colocamos el título y el autor
             // **Nota: Esto no será visible en el documento
@@ -75,7 +78,7 @@ namespace BalumaProject_Plantilla_Frontend
             // Abrimos el archivo
             doc.Open();
 
-            iTextSharp.text.Image imagen = iTextSharp.text.Image.GetInstance(@"C:\logoweb.png");
+            iTextSharp.text.Image imagen = iTextSharp.text.Image.GetInstance(@"D:\logoweb.png");
             imagen.BorderWidth = 0;
             imagen.Alignment = Element.ALIGN_RIGHT;
             float percentage = 0.0f;
@@ -148,21 +151,19 @@ namespace BalumaProject_Plantilla_Frontend
             tbl1.AddCell(clDescrp);
             tbl1.AddCell(clPrecio);
 
-            IList<ProductoEN> p = new List<ProductoEN>();
+           
             
-            p = (IList<ProductoEN>)Session["carrito"];
-            
-            foreach (ProductoEN producto in p)
+            foreach (ProductoEN producto in pedido)
             {
                 
                 // Llenamos la tabla con información
-                clCantidad = new PdfPCell(new Phrase("Hola", _standardFont));
+                clCantidad = new PdfPCell(new Phrase(producto.Cantidad.ToString(), _standardFont));
                 clCantidad.BorderWidth = 0;
                 
-                clDescrp = new PdfPCell(new Phrase("soy", _standardFont));
+                clDescrp = new PdfPCell(new Phrase(producto.Nombre.ToString(), _standardFont));
                 clDescrp.BorderWidth = 0;
                 
-                clPrecio = new PdfPCell(new Phrase("Epi", _standardFont));
+                clPrecio = new PdfPCell(new Phrase(producto.Precio.ToString(), _standardFont));
                 clPrecio.BorderWidth = 0;
                 
                 // Añadimos las celdas a la tabla
