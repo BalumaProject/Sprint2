@@ -20,11 +20,7 @@ namespace BalumaProject_Plantilla_Frontend
         private int id;
         void Page_PreInit(object sender, EventArgs e)
         {
-            if (Session["cliente"] != null)
-            {
-                this.MasterPageFile = "~/cliente/Cliente.Master";
-              
-            }
+           
             if (Session["carrito"] == null)
             {
                   carrito = new List<ProductoEN>(); 

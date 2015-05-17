@@ -14,10 +14,7 @@ namespace BalumaProject_Plantilla_Frontend
 
         void Page_PreInit(object sender, EventArgs e)
         {
-            if (Session["cliente"] != null)
-            {
-                this.MasterPageFile = "~/cliente/Cliente.Master";
-            }
+           
         }
         protected void Page_Load(object sender, EventArgs e)
         {
