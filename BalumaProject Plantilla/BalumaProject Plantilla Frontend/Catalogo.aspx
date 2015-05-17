@@ -52,7 +52,9 @@
                         <%= p.Nombre %>
                         <span class="price"><%= p.Precio %> €</span> 
                         <a href="Catalogo.aspx?id=<%: p.IdProducto %>&nombre=<%: p.Nombre %>">Añadir al carrito</a>
+                        
                     </div>
+
                     <% contador++; %>
                     <% } %>
                 </div>

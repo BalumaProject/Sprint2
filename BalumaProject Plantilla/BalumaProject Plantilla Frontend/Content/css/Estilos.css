@@ -47,7 +47,7 @@
 .lista-categoria
 {
    
-    margin-left: 30px;
+    margin-left: 20px;
     width: 150px;
     margin-bottom:30px;
     position:relative;
@@ -55,7 +55,7 @@
 }
 .etiqueta-buscar
 {
-   margin-left: 150px;
+   margin-left: 100px;
     width: 150px;
     margin-bottom:30px;
     position:relative;
@@ -68,12 +68,12 @@
 }
 .top-buscar
 {
-    margin-left:450px;
+    margin-left:350px;
     margin-bottom: 30px;
 }
 
 .boton-buscar
-{ margin-left:470px;
+{ margin-left:370px;
     margin-bottom: 100px;
 }
 

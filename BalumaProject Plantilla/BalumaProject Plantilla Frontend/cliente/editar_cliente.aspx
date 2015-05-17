@@ -44,8 +44,8 @@
 		</script>
         <form id="Form1" runat="server">
         
-    <div class="registration_left ">
-        <div class="registration_form medio-tam">
+    <div class="registration_left">
+        <div class="registration_form ">
 		 <!-- Form -->
 			
            <div class = "editar-foto">

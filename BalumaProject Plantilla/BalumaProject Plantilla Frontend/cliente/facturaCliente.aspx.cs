@@ -48,11 +48,14 @@ namespace BalumaProject_Plantilla_Frontend
             }
             else
             {
+               
                 ClienteEN cliente = (ClienteEN)Session["cliente"];
                 ClienteCEN cliCen = new ClienteCEN();
                 PedidoCEN pedCen = new PedidoCEN();
-              
-                    pedCen.CrearPedido(DateTime.Now, EstadoPedidoEnum.en_curso, TipoPagoEnum.paypal, "admin", cliente.NIF);
+                if (RadioButtonList1.SelectedItem.ToString().ToLower() == "paypal") pedCen.CrearPedido(DateTime.Now, EstadoPedidoEnum.en_curso, TipoPagoEnum.paypal, "admin", cliente.NIF);
+                if (RadioButtonList1.SelectedItem.ToString().ToLower() == "visa") pedCen.CrearPedido(DateTime.Now, EstadoPedidoEnum.en_curso, TipoPagoEnum.visa, "admin", cliente.NIF);
+               
+                 
                     IList<PedidoEN> pedEn = pedCen.ObtenerPorCliente(cliente.NIF);
                     pedCen.Comprar(pedEn.ElementAt(pedEn.Count - 1).IdPedido, pedido);
                     Session["cliente"] = cliente;
