@@ -87,36 +87,50 @@ namespace BalumaProject_Plantilla_Frontend
             DateTime hoy = DateTime.Today;
             DateTime fin = new DateTime(2015, 5, 18);
 
+            ClienteEN cli = (ClienteEN)Session["cliente"];
+
             Paragraph linea1 = new Paragraph();
 
             // Escribimos el encabezamiento en el documento
-            linea1.Add(new Chunk("FECHA DE EXPEDICIÓN:", _boldFont));
+            linea1.Add(new Chunk("FECHA DE EXPEDICIÓN: ", _boldFont));
             linea1.Add(new Chunk(hoy.ToString(), _standardFont));
+
+            doc.Add(linea1);
 
             Paragraph linea2 = new Paragraph();
 
-            doc.Add(new Chunk("FECHA DE VENCIMIENTO:", _boldFont));
+            doc.Add(new Chunk("FECHA DE VENCIMIENTO: ", _boldFont));
             doc.Add(new Chunk(fin.ToString(), _standardFont));
 
             doc.Add(linea2);
 
             Paragraph linea3 = new Paragraph();
 
-            doc.Add(new Paragraph("CLIENTE:", _boldFont));
+            doc.Add(new Chunk("CLIENTE: ", _boldFont));
+            doc.Add(new Chunk(cli.Nombre.ToString() + cli.Apellidos.ToString(), _standardFont));
 
             doc.Add(linea3);
 
             Paragraph linea4 = new Paragraph();
 
-            doc.Add(new Paragraph("DIRECCIÓN:", _boldFont));
+            doc.Add(new Chunk("NIF: ", _boldFont));
+            doc.Add(new Chunk(cli.NIF, _standardFont));
 
             doc.Add(linea4);
 
             Paragraph linea5 = new Paragraph();
 
-            doc.Add(new Paragraph("TEL:", _boldFont));
+            doc.Add(new Chunk("DIRECCIÓN: ", _boldFont));
+            doc.Add(new Chunk(cli.Localidad.ToString(), _standardFont));
 
             doc.Add(linea5);
+
+            Paragraph linea6 = new Paragraph();
+
+            doc.Add(new Chunk("E-MAIL: ", _boldFont));
+            doc.Add(new Chunk(cli.Email.ToString(), _standardFont));
+
+            doc.Add(linea6);
 
             doc.Add(Chunk.NEWLINE);
 
@@ -185,6 +199,12 @@ namespace BalumaProject_Plantilla_Frontend
             // Añadimos las celdas a la tabla
             tbl2.AddCell(clb1);
             tbl2.AddCell(clb2);
+            tbl2.AddCell(clTotal);
+
+            FacturaCEN factura = new FacturaCEN();
+
+            clTotal = new PdfPCell(new Phrase(factura.CalcularPrecioTotal(0, pedido).ToString(), _standardFont));
+
             tbl2.AddCell(clTotal);
 
             doc.Add(tbl2);

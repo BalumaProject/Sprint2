@@ -16,13 +16,15 @@ public partial class FacturaCEN
 {
 public float CalcularPrecioTotal (int p_oid, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN> pedido)
 {
-        /*PROTECTED REGION ID(BalumaProjectGenNHibernate.CEN.BalumaProject_Factura_calcularPrecioTotal) ENABLED START*/
 
-        // Write here your custom code...
+    float suma = 0.0f;
 
-        throw new NotImplementedException ("Method CalcularPrecioTotal() not yet implemented.");
+    foreach (ProductoEN producto in pedido)
+    {
+        suma += producto.Precio;
+    }
 
-        /*PROTECTED REGION END*/
+    return suma;
 }
 }
 }
