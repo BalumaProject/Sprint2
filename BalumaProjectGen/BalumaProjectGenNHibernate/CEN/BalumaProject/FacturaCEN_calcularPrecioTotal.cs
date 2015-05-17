@@ -14,17 +14,22 @@ namespace BalumaProjectGenNHibernate.CEN.BalumaProject
 {
 public partial class FacturaCEN
 {
-public float CalcularPrecioTotal (int p_oid, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN> pedido)
+public float CalcularPrecioTotal (System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN> pedido)
 {
+        /*PROTECTED REGION ID(BalumaProjectGenNHibernate.CEN.BalumaProject_Factura_calcularPrecioTotal) ENABLED START*/
 
-    float suma = 0.0f;
+        // Write here your custom code...
 
-    foreach (ProductoEN producto in pedido)
-    {
-        suma += producto.Precio;
-    }
+        float suma = 0.0f;
+        float precio = 0.0f;
 
-    return suma;
+        foreach (ProductoEN prod in pedido) {
+                precio = prod.Precio;
+                suma += precio;
+        }
+
+        return suma;
+        /*PROTECTED REGION END*/
 }
 }
 }

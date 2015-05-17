@@ -112,11 +112,6 @@
 	<Compile Include="CAD\BalumaProject\AdministradorCAD.cs" />
 			<Compile Include="CEN\BalumaProject\AdministradorCEN_ModificarStock.cs" />
 			<Compile Include="CEN\BalumaProject\AdministradorCEN_SeguimientoAdministrador.cs" />
-	<Compile Include="EN\BalumaProject\FacturaEN.cs" />
-	<Compile Include="CEN\BalumaProject\FacturaCEN.cs" />
-	<Compile Include="CAD\BalumaProject\IFacturaCAD.cs" />
-	<Compile Include="CAD\BalumaProject\FacturaCAD.cs" />
-			<Compile Include="CEN\BalumaProject\FacturaCEN_CalcularPrecioTotal.cs" />
 	<Compile Include="EN\BalumaProject\PedidoEN.cs" />
 	<Compile Include="CEN\BalumaProject\PedidoCEN.cs" />
 	<Compile Include="CAD\BalumaProject\IPedidoCAD.cs" />
@@ -156,7 +151,6 @@
 	<EmbeddedResource Include="Mappings\BalumaProject\validar.hbm.xml" />
 	<EmbeddedResource Include="Mappings\BalumaProject\cliente.hbm.xml" />
 	<EmbeddedResource Include="Mappings\BalumaProject\administrador.hbm.xml" />
-	<EmbeddedResource Include="Mappings\BalumaProject\factura.hbm.xml" />
 	<EmbeddedResource Include="Mappings\BalumaProject\pedido.hbm.xml" />
 	<EmbeddedResource Include="Mappings\BalumaProject\lineapedido.hbm.xml" />
 	<EmbeddedResource Include="Mappings\BalumaProject\producto.hbm.xml" />

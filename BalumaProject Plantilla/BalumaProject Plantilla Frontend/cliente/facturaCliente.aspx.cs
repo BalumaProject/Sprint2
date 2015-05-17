@@ -201,16 +201,22 @@ namespace BalumaProject_Plantilla_Frontend
             tbl2.AddCell(clb2);
             tbl2.AddCell(clTotal);
 
-            FacturaCEN factura = new FacturaCEN();
-
-            clTotal = new PdfPCell(new Phrase(factura.CalcularPrecioTotal(0, pedido).ToString(), _standardFont));
-
+            /*FacturaCEN factura = new FacturaCEN();
+            factura.CrearFactura(0);*/
+            clb1 = new PdfPCell(new Phrase(" ", _standardFont));
+            clb1.BorderWidth = 0;
+             clb2 = new PdfPCell(new Phrase(" ", _standardFont));
+            clb2.BorderWidth = 0;
+            clTotal = new PdfPCell(new Phrase(calculoTotal(pedido).ToString(), _standardFont));
+            clTotal.BorderWidth = 0;
+            tbl2.AddCell(clb1);
+            tbl2.AddCell(clb2);
             tbl2.AddCell(clTotal);
 
             doc.Add(tbl2);
 
             doc.Add(new Phrase("EMPRESA:" + "                   " + "RECIBÍ A CONFORMIDAD:", _standardFont));
-
+            
             iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(@"C:\firma.jpg");
             imagen.BorderWidth = 0;
             imagen.Alignment = Element.ALIGN_LEFT;
@@ -235,7 +241,18 @@ namespace BalumaProject_Plantilla_Frontend
 
             return (IList<ProductoEN>)Session["carrito"];
         }
+        private float calculoTotal(IList<ProductoEN> productos)
+        {
+            float suma = 0.0f;
+            float precio = 0.0f;
+            foreach (ProductoEN pd in productos)
+            {
+                precio = pd.Precio;
+                suma += precio;
+            }
 
+                return suma;
+        }
         private void Eliminar()
         {
             var id = int.Parse(Request["id"]);

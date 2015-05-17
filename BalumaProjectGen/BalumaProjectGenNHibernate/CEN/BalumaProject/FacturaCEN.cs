@@ -32,7 +32,7 @@ public IFacturaCAD get_IFacturaCAD ()
         return this._IFacturaCAD;
 }
 
-public int CrearFactura (int p_id, string p_HTML)
+public int CrearFactura (int p_id)
 {
         FacturaEN facturaEN = null;
         int oid;
@@ -40,8 +40,6 @@ public int CrearFactura (int p_id, string p_HTML)
         //Initialized FacturaEN
         facturaEN = new FacturaEN ();
         facturaEN.Id = p_id;
-
-        facturaEN.HTML = p_HTML;
 
         //Call to FacturaCAD
 

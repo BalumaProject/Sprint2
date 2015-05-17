@@ -15,12 +15,6 @@ private int id;
  *
  */
 
-private string hTML;
-
-/**
- *
- */
-
 private System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN> pedido;
 
 
@@ -29,11 +23,6 @@ private System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaPro
 
 public virtual int Id {
         get { return id; } set { id = value;  }
-}
-
-
-public virtual string HTML {
-        get { return hTML; } set { hTML = value;  }
 }
 
 
@@ -52,23 +41,21 @@ public FacturaEN()
 
 
 
-public FacturaEN(int id, string hTML, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN> pedido)
+public FacturaEN(int id, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN> pedido)
 {
-        this.init (id, hTML, pedido);
+        this.init (id, pedido);
 }
 
 
 public FacturaEN(FacturaEN factura)
 {
-        this.init (factura.Id, factura.HTML, factura.Pedido);
+        this.init (factura.Id, factura.Pedido);
 }
 
-private void init (int id, string hTML, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN> pedido)
+private void init (int id, System.Collections.Generic.IList<BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN> pedido)
 {
         this.Id = id;
 
-
-        this.HTML = hTML;
 
         this.Pedido = pedido;
 }

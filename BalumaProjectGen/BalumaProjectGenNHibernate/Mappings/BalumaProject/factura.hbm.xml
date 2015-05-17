@@ -4,21 +4,15 @@
 		                   namespace="BalumaProjectGenNHibernate.EN.BalumaProject">
 			<class name="FacturaEN" table="[Factura]">
 						<id name="Id" column="[id]"/>
-					<property name="HTML" type="string"> 
-						<column name="[HTML]"  not-null="true"/>
-					</property>
-			
 			
 			
 		  			
-						<bag name="Pedido" table="[pedido_factura]" inverse="true" >
+						<bag name="Pedido" >
 							<key>
-									<column name="[FK_id_idFactura]"/>
-							</key>
-      						<many-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN">
-									<column name="[FK_idPedido_idPedido]"/>
-      						</many-to-many>
-    					</bag>
+								<column name="[FK_id_idFactura]"/>
+					      	</key>
+							<one-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.PedidoEN"/>
+					    </bag>
 					
 					
 					

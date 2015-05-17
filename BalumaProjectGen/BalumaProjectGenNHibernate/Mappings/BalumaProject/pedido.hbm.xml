@@ -41,17 +41,6 @@
 								<column name="[FK_NIF_idCliente]"/>
 						</many-to-one>
 											 					
-			
-		  			
-						<bag name="Factura" table="[pedido_factura]"  >
-							<key>
-									<column name="[FK_idPedido_idPedido]"/>
-							</key>
-      						<many-to-many class="BalumaProjectGenNHibernate.EN.BalumaProject.FacturaEN">
-									<column name="[FK_id_idFactura]"/>
-      						</many-to-many>
-    					</bag>
-					
 					
 					
 					
