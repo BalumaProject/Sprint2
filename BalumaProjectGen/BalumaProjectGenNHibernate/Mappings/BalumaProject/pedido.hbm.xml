@@ -3,7 +3,10 @@
 		                   assembly="BalumaProjectGenNHibernate"
 		                   namespace="BalumaProjectGenNHibernate.EN.BalumaProject">
 			<class name="PedidoEN" table="[Pedido]">
-						<id name="IdPedido" column="[idPedido]"/>
+				  	
+						<id name="IdPedido" column="[idPedido]" type="integer">
+							<generator class="identity"/>
+						</id>
 					<property name="Fecha" type="date"> 
 						<column name="[fecha]"  not-null="true"/>
 					</property>

@@ -32,15 +32,13 @@ public IPedidoCAD get_IPedidoCAD ()
         return this._IPedidoCAD;
 }
 
-public int CrearPedido (int p_idPedido, Nullable<DateTime> p_fecha, BalumaProjectGenNHibernate.Enumerated.BalumaProject.EstadoPedidoEnum p_estado, BalumaProjectGenNHibernate.Enumerated.BalumaProject.TipoPagoEnum p_tipoPago, string p_administrador, string p_cliente)
+public int CrearPedido (Nullable<DateTime> p_fecha, BalumaProjectGenNHibernate.Enumerated.BalumaProject.EstadoPedidoEnum p_estado, BalumaProjectGenNHibernate.Enumerated.BalumaProject.TipoPagoEnum p_tipoPago, string p_administrador, string p_cliente)
 {
         PedidoEN pedidoEN = null;
         int oid;
 
         //Initialized PedidoEN
         pedidoEN = new PedidoEN ();
-        pedidoEN.IdPedido = p_idPedido;
-
         pedidoEN.Fecha = p_fecha;
 
         pedidoEN.Estado = p_estado;

@@ -51,19 +51,12 @@ namespace BalumaProject_Plantilla_Frontend
                 ClienteEN cliente = (ClienteEN)Session["cliente"];
                 ClienteCEN cliCen = new ClienteCEN();
                 PedidoCEN pedCen = new PedidoCEN();
-                if (Session["pedidio"] == null)
-                {
-                    pedCen.CrearPedido(7, DateTime.Now, EstadoPedidoEnum.en_curso, TipoPagoEnum.paypal, "admin", cliente.NIF);
-                    Session["pedido"] = pedCen;
-                    LineaPedidoCEN licen = new LineaPedidoCEN();
-                    int numLinea = 0;
-                    foreach (ProductoEN prod in pedido)
-                    {
-                        licen.CrearLinea(prod.IdProducto, 7, numLinea);
-                        numLinea++;
-                    }
+              
+                    pedCen.CrearPedido(DateTime.Now, EstadoPedidoEnum.en_curso, TipoPagoEnum.paypal, "admin", cliente.NIF);
+                    IList<PedidoEN> pedEn = pedCen.ObtenerPorCliente(cliente.NIF);
+                    pedCen.Comprar(pedEn.ElementAt(pedEn.Count - 1).IdPedido, pedido);
                     Session["cliente"] = cliente;
-                }
+              
             }
             Document doc = new Document(PageSize.LETTER);
             // Indicamos donde vamos a guardar el documento
@@ -214,7 +207,7 @@ namespace BalumaProject_Plantilla_Frontend
         protected void continuar(object sender, EventArgs e)
         {
             
-            Response.Redirect("Catalogo.aspx");
+            Response.Redirect("CatalogoCliente.aspx");
         }
 
         protected IList<ProductoEN> ObtenerProductos()

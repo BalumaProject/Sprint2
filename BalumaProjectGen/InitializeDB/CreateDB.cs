@@ -106,13 +106,13 @@ public static void InitializeData ()
                 "Manuel", "Manuel", "Manuel");
 
         var pedido = new PedidoCEN ();
-        pedido.CrearPedido (1, DateTime.Now, EstadoPedidoEnum.en_curso, TipoPagoEnum.paypal, "admin", "cliente1");
-        pedido.CrearPedido (2, DateTime.Now, EstadoPedidoEnum.cancelado, TipoPagoEnum.visa, "admin", "cliente1");
-        pedido.CrearPedido (3, DateTime.Now, EstadoPedidoEnum.entregado, TipoPagoEnum.paypal, "admin", "cliente1");
+        pedido.CrearPedido (DateTime.Now, EstadoPedidoEnum.en_curso, TipoPagoEnum.paypal, "admin", "cliente1");
+        pedido.CrearPedido (DateTime.Now, EstadoPedidoEnum.cancelado, TipoPagoEnum.visa, "admin", "cliente1");
+        pedido.CrearPedido (DateTime.Now, EstadoPedidoEnum.entregado, TipoPagoEnum.paypal, "admin", "cliente1");
 
-        pedido.CrearPedido (4, DateTime.Now, EstadoPedidoEnum.en_curso, TipoPagoEnum.paypal, "admin", "Manuel");
-        pedido.CrearPedido (5, DateTime.Now, EstadoPedidoEnum.cancelado, TipoPagoEnum.visa, "admin", "Manuel");
-        pedido.CrearPedido (6, DateTime.Now, EstadoPedidoEnum.entregado, TipoPagoEnum.paypal, "admin", "Manuel");
+        pedido.CrearPedido (DateTime.Now, EstadoPedidoEnum.en_curso, TipoPagoEnum.paypal, "admin", "Manuel");
+        pedido.CrearPedido (DateTime.Now, EstadoPedidoEnum.cancelado, TipoPagoEnum.visa, "admin", "Manuel");
+        pedido.CrearPedido (DateTime.Now, EstadoPedidoEnum.entregado, TipoPagoEnum.paypal, "admin", "Manuel");
 
 
         ProductoCEN prod = new ProductoCEN ();

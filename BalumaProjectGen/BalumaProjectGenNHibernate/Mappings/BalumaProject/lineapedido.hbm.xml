@@ -3,7 +3,10 @@
 		                   assembly="BalumaProjectGenNHibernate"
 		                   namespace="BalumaProjectGenNHibernate.EN.BalumaProject">
 			<class name="LineaPedidoEN" table="[LineaPedido]">
-						<id name="Numero" column="[numero]"/>
+				  	
+						<id name="Numero" column="[numero]" type="integer">
+							<generator class="identity"/>
+						</id>
 			
 		  			
 						<many-to-one name="Producto" class="BalumaProjectGenNHibernate.EN.BalumaProject.ProductoEN" >	

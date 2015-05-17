@@ -110,53 +110,43 @@ namespace BalumaProject_Plantilla_Frontend
 
             // Creamos una tabla que contendrá el nombre, apellido y país
             // de nuestros visitante.
-            PdfPTable tbl1 = new PdfPTable(3);
-            tbl1.WidthPercentage = 100;
+            PdfPTable tblPrueba = new PdfPTable(3);
+            tblPrueba.WidthPercentage = 100;
 
             // Configuramos el título de las columnas de la tabla
-            PdfPCell clCantidad = new PdfPCell(new Phrase("CANTIDAD", _boldFont));
-            clCantidad.BorderWidth = 0;
-            clCantidad.BorderWidthBottom = 0.75f;
+            PdfPCell clNombre = new PdfPCell(new Phrase("CANTIDAD", _boldFont));
+            clNombre.BorderWidth = 0;
+            clNombre.BorderWidthBottom = 0.75f;
 
-            PdfPCell clDescrp = new PdfPCell(new Phrase("DESCRIPCIÓN", _boldFont));
-            clDescrp.BorderWidth = 0;
-            clDescrp.BorderWidthBottom = 0.75f;
+            PdfPCell clApellido = new PdfPCell(new Phrase("DESCRIPCIÓN", _boldFont));
+            clApellido.BorderWidth = 0;
+            clApellido.BorderWidthBottom = 0.75f;
 
-            PdfPCell clPrecio = new PdfPCell(new Phrase("PRECIO", _boldFont));
-            clPrecio.BorderWidth = 0;
-            clPrecio.BorderWidthBottom = 0.75f;
+            PdfPCell clPais = new PdfPCell(new Phrase("PRECIO", _boldFont));
+            clPais.BorderWidth = 0;
+            clPais.BorderWidthBottom = 0.75f;
 
             // Añadimos las celdas a la tabla
-            tbl1.AddCell(clCantidad);
-            tbl1.AddCell(clDescrp);
-            tbl1.AddCell(clPrecio);
-            
-            IList<ProductoEN> pedido = new List<ProductoEN>();
+            tblPrueba.AddCell(clNombre);
+            tblPrueba.AddCell(clApellido);
+            tblPrueba.AddCell(clPais);
 
-            if (Session["carrito"] != null)
-            {
-                pedido = (IList<ProductoEN>)Session["carrito"];
+            // Llenamos la tabla con información
+            clNombre = new PdfPCell(new Phrase("", _standardFont));
+            clNombre.BorderWidth = 0;
 
-                foreach (ProductoEN producto in pedido)
-                {
-                    // Llenamos la tabla con información
-                    clCantidad = new PdfPCell(new Phrase(producto.Cantidad.ToString(), _standardFont));
-                    clCantidad.BorderWidth = 0;
+            clApellido = new PdfPCell(new Phrase("", _standardFont));
+            clApellido.BorderWidth = 0;
 
-                    clDescrp = new PdfPCell(new Phrase(producto.Nombre.ToString(), _standardFont));
-                    clDescrp.BorderWidth = 0;
+            clPais = new PdfPCell(new Phrase("", _standardFont));
+            clPais.BorderWidth = 0;
 
-                    clPrecio = new PdfPCell(new Phrase(producto.Precio.ToString(), _standardFont));
-                    clPrecio.BorderWidth = 0;
+            // Añadimos las celdas a la tabla
+            tblPrueba.AddCell(clNombre);
+            tblPrueba.AddCell(clApellido);
+            tblPrueba.AddCell(clPais);
 
-                    // Añadimos las celdas a la tabla
-                    tbl1.AddCell(clCantidad);
-                    tbl1.AddCell(clDescrp);
-                    tbl1.AddCell(clPrecio);
-                }
-            }
-
-            doc.Add(tbl1);
+            doc.Add(tblPrueba);
 
             PdfPTable tbl2 = new PdfPTable(3);
             tbl2.WidthPercentage = 100;

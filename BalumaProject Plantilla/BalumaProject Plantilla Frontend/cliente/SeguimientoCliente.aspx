@@ -5,7 +5,7 @@
  <form id="Form1" runat="server">
         <div class="container">
    
-        <table class="table table-bordered">
+        <table class="table">
             <tr>
                 <th>Id</th>
                 <th>Fecha</th>
